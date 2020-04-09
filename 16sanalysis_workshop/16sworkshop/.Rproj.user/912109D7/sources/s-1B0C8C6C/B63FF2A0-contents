@@ -1,0 +1,38 @@
+# Day1
+
+Yahoo!!! I am very excited to teach this course for the first time and share what we know with you all
+
+So lets start by talking about the very basics:
+
+
+## What are we trying to achieve
+  
+We are trying to gather data on a community or a neighbourhood to find out who lives there, how the demographic changes over time  or incase of a drastic event. We can gather more information by asking about neighbours, quality of life etc. Similarly when we are looking at microbial communities our first questions is who is here, how abundant and how their presence changes over time or when conditions change. We can also ask questions like how the microbiomes are intereacting with each other (metabolites).
+  
+  <p><font color="Tomato">For the scope of this workshop we will stick to the simplar questions: who and how much?</p></font>
+  
+  
+<br>
+
+## Basics & Background
+
+Here is the link the the presentation I will give to you all at the start of the [workshop](microbiomeworkshop.pptx)
+
+- Think of a hypothesis before doing an experiment
+- Spend time on experiment design.
+  - Sample size, 16s region to amplify etc
+  - Talk to a bioinformatician
+  - Think about the depth of sequencing if you want to capture the less abundant taxa
+  - Add negative control to account for contamination
+  
+- Thoughtful data analysis is critical for successful identification of microbes
+
+<p><font color="Tomato">"If you torture the data long enough, it will confess."- Ronald Coase, Economist </p></font>
+
+## DADA2 pipeline version 1.2
+ 
+From now on, we will be working on the DADA2 package version 1.12. DADA2 has great documentation and an excellent tutorial online that we will use to understand the pipeline. Please go to the following link http://benjjneb.github.io/dada2/tutorial.html
+
+### Data for the tutorial
+The data to use for the tutorial can be downloaded from [here](MiSeqSOPData.zip)  
+  

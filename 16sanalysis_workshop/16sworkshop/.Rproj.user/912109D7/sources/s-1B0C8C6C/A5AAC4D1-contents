@@ -1,0 +1,17 @@
+titanic <- read.csv("data/titanic.csv")
+titanic2 <- titanic %>% 
+  group_by(Sex, Survived, Age) %>% 
+  summarize(sum(n))
+
+colnames(titanic2)[colnames(titanic2)=="sum(n)"] <- "Sum"
+
+titanic2 %>% 
+  ggplot(aes(x = Sex, y = Sum, fill = Age)) +
+  geom_col()
+
+titanic3 <- titanic2 %>% 
+  mutate(Combined = paste0(as.character(Sex), as.character(Age)))
+
+titanic3 %>% 
+  ggplot(aes(x = Combined, y = Sum, fill = Survived)) +
+  geom_col()

@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1570307152837.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2066063591",
+    "id" : "83E9F642",
+    "lastKnownWriteTime" : 1570307174,
+    "last_content_update" : 1570307174264,
+    "path" : "~/projects/16sanalysis_workshop/16sworkshop/04-Day3.Rmd",
+    "project_path" : "04-Day3.Rmd",
+    "properties" : {
+        "cursorPosition" : "0,11",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
