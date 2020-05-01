@@ -1,0 +1,38 @@
+--- 
+title: "Intermediate R Workshop Notes"
+author: "Hena R. Ramay"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Lecture notes from the workshop"
+---
+
+# Introduction
+
+This notebook is created so that the particpants of the workshop can follow along with the instructors. We will contantly update this notebook during the workshop to include answers to the questions asked during the workshop.
+
+
+## Workshop Schedule
+
+We will try to cover the following material in the course:
+
+- Day1
+  - 9:00 - 9:30 am Introductions and workshop overview
+  - 9:30 -10:30 Conditionals and Loops
+  - 10:45 - 12 pm  Functions
+  - 1 pm -2 pm Apply family
+  - 2 - 4 pm  Advanced plotting ggplot2 
+
+- Day2
+  - 9:00 -10:30 R markdown basics
+  - 10:45 -12 Knitr chunks
+  - 1-2 pm  Rmarkdown themes, adding html and custom css styling
+  - 2- 4 pm  A short project to bring it all together!
+  
+  
+## Important links
+  
+
