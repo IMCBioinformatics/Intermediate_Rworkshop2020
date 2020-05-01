@@ -1,1 +1,6 @@
 # Advanced Plotting 
+
+Could be useful 
+https://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#setting_statistical_transformation_arguments
+
+Datacamps intermediate R course is also good
