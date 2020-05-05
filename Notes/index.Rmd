@@ -12,7 +12,7 @@ description: "Lecture notes from the workshop"
 
 # Introduction
 
-This notebook is created so that the particpants of the workshop can follow along with the instructors. We will contantly update this notebook during the workshop to include answers to the questions asked during the workshop.
+This notebook is created so that the particpants of the workshop can follow along with the instructors. We will constantly update this notebook during the workshop to include answers to the questions asked during the workshop.
 
 
 ## Workshop Schedule
