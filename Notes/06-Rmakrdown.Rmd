@@ -1,4 +1,8 @@
 # Rmarkdown
+
+“If I went back to college again, I’d concentrate on two areas: learning to write and to speak before an audience. Nothing in life is more important than the ability to communicate effectively.”
+– Gerald R. Ford
+
 Writing in R Markdown
 ---------------------
 
@@ -114,6 +118,7 @@ Write the name of your chunk after the {r}, like: `{r chunk_name}`
 R Markdown:
 
 ```
+
 ```{r chunky_monkey}
 summary(cars)
 ```
@@ -141,11 +146,11 @@ Sometimes you may not want to see the code that produced a particular result in 
 
 R Markdown:
 
-```
+
 ```{r funky_monkey, echo=FALSE}
 summary(cars)
 ```
-```
+
 
 Rendered:
 
@@ -189,7 +194,7 @@ Rendered (I swear there's a chunk after this! It's just invisible!):
 
 There are tons of other options you can include in your chunks: sizing your figures and whether or not to display error or warning messages. As you write reports of your own data analysis, you can look up these options to create a report formatted in the way you want.
 
-In addition to code chunks, you may want to include the results of an evaluation in line with regular text. For instance, you may want to describe the data in a paragraph, and include the number of individuals in that paragraph. To do so, you can indicate that a code box should be evaluated as R by including a lowercase r, such as ``r evaluate_me``
+In addition to code chunks, you may want to include the results of an evaluation in line with regular text. For instance, you may want to describe the data in a paragraph, and include the number of individuals in that paragraph. To do so, you can indicate that a code box should be evaluated as R by including a lowercase r.
 
 R Markdown:
 

@@ -1,3 +1,10 @@
 # Apply Functions with purrr package
 
 https://towardsdatascience.com/functional-programming-in-r-with-purrr-469e597d0229
+
+
+It’s easier to see the intent of your code, because your eyes are drawn to what’s different, not what stays the same.
+
+It’s easier to respond to changes in requirements. As your needs change, you only need to make changes in one place, rather than remembering to change every place that you copied-and-pasted the code.
+
+You’re likely to have fewer bugs because each line of code is used in more places.

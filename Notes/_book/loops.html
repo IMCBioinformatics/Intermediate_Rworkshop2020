@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Conditionals and Loops | Intermediate R Workshop Notes</title>
+  <title>Chapter 4 Loops | Intermediate R Workshop Notes</title>
   <meta name="description" content="Lecture notes from the workshop" />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Conditionals and Loops | Intermediate R Workshop Notes" />
+  <meta property="og:title" content="Chapter 4 Loops | Intermediate R Workshop Notes" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Conditionals and Loops | Intermediate R Workshop Notes" />
+  <meta name="twitter:title" content="Chapter 4 Loops | Intermediate R Workshop Notes" />
   
   <meta name="twitter:description" content="Lecture notes from the workshop" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="conditional-statements.html"/>
+<link rel="prev" href="conditional-statements.html"/>
+<link rel="next" href="functions.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -179,25 +179,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conditionals-and-loops" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Conditionals and Loops</h1>
-<hr />
-<div class="boxobj">
-<p><strong>Learning Objectives</strong></p>
-<ul>
-<li>Write an if…else statement.</li>
-<li>Write a for loop to modify a data frame.</li>
-</ul>
+<div id="loops" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Loops</h1>
+<p>Conceptually, a loop is a way to repeat a sequence of instructions under certain conditions. They allow you to automate parts of your code that are in need of repetition.</p>
+<p>The easiest and most frequently used loop in R is a <b>for</b> loop. Here is a demonstration of using loops.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="loops.html#cb10-1"></a>year &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2015</span>,<span class="dv">2016</span>,<span class="dv">2017</span>,<span class="dv">2018</span>)</span>
+<span id="cb10-2"><a href="loops.html#cb10-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(year)) {</span>
+<span id="cb10-3"><a href="loops.html#cb10-3"></a>  <span class="kw">print</span>(year[i])</span>
+<span id="cb10-4"><a href="loops.html#cb10-4"></a>}</span></code></pre></div>
+<pre><code>## [1] 2015
+## [1] 2016
+## [1] 2017
+## [1] 2018</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="loops.html#cb12-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(year)) {</span>
+<span id="cb12-2"><a href="loops.html#cb12-2"></a>  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;the year is &quot;</span>,year[i]))</span>
+<span id="cb12-3"><a href="loops.html#cb12-3"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;the year is 2015&quot;
+## [1] &quot;the year is 2016&quot;
+## [1] &quot;the year is 2017&quot;
+## [1] &quot;the year is 2018&quot;</code></pre>
+<div class="box">
+<h3 id="exercise-1"><span class="header-section-number">4</span> EXERCISE</h3>
+<p><strong>Challenging.</strong> Using the <em>E. coli</em> metadata from the last section, write a <code>for</code> loop containing an <code>if...else</code> statement to change the genome size into categorical variable with two levels: large and small.</p>
+<p>Do this by translating the following sentence into R code: for every element in the genome_size variable, if the genome size is greater than the mean, change it to “large”, otherwise, change it to “small”.</p>
 </div>
-<hr />
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="conditional-statements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="conditional-statements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

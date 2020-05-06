@@ -1,5 +1,9 @@
 # Advanced Plotting 
 
+"The greatest value of a picture is when it forces us to notice what we never expected to see"
+-John Tukey
+
+
 Could be useful 
 https://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#setting_statistical_transformation_arguments
 

@@ -1,4 +1,4 @@
-# Day One : Workshop Overview and setup
+Overview and setup
 
 Lets get started!
 

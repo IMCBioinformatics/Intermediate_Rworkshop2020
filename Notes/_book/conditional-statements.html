@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Conditionals and Loops | Intermediate R Workshop Notes</title>
+  <title>Chapter 3 Conditional statements | Intermediate R Workshop Notes</title>
   <meta name="description" content="Lecture notes from the workshop" />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Conditionals and Loops | Intermediate R Workshop Notes" />
+  <meta property="og:title" content="Chapter 3 Conditional statements | Intermediate R Workshop Notes" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Conditionals and Loops | Intermediate R Workshop Notes" />
+  <meta name="twitter:title" content="Chapter 3 Conditional statements | Intermediate R Workshop Notes" />
   
   <meta name="twitter:description" content="Lecture notes from the workshop" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="conditional-statements.html"/>
+<link rel="prev" href="conditionals-and-loops.html"/>
+<link rel="next" href="loops.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -179,25 +179,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="conditionals-and-loops" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Conditionals and Loops</h1>
-<hr />
-<div class="boxobj">
-<p><strong>Learning Objectives</strong></p>
-<ul>
-<li>Write an if…else statement.</li>
-<li>Write a for loop to modify a data frame.</li>
-</ul>
+<div id="conditional-statements" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Conditional statements</h1>
+<p>Decision making is an important part of programming. This can be achieved in R programming using conditional statements such as <code>if</code> and <code>if...else</code>.</p>
+<div id="if" class="section level2">
+<h2><span class="header-section-number">3.1</span> if</h2>
+<p>The syntax of an <b>if</b> statement is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="conditional-statements.html#cb1-1"></a><span class="cf">if</span> (test_expression) {</span>
+<span id="cb1-2"><a href="conditional-statements.html#cb1-2"></a>  do_this</span>
+<span id="cb1-3"><a href="conditional-statements.html#cb1-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="conditional-statements.html#cb2-1"></a>x &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb2-2"><a href="conditional-statements.html#cb2-2"></a><span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb2-3"><a href="conditional-statements.html#cb2-3"></a>  <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</span>
+<span id="cb2-4"><a href="conditional-statements.html#cb2-4"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;positive number&quot;</code></pre>
 </div>
-<hr />
+<div id="ifelse" class="section level2">
+<h2><span class="header-section-number">3.2</span> if…else</h2>
+<p>The syntax of an <b>if…else</b> statement is:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="conditional-statements.html#cb4-1"></a><span class="cf">if</span> (test_expression) {</span>
+<span id="cb4-2"><a href="conditional-statements.html#cb4-2"></a>  do_this</span>
+<span id="cb4-3"><a href="conditional-statements.html#cb4-3"></a>} <span class="cf">else</span> {</span>
+<span id="cb4-4"><a href="conditional-statements.html#cb4-4"></a>    do_that</span>
+<span id="cb4-5"><a href="conditional-statements.html#cb4-5"></a>}</span></code></pre></div>
+<p>The else part is optional and is only evaluated if test_expression is FALSE. It is important that the <code>else</code> word be in the same line as the closing brace of the <code>if</code> statement.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="conditional-statements.html#cb5-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb5-2"><a href="conditional-statements.html#cb5-2"></a><span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>){</span>
+<span id="cb5-3"><a href="conditional-statements.html#cb5-3"></a>  <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</span>
+<span id="cb5-4"><a href="conditional-statements.html#cb5-4"></a>} <span class="cf">else</span> {</span>
+<span id="cb5-5"><a href="conditional-statements.html#cb5-5"></a>    <span class="kw">print</span>(<span class="st">&quot;negative number&quot;</span>)</span>
+<span id="cb5-6"><a href="conditional-statements.html#cb5-6"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;positive number&quot;</code></pre>
+</div>
+<div id="nested-ifelse-statements" class="section level2">
+<h2><span class="header-section-number">3.3</span> Nested if…else statements</h2>
+<p>You can have more than two test expressions:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="conditional-statements.html#cb7-1"></a><span class="cf">if</span> (test_expression1) {</span>
+<span id="cb7-2"><a href="conditional-statements.html#cb7-2"></a>  statement1</span>
+<span id="cb7-3"><a href="conditional-statements.html#cb7-3"></a>} <span class="cf">else</span> <span class="cf">if</span> (test_expression2) {</span>
+<span id="cb7-4"><a href="conditional-statements.html#cb7-4"></a>    statement2</span>
+<span id="cb7-5"><a href="conditional-statements.html#cb7-5"></a>} <span class="cf">else</span> {</span>
+<span id="cb7-6"><a href="conditional-statements.html#cb7-6"></a>      statement4</span>
+<span id="cb7-7"><a href="conditional-statements.html#cb7-7"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="conditional-statements.html#cb8-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb8-2"><a href="conditional-statements.html#cb8-2"></a><span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb8-3"><a href="conditional-statements.html#cb8-3"></a>   <span class="kw">print</span>(<span class="st">&quot;negative number&quot;</span>)</span>
+<span id="cb8-4"><a href="conditional-statements.html#cb8-4"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb8-5"><a href="conditional-statements.html#cb8-5"></a>   <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</span>
+<span id="cb8-6"><a href="conditional-statements.html#cb8-6"></a>} <span class="cf">else</span> {</span>
+<span id="cb8-7"><a href="conditional-statements.html#cb8-7"></a>   <span class="kw">print</span>(<span class="st">&quot;zero&quot;</span>)</span>
+<span id="cb8-8"><a href="conditional-statements.html#cb8-8"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;zero&quot;</code></pre>
+<div class="box">
+<h3 id="exercise"><span class="header-section-number">3.3</span> EXERCISE</h3>
+<p>Write a simple if…else statement to check if 5 is an odd number and if it is print “I am odd”, otherwise print “I am even”.</p>
+</div>
+<!-- Solution -->
+<!-- x <- 5 -->
+<!-- if ((x %% 2) != 0) { -->
+<!--   print("I am odd") -->
+<!-- } else { -->
+<!--   print("I am even") -->
+<!-- } -->
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="conditional-statements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="conditionals-and-loops.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="loops.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
