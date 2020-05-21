@@ -3,8 +3,144 @@
 "The greatest value of a picture is when it forces us to notice what we never expected to see"
 -John Tukey
 
+## Setup
 
-Could be useful 
-https://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html#setting_statistical_transformation_arguments
+**1. Install the `tidyverse` package.**
 
-Datacamps intermediate R course is also good
+```{r}
+library(tidyverse)
+```
+
+**2. Download datasets.**
+
+We will be using a dataset containing citation and alternative metrics for articles published in the PLOS family of journals between 2003 and 2010. The data set was compiled by Priem et al 2012 ([publication](http://arxiv.org/abs/1203.4745)). 
+
+Download the data onto your computer from [this](https://www.dropbox.com/s/up38z3fd4llanrb/counts-raw.txt?dl=0) dropbox link and move it into a directory on your computer that makes sense.
+
+**3. Read in data into R.**
+
+```{r}
+counts <- read.delim("data/counts-raw.txt")
+
+research <- filter(counts, articleType == "Research Article")
+```
+
+
+
+
+## Review of ggplot2 basics
+
+`ggplot2` is a plotting package that makes it simple to create complex plots from data in a data frame. Graphics are built step by step by adding new elements. Adding layers in this fashion allows for extensive flexibility and customization of plots.
+
+A plot can be divided into different fundamental parts:
+
+**Plot = data + aesthetics + geom**
+
+Required building blocks:
+
+* data
+* aesthetics - describe how data are mapped to colour, size, shape, location
+* geoms - geometric objects like points, lines, shapes
+
+Optional building blocks:
+
+* facets - describes how panel plots should be constructed
+* stats - statistical transformations like binning, quantiles, smoothing
+* coordinates - describes the system in which the locations of the geoms will be drawn
+* scales - what scale an aesthetic map uses (ex. male = red, female = blue)
+
+To build a ggplot, we will use the following basic template that can be used for different types of plots:
+
+```{r, eval = FALSE}
+ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) +  <GEOM_FUNCTION>()
+```
+1. Specify which data set to use for the plot using the `data` argument.
+
+2. Define a "mapping" (using the aesthetic (`aes`) function), by selecting the variables to be plotted and specifying how to present them in the graph, e.g. as x/y positions or characteristics such as size, shape, color, etc.
+
+3. Add "geoms" – graphical representations of the data in the plot (points, lines, bars). `ggplot2` offers many different geoms; common ones include:
+
+* `geom_point()` for scatter plots, dot plots, etc.
+* `geom_boxplot()` for boxplots.
+* `geom_histogram()` for histograms.
+* `geom_barplot()` for barplots.
+* `geom_line()` for trend lines, time series, etc. 
+
+```{r}
+p <- ggplot(research, aes( x = pdfDownloadsCount, y = wosCountThru2011)) + geom_point()
+p
+```
+
+
+## Scales
+
+## Faceting
+
+## Themes
+
+In addition to `theme_bw()`, which changes the plot background to white, `ggplot2` comes with several other themes which can be useful to quickly change the look of your visualization. The complete list of themes is available at https://ggplot2.tidyverse.org/reference/ggtheme.html. `theme_minimal()` and `theme_light()` are popular, and `theme_void()` can be useful as a starting point to create a new hand-crafted theme.
+
+The `ggthemes` package provides a wide variety of options (including an Excel 2003 theme). The `ggplot2` [extensions website](https://www.ggplot2-exts.org) provides a list of packages that extend the capabilities of `ggplot2`, including additional themes.
+
+## Color palettes
+
+You can create your own color palettes using the `colorRamp()` or `colorRampPalette()` function. 
+
+`colorRamp()` returns a function that takes values between 0 and 1, indicating the extremes of the color palette.
+
+`colorRampPalette()` returns a function that takes integer arguments and returns a vector of colours. 
+
+```{r}
+cols <- colorRamp(c("red", "blue"))
+cols(0)
+cols(0.5)
+cols(1)
+
+cols <- colorRampPalette(c("red", "blue"))
+cols(2)
+cols(10)
+```
+
+Or, you can use the `RColorBrewer` package to get a premade colour palette.
+
+There are three types of palettes:
+* Sequential
+* Diverging
+* Qualitative
+
+```{r, fig.height = 8}
+library(RColorBrewer)
+display.brewer.all()
+```
+
+## Multiple plots
+
+There are two useful packages for combining multiple plots: `gridExtra` and `cowplot`. 
+
+`gridExtra` has two useful functions: `grid.arrange()` and `arrangeGrob()`. However, these functions make no attempt at aligning the plot panels; instead, the plots are simply placed into the grid as they are, so the axes are not aligned. If axis alignment is required, the `plot_grid()` function of the `cowplot` package is better. We will try using both here. 
+
+### The `gridExtra` package
+
+### The `cowplot` package
+
+### Saving plots
+
+The easiest way to save a plot is using the `ggsave()` function. 
+
+
+## Additional Resources
+
+http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization
+
+http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
+
+
+* Mailing list: http://groups.google.com/group/ggplot2
+* Wiki: https://github.com/hadley/ggplot2/wiki
+* Website: http://had.co.nz/ggplot2/
+* StackOverflow: http://stackoverflow.com/questions/tagged/ggplot
+
+Cheatsheet
+
+
+
