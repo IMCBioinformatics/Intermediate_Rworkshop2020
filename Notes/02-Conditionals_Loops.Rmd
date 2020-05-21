@@ -2,18 +2,25 @@
 
 ---
 
-Learning Objectives
--------------------
+## Setup
 
--   Write an if...else statement.
--   Write a for loop to modify a data frame.
----
+**1. Download data.**
+
+We will be using a dataset containing citation and alternative metrics for articles published in the PLOS family of journals between 2003 and 2010. The data set was compiled by Priem et al 2012 ([publication](http://arxiv.org/abs/1203.4745)). 
+
+Download the data onto your computer from [this](https://www.dropbox.com/s/up38z3fd4llanrb/counts-raw.txt?dl=0) dropbox link and move it into a directory on your computer that makes sense.
+
+**2. Read in data into R.**
+
+```{r}
+counts <- read.delim("data/counts-raw.txt")
+```
 
 ## Conditional statements
 
 Decision making is an important part of programming. This can be achieved in R programming using conditional statements such as `if` and `if...else`.
 
-## if
+### if {-}
 
 The syntax of an <b>if</b> statement is:
 ```{r, eval = FALSE}
@@ -28,7 +35,7 @@ if (x > 0) {
 }
 ```
 
-## if...else
+### if...else {-}
 
 The syntax of an <b>if...else</b> statement is:
 ```{r, eval = FALSE}
@@ -38,6 +45,7 @@ if (test_expression) {
     do_that
 }
 ```
+
 The else part is optional and is only evaluated if test_expression is FALSE. It is important that the `else` word be in the same line as the closing brace of the `if` statement.
 
 ```  {r}
@@ -49,7 +57,7 @@ if (x > 0){
 }
 ```
 
-## Nested if...else statements
+### Nested if...else statements {-}
 
 You can have more than two test expressions:
 ```{r, eval = FALSE}
@@ -72,10 +80,13 @@ if (x < 0) {
 }
 ```
 
-<div class="box">
-### EXERCISE
+---
+
+### EXERCISE 2.1 {-}
+
 Write a simple if...else statement to check if 5 is an odd number and if it is print "I am odd", otherwise print "I am even".
-</div>
+
+---
 
 <!-- Solution -->
 <!-- x <- 5 -->
@@ -89,7 +100,11 @@ Write a simple if...else statement to check if 5 is an odd number and if it is p
 
 Conceptually, a loop is a way to repeat a sequence of instructions under certain conditions. They allow you to automate parts of your code that are in need of repetition.
 
+### `for` loop {-}
+
 The easiest and most frequently used loop in R is a <b>for</b> loop. Here is a demonstration of using loops.
+
+![](img/r-for-loop.jpg)
 
 ```{r}
 year <- c(2015,2016,2017,2018)
@@ -101,9 +116,55 @@ for(i in 1:length(year)) {
 }
 ```
 
-<div class="box">
-### EXERCISE
-**Challenging.** Using the *E. coli* metadata from the last section, write a `for` loop containing an `if...else` statement to change the genome size into categorical variable with two levels: large and small.
+### `while` loop {-}
 
-Do this by translating the following sentence into R code: for every element in the genome_size variable, if the genome size is greater than the mean, change it to "large", otherwise, change it to "small".
-</div>
+In contrast to a **for** lop, **while** loops are used to loop until a specific conditional statement is no longer true. 
+
+![](img/r-while-loop.jpg)
+
+```{r, eval = FALSE}
+while (test_expression) {
+  do_this
+}
+```
+```{r}
+i <- 1
+while (i < 6) {
+  print(i)
+  i <- i + 1
+}
+```
+
+---
+
+### EXERCISE 2.2 {-}
+
+**Challenging.** From the PLOS journal publication data we read into R above, here is a plot showing the impact factor according to the F1000 (Faculty of 1000) versus the number of times the PDF was downloaded. 
+
+```{r, echo = FALSE}
+library(ggplot2)
+ggplot(counts, aes(f1000Factor, pdfDownloadsCount)) + geom_jitter(alpha = 0.5, size = 2, width = 0.2) + theme_bw()
+```
+
+Using this dataset, write a `for` loop containing an `if...else` statement to change the f1000Factor column into categorical variable with two levels: high impact and low impact.
+
+Do this by translating the following sentence into R code: for every element in the f1000Factor variable, if the value is greater than zero, change it to "high_impact", otherwise, change it to "low_impact".
+
+**Bonus.** Create a box plot (like the one below) showing the number of PDF downloads for high versus low impact articles.
+
+```{r, echo = FALSE}
+
+counts2 <- counts
+for (i in 1:length(counts2$f1000Factor)){
+	if (counts2$f1000Factor[i] > 0) {
+		counts2$f1000Factor[i] <- "high_impact"
+	} else {
+		counts2$f1000Factor[i] <- "low_impact"
+	}
+}
+
+ggplot(counts2, aes(f1000Factor, pdfDownloadsCount + 0.1, fill = f1000Factor)) + geom_boxplot() + theme_bw()	+ scale_y_log10() + ylab("log10(PDF Downloads + 0.1)")
+```
+
+---
+

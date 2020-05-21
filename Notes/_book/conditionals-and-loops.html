@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Conditionals and Loops | Intermediate R Workshop Notes</title>
   <meta name="description" content="Lecture notes from the workshop" />
-  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Conditionals and Loops | Intermediate R Workshop Notes" />
   <meta property="og:type" content="book" />
@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,35 +137,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#day-2"><i class="fa fa-check"></i>Day 2</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#important-links"><i class="fa fa-check"></i><b>1.2</b> Important links</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#setting-up-a-project"><i class="fa fa-check"></i><b>1.3</b> Setting up a project</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#learning-objectives"><i class="fa fa-check"></i><b>1.4</b> Learning Objectives</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#finding-your-location"><i class="fa fa-check"></i><b>1.5</b> Finding your location</a></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#downloading-files-from-the-command-line"><i class="fa fa-check"></i><b>1.6</b> Downloading files from the command line</a></li>
-<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#organizing-a-larger-project"><i class="fa fa-check"></i><b>1.7</b> Organizing a larger project</a></li>
-<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#create-a-readme-file"><i class="fa fa-check"></i><b>1.8</b> Create a README file</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html"><i class="fa fa-check"></i><b>2</b> Conditionals and Loops</a><ul>
-<li class="chapter" data-level="2.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
-<li class="chapter" data-level="2.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>2.2</b> Conditional statements</a></li>
-<li class="chapter" data-level="2.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i><b>2.3</b> if</a></li>
-<li class="chapter" data-level="2.4" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i><b>2.4</b> if…else</a></li>
-<li class="chapter" data-level="2.5" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i><b>2.5</b> Nested if…else statements</a></li>
-<li class="chapter" data-level="2.6" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>2.6</b> Loops</a></li>
+<li class="chapter" data-level="2.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#setup"><i class="fa fa-check"></i><b>2.1</b> Setup</a></li>
+<li class="chapter" data-level="2.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>2.2</b> Conditional statements</a><ul>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i>if</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i>if…else</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i>Nested if…else statements</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.1"><i class="fa fa-check"></i>EXERCISE 2.1</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>2.3</b> Loops</a><ul>
+<li><a href="conditionals-and-loops.html#for-loop"><code>for</code> loop</a></li>
+<li><a href="conditionals-and-loops.html#while-loop"><code>while</code> loop</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.2"><i class="fa fa-check"></i>EXERCISE 2.2</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
-<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#the-parts-of-a-function"><i class="fa fa-check"></i><b>3.1.1</b> The parts of a function</a></li>
-<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#the-principle-of-encapsulation"><i class="fa fa-check"></i><b>3.1.2</b> The principle of encapsulation</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#environments-are-complicated"><i class="fa fa-check"></i><b>3.2</b> Environments are complicated</a></li>
-<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#the-return-statement"><i class="fa fa-check"></i><b>3.3</b> The return statement</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="functions.html"><a href="functions.html#challenges"><i class="fa fa-check"></i><b>3.3.1</b> Challenges</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#write-your-own-function"><i class="fa fa-check"></i><b>3.4</b> Write your own function</a></li>
+<li class="chapter" data-level="3.0.1" data-path="functions.html"><a href="functions.html#the-parts-of-a-function"><i class="fa fa-check"></i><b>3.0.1</b> The parts of a function</a></li>
+<li class="chapter" data-level="3.0.2" data-path="functions.html"><a href="functions.html#the-principle-of-encapsulation"><i class="fa fa-check"></i><b>3.0.2</b> The principle of encapsulation</a></li>
+<li class="chapter" data-level="3.0.3" data-path="functions.html"><a href="functions.html#challenges"><i class="fa fa-check"></i><b>3.0.3</b> Challenges</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="apply-functions-with-purrr-package.html"><a href="apply-functions-with-purrr-package.html"><i class="fa fa-check"></i><b>4</b> Apply Functions with purrr package</a></li>
 <li class="chapter" data-level="5" data-path="advanced-plotting.html"><a href="advanced-plotting.html"><i class="fa fa-check"></i><b>5</b> Advanced Plotting</a><ul>
-<li class="chapter" data-level="5.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
+<li class="chapter" data-level="5.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup-1"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
 <li class="chapter" data-level="5.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>5.2</b> Review of ggplot2 basics</a></li>
 <li class="chapter" data-level="5.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#scales"><i class="fa fa-check"></i><b>5.3</b> Scales</a></li>
 <li class="chapter" data-level="5.4" data-path="advanced-plotting.html"><a href="advanced-plotting.html#faceting"><i class="fa fa-check"></i><b>5.4</b> Faceting</a></li>
@@ -180,10 +172,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.8" data-path="advanced-plotting.html"><a href="advanced-plotting.html#additional-resources"><i class="fa fa-check"></i><b>5.8</b> Additional Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> Rmarkdown</a><ul>
-<li class="chapter" data-level="6.1" data-path="rmarkdown.html"><a href="rmarkdown.html#writing-in-r-markdown"><i class="fa fa-check"></i><b>6.1</b> Writing in R Markdown</a></li>
-<li class="chapter" data-level="6.2" data-path="rmarkdown.html"><a href="rmarkdown.html#learning-objectives-3"><i class="fa fa-check"></i><b>6.2</b> Learning Objectives</a></li>
-</ul></li>
+<li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> Rmarkdown</a></li>
 <li class="chapter" data-level="7" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>7</b> Project</a></li>
 <li class="chapter" data-level="8" data-path="interesting-packages.html"><a href="interesting-packages.html"><i class="fa fa-check"></i><b>8</b> Interesting Packages</a></li>
 <li class="chapter" data-level="9" data-path="faqs.html"><a href="faqs.html"><i class="fa fa-check"></i><b>9</b> FAQs</a></li>
@@ -210,69 +199,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="conditionals-and-loops" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Conditionals and Loops</h1>
 <hr />
-<div id="learning-objectives-1" class="section level2">
-<h2><span class="header-section-number">2.1</span> Learning Objectives</h2>
-<ul>
-<li>Write an if…else statement.</li>
-<li><h2 id="write-a-for-loop-to-modify-a-data-frame."><span class="header-section-number">2.1</span> Write a for loop to modify a data frame.</h2></li>
-</ul>
+<div id="setup" class="section level2">
+<h2><span class="header-section-number">2.1</span> Setup</h2>
+<p><strong>1. Download data.</strong></p>
+<p>We will be using a dataset containing citation and alternative metrics for articles published in the PLOS family of journals between 2003 and 2010. The data set was compiled by Priem et al 2012 (<a href="http://arxiv.org/abs/1203.4745">publication</a>).</p>
+<p>Download the data onto your computer from <a href="https://www.dropbox.com/s/up38z3fd4llanrb/counts-raw.txt?dl=0">this</a> dropbox link and move it into a directory on your computer that makes sense.</p>
+<p><strong>2. Read in data into R.</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">counts &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;data/counts-raw.txt&quot;</span>)</a></code></pre></div>
 </div>
 <div id="conditional-statements" class="section level2">
 <h2><span class="header-section-number">2.2</span> Conditional statements</h2>
 <p>Decision making is an important part of programming. This can be achieved in R programming using conditional statements such as <code>if</code> and <code>if...else</code>.</p>
-</div>
-<div id="if" class="section level2">
-<h2><span class="header-section-number">2.3</span> if</h2>
+<div id="if" class="section level3 unnumbered">
+<h3>if</h3>
 <p>The syntax of an <b>if</b> statement is:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="conditionals-and-loops.html#cb10-1"></a><span class="cf">if</span> (test_expression) {</span>
-<span id="cb10-2"><a href="conditionals-and-loops.html#cb10-2"></a>  do_this</span>
-<span id="cb10-3"><a href="conditionals-and-loops.html#cb10-3"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="conditionals-and-loops.html#cb11-1"></a>x &lt;-<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb11-2"><a href="conditionals-and-loops.html#cb11-2"></a><span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb11-3"><a href="conditionals-and-loops.html#cb11-3"></a>  <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</span>
-<span id="cb11-4"><a href="conditionals-and-loops.html#cb11-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="cf">if</span> (test_expression) {</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  do_this</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">}</a></code></pre></div>
 <pre><code>## [1] &quot;positive number&quot;</code></pre>
 </div>
-<div id="ifelse" class="section level2">
-<h2><span class="header-section-number">2.4</span> if…else</h2>
+<div id="ifelse" class="section level3 unnumbered">
+<h3>if…else</h3>
 <p>The syntax of an <b>if…else</b> statement is:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="conditionals-and-loops.html#cb13-1"></a><span class="cf">if</span> (test_expression) {</span>
-<span id="cb13-2"><a href="conditionals-and-loops.html#cb13-2"></a>  do_this</span>
-<span id="cb13-3"><a href="conditionals-and-loops.html#cb13-3"></a>} <span class="cf">else</span> {</span>
-<span id="cb13-4"><a href="conditionals-and-loops.html#cb13-4"></a>    do_that</span>
-<span id="cb13-5"><a href="conditionals-and-loops.html#cb13-5"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="cf">if</span> (test_expression) {</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">  do_this</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">    do_that</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">}</a></code></pre></div>
 <p>The else part is optional and is only evaluated if test_expression is FALSE. It is important that the <code>else</code> word be in the same line as the closing brace of the <code>if</code> statement.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="conditionals-and-loops.html#cb14-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb14-2"><a href="conditionals-and-loops.html#cb14-2"></a><span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>){</span>
-<span id="cb14-3"><a href="conditionals-and-loops.html#cb14-3"></a>  <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</span>
-<span id="cb14-4"><a href="conditionals-and-loops.html#cb14-4"></a>} <span class="cf">else</span> {</span>
-<span id="cb14-5"><a href="conditionals-and-loops.html#cb14-5"></a>    <span class="kw">print</span>(<span class="st">&quot;negative number&quot;</span>)</span>
-<span id="cb14-6"><a href="conditionals-and-loops.html#cb14-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">    <span class="kw">print</span>(<span class="st">&quot;negative number&quot;</span>)</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">}</a></code></pre></div>
 <pre><code>## [1] &quot;positive number&quot;</code></pre>
 </div>
-<div id="nested-ifelse-statements" class="section level2">
-<h2><span class="header-section-number">2.5</span> Nested if…else statements</h2>
+<div id="nested-ifelse-statements" class="section level3 unnumbered">
+<h3>Nested if…else statements</h3>
 <p>You can have more than two test expressions:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="conditionals-and-loops.html#cb16-1"></a><span class="cf">if</span> (test_expression1) {</span>
-<span id="cb16-2"><a href="conditionals-and-loops.html#cb16-2"></a>  statement1</span>
-<span id="cb16-3"><a href="conditionals-and-loops.html#cb16-3"></a>} <span class="cf">else</span> <span class="cf">if</span> (test_expression2) {</span>
-<span id="cb16-4"><a href="conditionals-and-loops.html#cb16-4"></a>    statement2</span>
-<span id="cb16-5"><a href="conditionals-and-loops.html#cb16-5"></a>} <span class="cf">else</span> {</span>
-<span id="cb16-6"><a href="conditionals-and-loops.html#cb16-6"></a>      statement4</span>
-<span id="cb16-7"><a href="conditionals-and-loops.html#cb16-7"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="conditionals-and-loops.html#cb17-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb17-2"><a href="conditionals-and-loops.html#cb17-2"></a><span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb17-3"><a href="conditionals-and-loops.html#cb17-3"></a>   <span class="kw">print</span>(<span class="st">&quot;negative number&quot;</span>)</span>
-<span id="cb17-4"><a href="conditionals-and-loops.html#cb17-4"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb17-5"><a href="conditionals-and-loops.html#cb17-5"></a>   <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</span>
-<span id="cb17-6"><a href="conditionals-and-loops.html#cb17-6"></a>} <span class="cf">else</span> {</span>
-<span id="cb17-7"><a href="conditionals-and-loops.html#cb17-7"></a>   <span class="kw">print</span>(<span class="st">&quot;zero&quot;</span>)</span>
-<span id="cb17-8"><a href="conditionals-and-loops.html#cb17-8"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="cf">if</span> (test_expression1) {</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">  statement1</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">} <span class="cf">else</span> <span class="cf">if</span> (test_expression2) {</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">    statement2</a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">      statement4</a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">   <span class="kw">print</span>(<span class="st">&quot;negative number&quot;</span>)</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">} <span class="cf">else</span> <span class="cf">if</span> (x <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">   <span class="kw">print</span>(<span class="st">&quot;positive number&quot;</span>)</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb9-7" data-line-number="7">   <span class="kw">print</span>(<span class="st">&quot;zero&quot;</span>)</a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">}</a></code></pre></div>
 <pre><code>## [1] &quot;zero&quot;</code></pre>
-<div class="box">
-<h3 id="exercise"><span class="header-section-number">2.5</span> EXERCISE</h3>
-<p>Write a simple if…else statement to check if 5 is an odd number and if it is print “I am odd”, otherwise print “I am even”.</p>
+<hr />
 </div>
+<div id="exercise-2.1" class="section level3 unnumbered">
+<h3>EXERCISE 2.1</h3>
+<p>Write a simple if…else statement to check if 5 is an odd number and if it is print “I am odd”, otherwise print “I am even”.</p>
+<hr />
 <!-- Solution -->
 <!-- x <- 5 -->
 <!-- if ((x %% 2) != 0) { -->
@@ -281,31 +272,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!--   print("I am even") -->
 <!-- } -->
 </div>
+</div>
 <div id="loops" class="section level2">
-<h2><span class="header-section-number">2.6</span> Loops</h2>
+<h2><span class="header-section-number">2.3</span> Loops</h2>
 <p>Conceptually, a loop is a way to repeat a sequence of instructions under certain conditions. They allow you to automate parts of your code that are in need of repetition.</p>
+<div id="for-loop" class="section level3 unnumbered">
+<h3><code>for</code> loop</h3>
 <p>The easiest and most frequently used loop in R is a <b>for</b> loop. Here is a demonstration of using loops.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="conditionals-and-loops.html#cb19-1"></a>year &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2015</span>,<span class="dv">2016</span>,<span class="dv">2017</span>,<span class="dv">2018</span>)</span>
-<span id="cb19-2"><a href="conditionals-and-loops.html#cb19-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(year)) {</span>
-<span id="cb19-3"><a href="conditionals-and-loops.html#cb19-3"></a>  <span class="kw">print</span>(year[i])</span>
-<span id="cb19-4"><a href="conditionals-and-loops.html#cb19-4"></a>}</span></code></pre></div>
+<p><img src="img/r-for-loop.jpg" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">year &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2015</span>,<span class="dv">2016</span>,<span class="dv">2017</span>,<span class="dv">2018</span>)</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(year)) {</a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">  <span class="kw">print</span>(year[i])</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">}</a></code></pre></div>
 <pre><code>## [1] 2015
 ## [1] 2016
 ## [1] 2017
 ## [1] 2018</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="conditionals-and-loops.html#cb21-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(year)) {</span>
-<span id="cb21-2"><a href="conditionals-and-loops.html#cb21-2"></a>  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;the year is &quot;</span>,year[i]))</span>
-<span id="cb21-3"><a href="conditionals-and-loops.html#cb21-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(year)) {</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">  <span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;the year is &quot;</span>,year[i]))</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">}</a></code></pre></div>
 <pre><code>## [1] &quot;the year is 2015&quot;
 ## [1] &quot;the year is 2016&quot;
 ## [1] &quot;the year is 2017&quot;
 ## [1] &quot;the year is 2018&quot;</code></pre>
-<div class="box">
-<h3 id="exercise-1"><span class="header-section-number">2.6</span> EXERCISE</h3>
-<p><strong>Challenging.</strong> Using the <em>E. coli</em> metadata from the last section, write a <code>for</code> loop containing an <code>if...else</code> statement to change the genome size into categorical variable with two levels: large and small.</p>
-<p>Do this by translating the following sentence into R code: for every element in the genome_size variable, if the genome size is greater than the mean, change it to “large”, otherwise, change it to “small”.</p>
 </div>
+<div id="while-loop" class="section level3 unnumbered">
+<h3><code>while</code> loop</h3>
+<p>In contrast to a <strong>for</strong> lop, <strong>while</strong> loops are used to loop until a specific conditional statement is no longer true.</p>
+<p><img src="img/r-while-loop.jpg" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="cf">while</span> (test_expression) {</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2">  do_this</a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1">i &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="cf">while</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">6</span>) {</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3">  <span class="kw">print</span>(i)</a>
+<a class="sourceLine" id="cb16-4" data-line-number="4">  i &lt;-<span class="st"> </span>i <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5">}</a></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+<hr />
+</div>
+<div id="exercise-2.2" class="section level3 unnumbered">
+<h3>EXERCISE 2.2</h3>
+<p><strong>Challenging.</strong> From the PLOS journal publication data we read into R above, here is a plot showing the impact factor according to the F1000 (Faculty of 1000) versus the number of times the PDF was downloaded.</p>
+<p><img src="Notes_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Using this dataset, write a <code>for</code> loop containing an <code>if...else</code> statement to change the f1000Factor column into categorical variable with two levels: high impact and low impact.</p>
+<p>Do this by translating the following sentence into R code: for every element in the f1000Factor variable, if the value is greater than zero, change it to “high_impact”, otherwise, change it to “low_impact”.</p>
+<p><strong>Bonus.</strong> Create a box plot (like the one below) showing the number of PDF downloads for high versus low impact articles.</p>
+<p><img src="Notes_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<hr />
 
+</div>
 </div>
 </div>
             </section>
