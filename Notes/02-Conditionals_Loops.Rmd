@@ -9,7 +9,7 @@ Learning Objectives
 -   Write a for loop to modify a data frame.
 ---
 
-# Conditional statements
+## Conditional statements
 
 Decision making is an important part of programming. This can be achieved in R programming using conditional statements such as `if` and `if...else`.
 
@@ -85,7 +85,7 @@ Write a simple if...else statement to check if 5 is an odd number and if it is p
 <!--   print("I am even") -->
 <!-- } -->
 
-# Loops
+## Loops
 
 Conceptually, a loop is a way to repeat a sequence of instructions under certain conditions. They allow you to automate parts of your code that are in need of repetition.
 
