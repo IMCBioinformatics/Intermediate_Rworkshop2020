@@ -49,7 +49,7 @@ Optional building blocks:
 To build a ggplot, we will use the following basic template that can be used for different types of plots:
 
 ```{r, eval = FALSE}
-ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) +  <GEOM_FUNCTION>()
+ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) + <GEOM_FUNCTION>()
 ```
 1. Specify which data set to use for the plot using the `data` argument.
 
@@ -63,15 +63,107 @@ ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) +  <GEOM_FUNCTION>()
 * `geom_barplot()` for barplots.
 * `geom_line()` for trend lines, time series, etc. 
 
+Example:
+
 ```{r}
 p <- ggplot(research, aes( x = pdfDownloadsCount, y = wosCountThru2011)) + geom_point()
 p
 ```
 
+Adding aesthetics:
+
+```{r}
+p <- ggplot(research, aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011)) +
+  geom_point(aes(color = journal))
+p
+```
+
+## Statistics
+
+The function `geom_smooth()` adds a loess curve to the data along with a 95% confidence interval.
+
+```{r}
+p <- ggplot(research, aes(x = pdfDownloadsCount,
+                          y = wosCountThru2011)) +
+  geom_point(aes(color = journal)) +
+  geom_smooth()
+p
+```
+
+If we move the colour to the base ggplot call, we get loess curves for each level of that factor.
+
+```{r}
+p <- ggplot(research, aes(x = pdfDownloadsCount, 
+                          y = wosCountThru2011, 
+                          color = journal)) + 
+  geom_point() + 
+  geom_smooth()
+p
+```
+
+Check the help page for the function `geom_smooth()` for more information about how the curve is made. For example, to map a linear model onto the plot, you can choose `method = "lm"`.
+
+```{r}
+p <- ggplot(research, aes(x = pdfDownloadsCount, 
+                          y = wosCountThru2011, 
+                          color = journal)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+p
+```
 
 ## Scales
 
+Now let's look at the relationship between days since published and citation count.
+
+```{r}
+p <- ggplot(research, aes(x = daysSincePublished, 
+                          y = wosCountThru2011)) + 
+  geom_point(aes(color= journal))
+p
+```
+
+It looks like most of the citation counts are close to 0. We can quickly check the distribution of this variable using a qplot.
+
+```{r}
+qplot(data = research, x = wosCountThru2011)
+```
+
+To control the plot axes, we use variants of the functions `scale_x_*` and `scale_y_*`.
+
+```{r}
+p <- ggplot(research, aes(x = daysSincePublished, 
+                          y = wosCountThru2011)) + 
+  geom_point(aes(color= journal)) +
+  scale_y_log10()
+p
+```
+
+How can we fix this?
+
+```{r}
+p <- ggplot(research, aes(x = daysSincePublished, 
+                          y = log10(wosCountThru2011 + 1))) + 
+  geom_point(aes(color= journal))
+p
+```
+
+Notice what this fix has done to the way the y-axis is labelled. To manually update the axis label, we can use the `scale_y_continuous()` function.
+
+```{r}
+p <- ggplot(research, aes(x = daysSincePublished, 
+                          y = log10(wosCountThru2011 + 1))) + 
+  geom_point(aes(color= journal)) +
+  scale_y_continuous(breaks = c(1,2,3), labels = c(10, 100, 1000))
+p
+```
+
 ## Faceting
+
+There are two functions to control how plots are divided into facets: `facet_wrap()` and `facet_grid()`. 
+
+
 
 ## Themes
 

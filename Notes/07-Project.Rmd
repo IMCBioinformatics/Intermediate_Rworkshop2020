@@ -3,5 +3,12 @@
 ## Setup
 Please download the files form 
 
-1. Calculate variance and rearrange columns by variance decreasingly. Hint (use var() function for variance)
-2.
+
+## Task 1
+1. Calculate variance of each column in golub. Hint use one of the apply() function
+2. Order these variances in decreasing order. Use the order() function.
+3. Use the ordered list to order the golub dataframe.
+4. Download the corrplot pacakge and use the corrplot function to plot the correlations for the first 20 rows of the ordered golub datafram.
+
+## Task 2
+

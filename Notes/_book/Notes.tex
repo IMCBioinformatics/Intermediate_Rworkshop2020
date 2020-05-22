@@ -1,0 +1,1597 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Intermediate R Workshop Notes},
+  pdfauthor={Hena R. Ramay},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Intermediate R Workshop Notes}
+\author{Hena R. Ramay}
+\date{2020-05-22}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+This notebook is created so that the particpants of the workshop can follow along with the instructors. We will constantly update this notebook during the workshop to include answers to the questions asked during the workshop. So Please ask a lot of questions!!
+
+\hypertarget{workshop-schedule}{%
+\section{Workshop Schedule}\label{workshop-schedule}}
+
+We will try to cover the following material in the course:
+
+\hypertarget{day-1}{%
+\subsection*{Day 1}\label{day-1}}
+\addcontentsline{toc}{subsection}{Day 1}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Time & Topic\tabularnewline
+\midrule
+\endhead
+9:00 & Introductions and workshop overview\tabularnewline
+9:30 & Conditionals and Loops\tabularnewline
+10:45 & Functions\tabularnewline
+13:00 & Apply family\tabularnewline
+14:00 & Advanced plotting ggplot2\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{day-2}{%
+\subsection*{Day 2}\label{day-2}}
+\addcontentsline{toc}{subsection}{Day 2}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Time & Topic\tabularnewline
+\midrule
+\endhead
+9:00 & R markdown basics\tabularnewline
+10:45 & Knitr chunks\tabularnewline
+13:00 & Rmarkdown themes, adding html and custom css styling\tabularnewline
+14:00 & A short project to bring it all together!\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{important-links}{%
+\section{Important links}\label{important-links}}
+
+Overview and setup
+
+Lets get started!
+
+\hypertarget{setting-up-a-project}{%
+\section{Setting up a project}\label{setting-up-a-project}}
+
+\hypertarget{learning-objectives}{%
+\section{Learning Objectives}\label{learning-objectives}}
+
+\begin{itemize}
+\tightlist
+\item
+  Create directories and files
+\item
+  Understand the difference between absolute and relative paths
+\end{itemize}
+
+Before we start using R, we will first review the basics of the Unix shell by setting up our project. Open the terminal in OS X or Linux, or Git Bash in Windows.
+
+Our project will explore the citations and alternative metrics (altmetrics) for articles published in the PLOS family of journals between 2003 and 2010. The data set was compiled by Priem et al.~2012 (\href{http://arxiv.org/abs/1203.4745}{publication},~\href{https://github.com/jasonpriem/plos_altmetrics_study}{code}).
+
+First create a new directory to store the project files called~\texttt{altmetrics}~and then change to that directory.
+
+\begin{verbatim}
+mkdir altmetrics
+cd altmetrics
+\end{verbatim}
+
+Repeat this process to create a subdirectory to store the data files.
+
+\begin{verbatim}
+mkdir data
+cd data
+\end{verbatim}
+
+\hypertarget{finding-your-location}{%
+\section{Finding your location}\label{finding-your-location}}
+
+Recall that you can always determine where you are by running the command~\texttt{pwd}, which stands for ``print working directory''. Also, if you run~\texttt{cd}~with no arguments, it takes you to your home directory.
+
+Download the two data files using the links below. Save them to the data subdirectory.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://raw.githubusercontent.com/jdblischak/r-intermediate-altmetrics/gh-pages/data/counts-raw.txt.gz}{counts-raw}
+\item
+  \href{https://raw.githubusercontent.com/jdblischak/r-intermediate-altmetrics/gh-pages/data/counts-norm.txt.gz}{counts-norm}
+\end{itemize}
+
+\hypertarget{downloading-files-from-the-command-line}{%
+\section{Downloading files from the command line}\label{downloading-files-from-the-command-line}}
+
+When possible, it is best to download files from the command line because that makes the analysis more reproducible. Different systems have different tools installed, which is why we manually downloaded the files for this lesson. Some options include~\texttt{wget},~\texttt{curl}, and~\texttt{rsync}. As an example, here is how to perform the download using~\texttt{wget}.
+
+\begin{verbatim}
+wget https://raw.githubusercontent.com/jdblischak/r-intermediate-altmetrics/gh-pages/data/counts-raw.txt.gz
+wget https://raw.githubusercontent.com/jdblischak/r-intermediate-altmetrics/gh-pages/data/counts-norm.txt.gz
+\end{verbatim}
+
+If~\texttt{wget}~isn't installed on your machine, try~\texttt{curl}:
+
+\begin{verbatim}
+curl -O "https://raw.githubusercontent.com/jdblischak/r-intermediate-altmetrics/gh-pages/data/counts-raw.txt.gz"
+curl -O  "https://raw.githubusercontent.com/jdblischak/r-intermediate-altmetrics/gh-pages/data/counts-norm.txt.gz"
+\end{verbatim}
+
+The first file,~\texttt{counts-raw.txt.gz}, contains the raw counts for each of the articles across all the metrics. The second file,~\texttt{counts-norm.txt.gz}, contains the counts for each of the articles across all the metrics after they have been normalized across disciplines and years.
+
+Confirm that the files downloaded by listing the files in~\texttt{data}.
+
+\begin{verbatim}
+ls
+\end{verbatim}
+
+\begin{verbatim}
+counts-norm.txt.gz counts-raw.txt.gz
+\end{verbatim}
+
+Now move back up a directory to~\texttt{altmetrics}. One option would be to specify the absolute path to this directory, e.g.~\texttt{\textasciitilde{}/altmetrics/}~if you created the directory in your home folder. However, an easier option is to use a relative path, which is dependent on the directory you are currently in. The shortcut to move to the directory above is two periods:~\texttt{..}.
+
+\begin{verbatim}
+cd ..
+\end{verbatim}
+
+Now you should be in the~\texttt{altmetrics}~directory. If you ran the above command again, you would be moved to the directory where you created~\texttt{altmetrics}.
+
+To create files, we'll use the simple text editor~\texttt{nano}. As an argument, you provide the name of an existing file to edit or the name of a new file to create. If you call~\texttt{nano}~without specifying a filename, it will prompt you for a filename when saving. Create a file to practice.
+
+\begin{verbatim}
+nano example-file
+\end{verbatim}
+
+The commands are listed at the bottom of the screen. The~\texttt{\^{}}~stands for~\texttt{Ctrl}, thus to save type~\texttt{Ctrl-W}~and to exit type~\texttt{Ctrl-X}.
+
+Remove the file with~\texttt{rm}.
+
+\begin{verbatim}
+rm example-file
+\end{verbatim}
+
+\hypertarget{organizing-a-larger-project}{%
+\section{Organizing a larger project}\label{organizing-a-larger-project}}
+
+Projects can grow quickly. For ideas on organizing your own projects, see~\href{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424}{A Quick Guide to Organizing Computational Biology Projects}~by William Noble.
+
+\hypertarget{create-a-readme-file}{%
+\section{Create a README file}\label{create-a-readme-file}}
+
+It is a convention to have a file named~\texttt{README}~in a project directory to explain what it contains (both for others and your future self). Use~\texttt{nano}~to create a README file. Include the date and explain that this directory was created for a Software Carpentry workshop.
+
+\href{http://software-carpentry.org/}{Software Carpentry}~\href{https://github.com/jdblischak/r-intermediate-altmetrics}{Source}~\href{mailto:admin@software-carpentry.org}{Contact}~\href{https://jdblischak.github.io/r-intermediate-altmetrics/LICENSE.html}{License}
+
+\hypertarget{conditionals-and-loops}{%
+\chapter{Conditionals and Loops}\label{conditionals-and-loops}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{setup}{%
+\section{Setup}\label{setup}}
+
+\textbf{1. Download data.}
+
+We will be using a dataset containing citation and alternative metrics for articles published in the PLOS family of journals between 2003 and 2010. The data set was compiled by Priem et al 2012 (\href{http://arxiv.org/abs/1203.4745}{publication}).
+
+Download the data onto your computer from \href{https://www.dropbox.com/s/up38z3fd4llanrb/counts-raw.txt?dl=0}{this} dropbox link and move it into a directory on your computer that makes sense.
+
+\textbf{2. Read in data into R.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts <-}\StringTok{ }\KeywordTok{read.delim}\NormalTok{(}\StringTok{"data/counts-raw.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{conditional-statements}{%
+\section{Conditional statements}\label{conditional-statements}}
+
+Decision making is an important part of programming. This can be achieved in R programming using conditional statements such as \texttt{if} and \texttt{if...else}.
+
+\hypertarget{if}{%
+\subsection*{if}\label{if}}
+\addcontentsline{toc}{subsection}{if}
+
+The syntax of an if statement is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ (test_expression) \{}
+\NormalTok{  do_this}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{5}
+\ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+  \KeywordTok{print}\NormalTok{(}\StringTok{"positive number"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "positive number"
+\end{verbatim}
+
+\hypertarget{ifelse}{%
+\subsection*{if\ldots else}\label{ifelse}}
+\addcontentsline{toc}{subsection}{if\ldots else}
+
+The syntax of an if\ldots else statement is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ (test_expression) \{}
+\NormalTok{  do_this}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{    do_that}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+The else part is optional and is only evaluated if test\_expression is FALSE. It is important that the \texttt{else} word be in the same line as the closing brace of the \texttt{if} statement.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{1}
+\ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
+  \KeywordTok{print}\NormalTok{(}\StringTok{"positive number"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+    \KeywordTok{print}\NormalTok{(}\StringTok{"negative number"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "positive number"
+\end{verbatim}
+
+\hypertarget{nested-ifelse-statements}{%
+\subsection*{Nested if\ldots else statements}\label{nested-ifelse-statements}}
+\addcontentsline{toc}{subsection}{Nested if\ldots else statements}
+
+You can have more than two test expressions:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{ (test_expression1) \{}
+\NormalTok{  statement1}
+\NormalTok{\} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (test_expression2) \{}
+\NormalTok{    statement2}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{      statement4}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\DecValTok{0}
+\ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+   \KeywordTok{print}\NormalTok{(}\StringTok{"negative number"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{) \{}
+   \KeywordTok{print}\NormalTok{(}\StringTok{"positive number"}\NormalTok{)}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+   \KeywordTok{print}\NormalTok{(}\StringTok{"zero"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "zero"
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{exercise-2.1}{%
+\subsection*{EXERCISE 2.1}\label{exercise-2.1}}
+\addcontentsline{toc}{subsection}{EXERCISE 2.1}
+
+Write a simple if\ldots else statement to check if 5 is an odd number and if it is print ``I am odd'', otherwise print ``I am even''.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{loops}{%
+\section{Loops}\label{loops}}
+
+Conceptually, a loop is a way to repeat a sequence of instructions under certain conditions. They allow you to automate parts of your code that are in need of repetition.
+
+\hypertarget{for-loop}{%
+\subsection*{\texorpdfstring{\texttt{for} loop}{for loop}}\label{for-loop}}
+\addcontentsline{toc}{subsection}{\texttt{for} loop}
+
+The easiest and most frequently used loop in R is a for loop. Here is a demonstration of using loops.
+
+\includegraphics{img/r-for-loop.jpg}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{year <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2015}\NormalTok{,}\DecValTok{2016}\NormalTok{,}\DecValTok{2017}\NormalTok{,}\DecValTok{2018}\NormalTok{)}
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(year)) \{}
+  \KeywordTok{print}\NormalTok{(year[i])}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2015
+## [1] 2016
+## [1] 2017
+## [1] 2018
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(year)) \{}
+  \KeywordTok{print}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(}\StringTok{"the year is "}\NormalTok{,year[i]))}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "the year is 2015"
+## [1] "the year is 2016"
+## [1] "the year is 2017"
+## [1] "the year is 2018"
+\end{verbatim}
+
+\hypertarget{while-loop}{%
+\subsection*{\texorpdfstring{\texttt{while} loop}{while loop}}\label{while-loop}}
+\addcontentsline{toc}{subsection}{\texttt{while} loop}
+
+In contrast to a \textbf{for} lop, \textbf{while} loops are used to loop until a specific conditional statement is no longer true.
+
+\includegraphics{img/r-while-loop.jpg}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{while}\NormalTok{ (test_expression) \{}
+\NormalTok{  do_this}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{i <-}\StringTok{ }\DecValTok{1}
+\ControlFlowTok{while}\NormalTok{ (i }\OperatorTok{<}\StringTok{ }\DecValTok{6}\NormalTok{) \{}
+  \KeywordTok{print}\NormalTok{(i)}
+\NormalTok{  i <-}\StringTok{ }\NormalTok{i }\OperatorTok{+}\StringTok{ }\DecValTok{1}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{exercise-2.2}{%
+\subsection*{EXERCISE 2.2}\label{exercise-2.2}}
+\addcontentsline{toc}{subsection}{EXERCISE 2.2}
+
+\textbf{Challenging.} From the PLOS journal publication data we read into R above, here is a plot showing the impact factor according to the F1000 (Faculty of 1000) versus the number of times the PDF was downloaded.
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+Using this dataset, write a \texttt{for} loop containing an \texttt{if...else} statement to change the f1000Factor column into categorical variable with two levels: high impact and low impact.
+
+Do this by translating the following sentence into R code: for every element in the f1000Factor variable, if the value is greater than zero, change it to ``high\_impact'', otherwise, change it to ``low\_impact''.
+
+\textbf{Bonus.} Create a box plot (like the one below) showing the number of PDF downloads for high versus low impact articles.
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{functions}{%
+\chapter{Functions}\label{functions}}
+
+``Intelligence is the ability to avoid doing work, yet getting the work done.''
+― Linus Torvalds
+
+\hypertarget{learning-objectives-1}{%
+\subsubsection*{Learning Objectives}\label{learning-objectives-1}}
+\addcontentsline{toc}{subsubsection}{Learning Objectives}
+
+\begin{itemize}
+\tightlist
+\item
+  Functions have two parts: arguments and body
+\item
+  Functions have their own environment
+\item
+  Functions help you repeat code chunks
+\end{itemize}
+
+In the last lesson we learnt to write loops to avoid writing the same code multiple time. Now lets learn how to make our code even more efficient and re-use the same code multiple times without copy-paste!
+
+\hypertarget{parts-of-a-function}{%
+\section{Parts of a function}\label{parts-of-a-function}}
+
+We've already been using built-in R functions:~\texttt{read.csv},~\texttt{mean},~\texttt{length}, etc. These functions allow us to run the same routine with different inputs.
+
+Let's explore~\texttt{read.csv}~further. All functions in R have two parts: the input arguments and the body. We can see the arguments of a function with the~\texttt{args}.
+
+\begin{verbatim}
+args(read.csv)
+\end{verbatim}
+
+\begin{verbatim}
+function (file, header = TRUE, sep = ",", quote = "\"", dec = ".", 
+    fill = TRUE, comment.char = "", ...) 
+NULL
+\end{verbatim}
+
+So when we pass a character vector like~\texttt{"data/counts-raw."}, this gets assigned to the argument~\texttt{file}. All the other arguments have defaults set, so we do not need to assign them a value.
+
+After the arguments have been assigned values, then the body of the function is executed. We can view the body of a function with~\texttt{body}.
+
+\begin{verbatim}
+body(read.csv)
+\end{verbatim}
+
+\begin{verbatim}
+read.table(file = file, header = header, sep = sep, quote = quote,
+    dec = dec, fill = fill, comment.char = comment.char, ...)
+\end{verbatim}
+
+\texttt{read.csv}~is very short. It just calls another function,~\texttt{read.table}, using the input file and the default arguments as the arguments passed to~\texttt{read.table}.
+
+When we define our own functions, we use the syntax below. We list the arguments, separated by commas, within the parentheses. The body follows, contained within curly brackets~\texttt{\{\}}.
+
+\begin{verbatim}
+function_name <- function(args) {
+  body
+}
+\end{verbatim}
+
+\hypertarget{the-principle-of-encapsulation}{%
+\section{The principle of encapsulation}\label{the-principle-of-encapsulation}}
+
+An important feature of functions is the principle of encapsulation: the environment inside the function is distinct from the environment outside the function. In other words, variables defined inside a function are separate from variables defined outside the function.
+
+Here's an small example to demonstrate this idea. The function~\texttt{ex\_fun}~takes two input arguments,~\texttt{x}~and~\texttt{y}. It calculates~\texttt{z}~and returns its value.
+
+\begin{verbatim}
+ex_fun <- function(x, y) {
+  z <- x - y
+  return(z)
+}
+\end{verbatim}
+
+When we run~\texttt{ex\_fun}, the only thing returned to the global environment is the value that was assigned to~\texttt{z}. The variable~\texttt{z}~itself was only defined in the function environment, and does not exist in the global environment.
+
+\begin{verbatim}
+ex_fun(3, 10)
+\end{verbatim}
+
+\begin{verbatim}
+[1] -7
+\end{verbatim}
+
+\begin{verbatim}
+z
+\end{verbatim}
+
+\begin{verbatim}
+Error in eval(expr, envir, enclos): object 'z' not found
+\end{verbatim}
+
+\hypertarget{environments}{%
+\subsection{Environments}\label{environments}}
+
+The situation presented above is a simplified version of environments which will serve you well if you treat functions as truly encapsulated. In reality, things are more complicated. For example, if inside a function you have a variable that has not been defined in the function, it will actually search the global environment for this variable. To learn the advanced details, see the chapter~\href{http://adv-r.had.co.nz/Environments.html}{Environments}~in Advanced R by Hadley Wickham.
+
+\hypertarget{the-return-statement}{%
+\section{The return statement}\label{the-return-statement}}
+
+R provides the shortcut of not needing to use~\texttt{return}~at the end of the function. Instead, the variable on the last line of the body of the function is returned. This is useful for writing very small functions, but in these lessons we will use~\texttt{return}~to be more explicit about what is happening.
+
+\hypertarget{exercise}{%
+\subsubsection*{Exercise}\label{exercise}}
+\addcontentsline{toc}{subsubsection}{Exercise}
+
+\begin{itemize}
+\tightlist
+\item
+  Write your own function called~\texttt{select\_first}. It should take a vector as input and returns the first element of the list.
+\item
+  Now use articleType column from counts dataframe and use it as input to select\_first function.
+\end{itemize}
+
+\hypertarget{the-apply-family}{%
+\chapter{The apply family}\label{the-apply-family}}
+
+\hypertarget{learning-objectives-2}{%
+\subsubsection*{Learning Objectives}\label{learning-objectives-2}}
+\addcontentsline{toc}{subsubsection}{Learning Objectives}
+
+Learn to use apply family functions in place of loops.
+
+Whenever you're using a for loop, you might want to revise your code and see whether you can use the lapply function instead. Learn all about this intuitive way of applying a function over a list or a vector, and its variants sapply and vapply.
+
+\hypertarget{apply}{%
+\section{apply()}\label{apply}}
+
+apply() takes Data frame or matrix as an input and gives output in vector, list or array. apply() Function is primarily used to avoid explicit uses of loop constructs. It is the most basic of all collections can be used over a matrice.
+
+This function takes 3 arguments:
+
+\begin{verbatim}
+apply(X, MARGIN, FUN)
+\end{verbatim}
+
+apply() takes an array or matrix \texttt{X}, a \texttt{Margin} that takes a value 1 for rows or 2 for columns and applies a functoin \texttt{FUN} to it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m1 <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(C<-(}\DecValTok{1}\OperatorTok{:}\DecValTok{10}\NormalTok{),}\DataTypeTok{nrow=}\DecValTok{5}\NormalTok{, }\DataTypeTok{ncol=}\DecValTok{6}\NormalTok{)}
+\NormalTok{m1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    6    1    6    1    6
+## [2,]    2    7    2    7    2    7
+## [3,]    3    8    3    8    3    8
+## [4,]    4    9    4    9    4    9
+## [5,]    5   10    5   10    5   10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a_m1 <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(m1, }\DecValTok{2}\NormalTok{, sum)}
+\NormalTok{a_m1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15 40 15 40 15 40
+\end{verbatim}
+
+\includegraphics{img/apply.png}
+
+\hypertarget{exercise-1}{%
+\subsubsection*{Exercise}\label{exercise-1}}
+\addcontentsline{toc}{subsubsection}{Exercise}
+
+Select the columns from count.raw file from pdfDownloadsCount to hmtlDownloadsCount and using the apply function find the mean of each column.
+
+\hypertarget{lapply}{%
+\section{lapply()}\label{lapply}}
+
+Before you go about solving the exercises below, have a look at the documentation of the \texttt{lapply()} function. The Usage section shows the following expression:
+
+\begin{verbatim}
+lapply(X, FUN, ...)
+\end{verbatim}
+
+To put it generally, \texttt{lapply} takes a vector or list \texttt{X}, and applies the function \texttt{FUN} to each of its members. If \texttt{FUN} requires additional arguments, you pass them after you've specified \texttt{X} and \texttt{FUN} (\texttt{...}). The output of \texttt{lapply()} is a list, the same length as \texttt{X}, where each element is the result of applying \texttt{FUN} on the corresponding element of \texttt{X}.
+
+Now that you are truly brushing up on your data science skills, let's revisit some of the most relevant figures in data science history. We've compiled a vector of famous mathematicians/statisticians and the year they were born. Up to you to extract some information!
+
+\hypertarget{example}{%
+\subsubsection{Example}\label{example}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The vector pioneers has already been created for you}
+\NormalTok{pioneers <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"GAUSS:1777"}\NormalTok{, }\StringTok{"BAYES:1702"}\NormalTok{, }\StringTok{"PASCAL:1623"}\NormalTok{, }\StringTok{"PEARSON:1857"}\NormalTok{)}
+
+\CommentTok{# Split names from birth year to make split_math a list}
+\NormalTok{split_math <-}\StringTok{ }\KeywordTok{strsplit}\NormalTok{(pioneers, }\DataTypeTok{split =} \StringTok{":"}\NormalTok{)}
+\CommentTok{# Convert to lowercase strings: split_low}
+\NormalTok{split_low <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(split_math, tolower)}
+\CommentTok{# Take a look at the structure of split_low}
+\KeywordTok{str}\NormalTok{(split_low)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## List of 4
+##  $ : chr [1:2] "gauss" "1777"
+##  $ : chr [1:2] "bayes" "1702"
+##  $ : chr [1:2] "pascal" "1623"
+##  $ : chr [1:2] "pearson" "1857"
+\end{verbatim}
+
+\hypertarget{use-lapply-with-your-own-function}{%
+\subsection{Use lapply with your own function}\label{use-lapply-with-your-own-function}}
+
+As Filip explained in the instructional video, you can use \texttt{lapply()} on your own functions as well. You just need to code a new function and make sure it is available in the workspace. After that, you can use the function inside \texttt{lapply()} just as you did with base R functions.
+
+In the previous exercise you already used \texttt{lapply()} once to convert the information about your favorite pioneering statisticians to a list of vectors composed of two character strings. Let's write some code to select the names and the birth years separately.
+
+The sample code already includes code that defined \texttt{select\_first()}, that takes a vector as input and returns the first element of this vector.
+
+\hypertarget{example-1}{%
+\subsubsection{Example}\label{example-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{select_first <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{  x[}\DecValTok{1}\NormalTok{]}
+\NormalTok{\}}
+\CommentTok{# Apply select_first() over split_low: names}
+\NormalTok{names <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(split_low, select_first)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{lapply-and-anonymous-functions}{%
+\subsection{lapply and anonymous functions}\label{lapply-and-anonymous-functions}}
+
+Writing your own functions and then using them inside \texttt{lapply()} is quite an accomplishment! But defining functions to use them only once is kind of overkill, isn't it? That's why you can use so-called \textbf{anonymous functions} in R.
+
+Previously, you learned that functions in R are objects in their own right. This means that they aren't automatically bound to a name. When you create a function, you can use the assignment operator to give the function a name. It's perfectly possible, however, to not give the function a name. This is called an anonymous function:
+
+\begin{verbatim}
+# Named function
+select_first <- function(x) { x[1] }
+
+# Use anonymous function inside lapply()
+lapply(list(1,2,3), function(x) {x[1]})
+\end{verbatim}
+
+\hypertarget{example-2}{%
+\subsubsection{Example}\label{example-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Definition of split_low}
+\NormalTok{pioneers <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"GAUSS:1777"}\NormalTok{, }\StringTok{"BAYES:1702"}\NormalTok{, }\StringTok{"PASCAL:1623"}\NormalTok{, }\StringTok{"PEARSON:1857"}\NormalTok{)}
+\NormalTok{split <-}\StringTok{ }\KeywordTok{strsplit}\NormalTok{(pioneers, }\DataTypeTok{split =} \StringTok{":"}\NormalTok{)}
+\NormalTok{split_low <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(split, tolower)}
+\CommentTok{# Transform: use anonymous function inside lapply}
+\NormalTok{names <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(split_low, }\ControlFlowTok{function}\NormalTok{(x) \{ x[}\DecValTok{1}\NormalTok{] \})}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{use-lapply-with-additional-arguments}{%
+\subsection{Use lapply with additional arguments}\label{use-lapply-with-additional-arguments}}
+
+In the video, the \texttt{triple()} function was transformed to the \texttt{multiply()} function to allow for a more generic approach. \texttt{lapply()} provides a way to handle functions that require more than one argument, such as the \texttt{multiply()} function:
+
+\begin{verbatim}
+multiply <- function(x, factor) {
+  x * factor
+}
+
+lapply(list(1,2,3), multiply, factor = 3)
+\end{verbatim}
+
+On the right we've included a generic version of the select functions that you've coded earlier: \texttt{select\_el()}. It takes a vector as its first argument, and an index as its second argument. It returns the vector's element at the specified index.
+
+\hypertarget{example-3}{%
+\subsubsection{Example}\label{example-3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Generic select function}
+\NormalTok{select_el <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, index) \{}
+\NormalTok{  x[index]}
+\NormalTok{\}}
+\CommentTok{# Use lapply() twice on split_low: names and years}
+\NormalTok{names <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(split_low, select_el, }\DataTypeTok{index =} \DecValTok{1}\NormalTok{)}
+\NormalTok{years <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(split_low, select_el, }\DataTypeTok{index =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{sapply}{%
+\section{sapply()}\label{sapply}}
+
+You can use \texttt{sapply()} similar to how you used \texttt{lapply()}. sapply is a user-friendly version and wrapper of lapply by default returning a vector, matrix .The first argument of \texttt{sapply()} is the list or vector \texttt{X} over which you want to apply a function, \texttt{FUN}. Potential additional arguments to this function are specified afterwards (\texttt{...}):
+
+\begin{verbatim}
+sapply(X, FUN, ...)
+\end{verbatim}
+
+\hypertarget{example-4}{%
+\subsubsection{Example}\label{example-4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Constructing temp variable}
+\NormalTok{names <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(split_low, select_el, }\DataTypeTok{index =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{sapply-with-your-own-function}{%
+\subsection{sapply with your own function}\label{sapply-with-your-own-function}}
+
+Like \texttt{lapply()}, \texttt{sapply()} allows you to use self-defined functions and apply them over a vector or a list:
+
+\begin{verbatim}
+sapply(X, FUN, ...)
+\end{verbatim}
+
+Here, \texttt{FUN} can be one of R's built-in functions, but it can also be a function you wrote. This self-written function can be defined before hand, or can be inserted directly as an anonymous function.
+
+\hypertarget{sapply-with-function-returning-vector}{%
+\subsection{sapply with function returning vector}\label{sapply-with-function-returning-vector}}
+
+In the previous exercises, you've seen how \texttt{sapply()} simplifies the list that \texttt{lapply()} would return by turning it into a vector. But what if the function you're applying over a list or a vector returns a vector of length greater than 1? If you don't remember from the video, don't waste more time in the valley of ignorance and head over to the instructions!
+
+\hypertarget{example-5}{%
+\subsubsection{Example}\label{example-5}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{temp=}\KeywordTok{list}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{))}
+\CommentTok{# Create a function that returns min and max of a vector: extremes}
+\NormalTok{extremes <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+  \KeywordTok{c}\NormalTok{(}\DataTypeTok{min =} \KeywordTok{min}\NormalTok{(x), }\DataTypeTok{max =} \KeywordTok{max}\NormalTok{(x))}
+\NormalTok{\}}
+\CommentTok{# Apply extremes() over temp with lapply()}
+\KeywordTok{lapply}\NormalTok{(temp, extremes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## min max 
+##   1   6 
+## 
+## [[2]]
+## min max 
+##   3   9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Apply extremes() over temp with sapply()}
+\KeywordTok{sapply}\NormalTok{(temp, extremes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     [,1] [,2]
+## min    1    3
+## max    6    9
+\end{verbatim}
+
+\hypertarget{sapply-cant-simplify-now-what}{%
+\subsection{sapply can't simplify, now what?}\label{sapply-cant-simplify-now-what}}
+
+It seems like we've hit the jackpot with \texttt{sapply()}. On all of the examples so far, \texttt{sapply()} was able to nicely simplify the rather bulky output of \texttt{lapply()}. But, as with life, there are things you can't simplify. How does \texttt{sapply()} react?
+
+We already created a function, \texttt{below\_zero()}, that takes a vector of numerical values and returns a vector that only contains the values that are strictly below zero.
+
+\hypertarget{instructions}{%
+\subsubsection{Instructions}\label{instructions}}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Apply} \texttt{below\_zero()} \emph{over} \texttt{temp} \emph{using} \texttt{lapply()} \emph{and store the result in} \texttt{freezing\_s}\emph{.}
+\item
+  \emph{Apply} \texttt{below\_zero()} \emph{over} \texttt{temp} \emph{using} \texttt{sapply()}\emph{. Save the resulting list in a variable} \texttt{freezing\_l}\emph{.}
+\item
+  \emph{Compare} \texttt{freezing\_l} \emph{to} \texttt{freezing\_s} \emph{using the} \texttt{identical()} \emph{function.}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# temp is already prepared for you in the workspace}
+\CommentTok{# Definition of below_zero()}
+\NormalTok{below_zero <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+  \KeywordTok{return}\NormalTok{(x[x }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{])}
+\NormalTok{\}}
+\CommentTok{# Apply below_zero over temp using lapply(): freezing_l}
+\NormalTok{freezing_l <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(temp, below_zero)}
+\CommentTok{# Apply below_zero over temp using sapply(): freezing_s}
+\NormalTok{freezing_s <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(temp, below_zero)}
+\CommentTok{# Are freezing_l and freezing_s identical?}
+\KeywordTok{identical}\NormalTok{(freezing_l, freezing_s)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+\hypertarget{vapply}{%
+\section{vapply()}\label{vapply}}
+
+Before you get your hands dirty with the third and last apply function that you'll learn about in this intermediate R course, let's take a look at its syntax. The function is called \texttt{vapply()}, and it has the following syntax:
+
+\begin{verbatim}
+vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
+\end{verbatim}
+
+Over the elements inside \texttt{X}, the function \texttt{FUN} is applied. The \texttt{FUN.VALUE} argument expects a template for the return argument of this function \texttt{FUN}. \texttt{USE.NAMES} is \texttt{TRUE} by default; in this case \texttt{vapply()} tries to generate a named array, if possible.
+
+For the next set of exercises, you'll be working on the \texttt{temp} list again, that contains 7 numerical vectors of length 5. We also coded a function \texttt{basics()} that takes a vector, and returns a named vector of length 3, containing the minimum, mean and maximum value of the vector respectively.
+
+\hypertarget{example-6}{%
+\subsubsection{Example}\label{example-6}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# temp is already available in the workspace}
+\CommentTok{# Definition of basics()}
+\NormalTok{basics <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+  \KeywordTok{c}\NormalTok{(}\DataTypeTok{min =} \KeywordTok{min}\NormalTok{(x), }\DataTypeTok{mean =} \KeywordTok{mean}\NormalTok{(x), }\DataTypeTok{max =} \KeywordTok{max}\NormalTok{(x))}
+\NormalTok{\}}
+\CommentTok{# Apply basics() over temp using vapply()}
+\KeywordTok{vapply}\NormalTok{(temp, basics, }\KeywordTok{numeric}\NormalTok{(}\DecValTok{3}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## min   1.0    3
+## mean  3.6    6
+## max   6.0    9
+\end{verbatim}
+
+\hypertarget{exercise-2}{%
+\subsubsection{Exercise}\label{exercise-2}}
+
+\begin{verbatim}
+<br>
+Use the table() function and one of the apply functions to see how many counts of each year and articleType are available. 
+Explain which function you used and what does the output look like?
+
+</div>
+
+
+<!--chapter:end:04-Apply_family.Rmd-->
+
+# Advanced Plotting 
+
+"The greatest value of a picture is when it forces us to notice what we never expected to see"
+-John Tukey
+
+---
+
+## Setup
+
+**1. Install the `tidyverse` package.**
+
+
+```r
+library(tidyverse)
+\end{verbatim}
+
+\textbf{2. Filter data.}
+
+We will be using the publication dataset that we read into R in Chapter 2 as \texttt{counts}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{research <-}\StringTok{ }\KeywordTok{filter}\NormalTok{(counts, articleType }\OperatorTok{==}\StringTok{ "Research Article"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{review-of-ggplot2-basics}{%
+\section{Review of ggplot2 basics}\label{review-of-ggplot2-basics}}
+
+\texttt{ggplot2} is a plotting package that makes it simple to create complex plots from data in a data frame. Graphics are built step by step by adding new elements. Adding layers in this fashion allows for extensive flexibility and customization of plots.
+
+A plot can be divided into different fundamental parts:
+
+\textbf{Plot = data + aesthetics + geom}
+
+Required building blocks:
+
+\begin{itemize}
+\tightlist
+\item
+  data
+\item
+  aesthetics - describe how data are mapped to colour, size, shape, location
+\item
+  geoms - geometric objects like points, lines, shapes
+\end{itemize}
+
+Optional building blocks:
+
+\begin{itemize}
+\tightlist
+\item
+  facets - describes how panel plots should be constructed
+\item
+  stats - statistical transformations like binning, quantiles, smoothing
+\item
+  coordinates - describes the system in which the locations of the geoms will be drawn
+\item
+  scales - what scale an aesthetic map uses (ex. male = red, female = blue)
+\end{itemize}
+
+To build a ggplot, we will use the following basic template that can be used for different types of plots:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =} \OperatorTok{<}\NormalTok{DATA}\OperatorTok{>}\NormalTok{, }\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\OperatorTok{<}\NormalTok{MAPPINGS}\OperatorTok{>}\NormalTok{)) }\OperatorTok{+}\StringTok{ }\ErrorTok{<}\NormalTok{GEOM_FUNCTION}\OperatorTok{>}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Specify which data set to use for the plot using the \texttt{data} argument.
+\item
+  Define a ``mapping'' (using the aesthetic (\texttt{aes}) function), by selecting the variables to be plotted and specifying how to present them in the graph, e.g.~as x/y positions or characteristics such as size, shape, color, etc.
+\item
+  Add ``geoms'' -- graphical representations of the data in the plot (points, lines, bars). \texttt{ggplot2} offers many different geoms; common ones include:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{geom\_point()} for scatter plots, dot plots, etc.
+\item
+  \texttt{geom\_boxplot()} for boxplots.
+\item
+  \texttt{geom\_histogram()} for histograms.
+\item
+  \texttt{geom\_barplot()} for barplots.
+\item
+  \texttt{geom\_line()} for trend lines, time series, etc.
+\end{itemize}
+
+Example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{( }\DataTypeTok{x =}\NormalTok{ pdfDownloadsCount, }\DataTypeTok{y =}\NormalTok{ wosCountThru2011)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{()}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+Adding aesthetics:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pdfDownloadsCount,}
+                          \DataTypeTok{y =}\NormalTok{ wosCountThru2011)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color =}\NormalTok{ journal))}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-27-1.pdf}
+
+\hypertarget{statistics}{%
+\section{Statistics}\label{statistics}}
+
+The function \texttt{geom\_smooth()} adds a loess curve to the data along with a 95\% confidence interval.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pdfDownloadsCount,}
+                          \DataTypeTok{y =}\NormalTok{ wosCountThru2011)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color =}\NormalTok{ journal)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{()}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+\end{verbatim}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-28-1.pdf}
+
+If we move the colour to the base ggplot call, we get loess curves for each level of that factor.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pdfDownloadsCount, }
+                          \DataTypeTok{y =}\NormalTok{ wosCountThru2011, }
+                          \DataTypeTok{color =}\NormalTok{ journal)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{()}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+\end{verbatim}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-29-1.pdf}
+
+Check the help page for the function \texttt{geom\_smooth()} for more information about how the curve is made. For example, to map a linear model onto the plot, you can choose \texttt{method\ =\ "lm"}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ pdfDownloadsCount, }
+                          \DataTypeTok{y =}\NormalTok{ wosCountThru2011, }
+                          \DataTypeTok{color =}\NormalTok{ journal)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"lm"}\NormalTok{)}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-30-1.pdf}
+
+\hypertarget{scales}{%
+\section{Scales}\label{scales}}
+
+Now let's look at the relationship between days since published and citation count.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ daysSincePublished, }
+                          \DataTypeTok{y =}\NormalTok{ wosCountThru2011)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color=}\NormalTok{ journal))}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-31-1.pdf}
+
+It looks like most of the citation counts are close to 0. We can quickly check the distribution of this variable using a qplot.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ research, }\DataTypeTok{x =}\NormalTok{ wosCountThru2011)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-32-1.pdf}
+
+To control the plot axes, we use variants of the functions \texttt{scale\_x\_*} and \texttt{scale\_y\_*}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ daysSincePublished, }
+                          \DataTypeTok{y =}\NormalTok{ wosCountThru2011)) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color=}\NormalTok{ journal)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_log10}\NormalTok{()}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Transformation introduced infinite values in continuous y-axis
+\end{verbatim}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-33-1.pdf}
+
+How can we fix this?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ daysSincePublished, }
+                          \DataTypeTok{y =} \KeywordTok{log10}\NormalTok{(wosCountThru2011 }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{))) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color=}\NormalTok{ journal))}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-34-1.pdf}
+
+Notice what this fix has done to the way the y-axis is labelled. To manually update the axis label, we can use the \texttt{scale\_y\_continuous()} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(research, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ daysSincePublished, }
+                          \DataTypeTok{y =} \KeywordTok{log10}\NormalTok{(wosCountThru2011 }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{))) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{color=}\NormalTok{ journal)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale_y_continuous}\NormalTok{(}\DataTypeTok{breaks =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{100}\NormalTok{, }\DecValTok{1000}\NormalTok{))}
+\NormalTok{p}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-35-1.pdf}
+
+\hypertarget{faceting}{%
+\section{Faceting}\label{faceting}}
+
+There are two functions to control how plots are divided into facets: \texttt{facet\_wrap()} and \texttt{facet\_grid()}.
+
+\hypertarget{themes}{%
+\section{Themes}\label{themes}}
+
+In addition to \texttt{theme\_bw()}, which changes the plot background to white, \texttt{ggplot2} comes with several other themes which can be useful to quickly change the look of your visualization. The complete list of themes is available at \url{https://ggplot2.tidyverse.org/reference/ggtheme.html}. \texttt{theme\_minimal()} and \texttt{theme\_light()} are popular, and \texttt{theme\_void()} can be useful as a starting point to create a new hand-crafted theme.
+
+The \texttt{ggthemes} package provides a wide variety of options (including an Excel 2003 theme). The \texttt{ggplot2} \href{https://www.ggplot2-exts.org}{extensions website} provides a list of packages that extend the capabilities of \texttt{ggplot2}, including additional themes.
+
+\hypertarget{color-palettes}{%
+\section{Color palettes}\label{color-palettes}}
+
+You can create your own color palettes using the \texttt{colorRamp()} or \texttt{colorRampPalette()} function.
+
+\texttt{colorRamp()} returns a function that takes values between 0 and 1, indicating the extremes of the color palette.
+
+\texttt{colorRampPalette()} returns a function that takes integer arguments and returns a vector of colours.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cols <-}\StringTok{ }\KeywordTok{colorRamp}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"blue"}\NormalTok{))}
+\KeywordTok{cols}\NormalTok{(}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]  255    0    0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cols}\NormalTok{(}\FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       [,1] [,2]  [,3]
+## [1,] 127.5    0 127.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cols}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2] [,3]
+## [1,]    0    0  255
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cols <-}\StringTok{ }\KeywordTok{colorRampPalette}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"blue"}\NormalTok{))}
+\KeywordTok{cols}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "#FF0000" "#0000FF"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{cols}\NormalTok{(}\DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "#FF0000" "#E2001C" "#C60038" "#AA0055" "#8D0071" "#71008D" "#5500AA"
+##  [8] "#3800C6" "#1C00E2" "#0000FF"
+\end{verbatim}
+
+Or, you can use the \texttt{RColorBrewer} package to get a premade colour palette.
+
+There are three types of palettes:
+* Sequential
+* Diverging
+* Qualitative
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(RColorBrewer)}
+\KeywordTok{display.brewer.all}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Notes_files/figure-latex/unnamed-chunk-37-1.pdf}
+
+\hypertarget{multiple-plots}{%
+\section{Multiple plots}\label{multiple-plots}}
+
+There are two useful packages for combining multiple plots: \texttt{gridExtra} and \texttt{cowplot}.
+
+\texttt{gridExtra} has two useful functions: \texttt{grid.arrange()} and \texttt{arrangeGrob()}. However, these functions make no attempt at aligning the plot panels; instead, the plots are simply placed into the grid as they are, so the axes are not aligned. If axis alignment is required, the \texttt{plot\_grid()} function of the \texttt{cowplot} package is better. We will try using both here.
+
+\hypertarget{the-gridextra-package}{%
+\subsection{\texorpdfstring{The \texttt{gridExtra} package}{The gridExtra package}}\label{the-gridextra-package}}
+
+\hypertarget{the-cowplot-package}{%
+\subsection{\texorpdfstring{The \texttt{cowplot} package}{The cowplot package}}\label{the-cowplot-package}}
+
+\hypertarget{saving-plots}{%
+\subsection{Saving plots}\label{saving-plots}}
+
+The easiest way to save a plot is using the \texttt{ggsave()} function.
+
+\hypertarget{additional-resources}{%
+\section{Additional Resources}\label{additional-resources}}
+
+\url{http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization}
+
+\url{http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html}
+
+\begin{itemize}
+\tightlist
+\item
+  Mailing list: \url{http://groups.google.com/group/ggplot2}
+\item
+  Wiki: \url{https://github.com/hadley/ggplot2/wiki}
+\item
+  Website: \url{http://had.co.nz/ggplot2/}
+\item
+  StackOverflow: \url{http://stackoverflow.com/questions/tagged/ggplot}
+\end{itemize}
+
+Cheatsheet
+
+\hypertarget{rmarkdown}{%
+\chapter{Rmarkdown}\label{rmarkdown}}
+
+``If I went back to college again, I'd concentrate on two areas: learning to write and to speak before an audience. Nothing in life is more important than the ability to communicate effectively.''
+-- Gerald R. Ford
+
+\hypertarget{learning-objectives-3}{%
+\subsubsection*{Learning Objectives}\label{learning-objectives-3}}
+\addcontentsline{toc}{subsubsection}{Learning Objectives}
+
+Learn how to generate reproducible reports that display your code and results.
+
+\hypertarget{set-up-new-r-markdown-file}{%
+\section{Set up new R Markdown file}\label{set-up-new-r-markdown-file}}
+
+When you perform wet lab experiments, what information do you put in your lab notebook? You probably include the protocol you used to run the experiment, information about the samples and reagents used in the protocol, and at the end you'll likely include your results (for instance, a picture of a gel). This essentially creates a report of your experiment.
+
+You can do the same with your dry lab analyses using a tool called R Markdown. Why would we want to do this?
+
+\begin{itemize}
+\item
+  Your method, results, and interpretation are stored in one place
+\item
+  If you update your methodology, you can easily update your results with the click of a button, rather than copying and pasting.
+\item
+  You \emph{could} cut and paste your code and results into Word or Power Point, but that will make rerunning your code challenging, as Word often introduces hidden characters.
+\end{itemize}
+
+R Markdown is a fairly simple language you can use to generate reports that incorporate bits of R code along with the output they produce. There are two steps to generating reports with R Markdown and RStudio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write your code in R Markdown.
+\item
+  Assemble your report as either HTML or a PDF using the package rmarkdown.
+\end{enumerate}
+
+Next, let's run through the demo R Markdown file to see some of the options. Go up to \texttt{File} -\textgreater{} \texttt{New\ File} -\textgreater{} \texttt{R\ Markdown}.
+
+\includegraphics{img/markdown.png}
+
+A screen will pop up asking us what kind of document we wish to create. Let's name our demo report ``Trial Report'' and fill in your name. Ensure that ``Document'' is highlighted to the left and that ``HTML'' is chosen. Click ``Ok''.
+
+\includegraphics{img/mdname.png}
+
+Now we have the example R Markdown file open. The first thing you'll notice at the top is a header which includes your name, the title of the document, the date, and a field called output. This header tells the package rmarkdown some information it might need about your document, including what format you want the final report rendered in.
+
+The next thing you'll notice is white space with some text describing an R Markdown document. White space in this document represents text of the report you would like to display. You can put anything here describing your analysis, results, etc. and it will be recognized as text and not R code. This white space is interpreted as Markdown language, so you can use any of the tricks we learned in the last lesson to make lists, bold certain words, or create headers in your document.
+
+In this trial script, you'll see how some of these markdown elements are used. For example, the word knit is in bolded (using asterisks), and there are code chucks near the bottom that say echo = FALSE.
+
+\includegraphics{img/firstmd.png}
+
+\hypertarget{r-markdown-componenets}{%
+\subsection{R Markdown componenets}\label{r-markdown-componenets}}
+
+Notice that the file contains three types of content:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  An (optional) YAML header surrounded by ---s
+\item
+  R code chunks surrounded by ```s
+\item
+  text mixed with simple text formatting
+\end{enumerate}
+
+In addition to the white space, you'll gray blocks that have ``` at the top and bottom. These are called chunks. If the start of a chunk has \{r\} at the end of the ticks, the code will be run and both it and its output will be displayed in the rendered HTML. In your R Markdown, the code will look like:
+
+In your final report, the code will look like:
+
+\begin{verbatim}
+summary(cars)
+\end{verbatim}
+
+Let's add a new chunk to end this demo document. To do so, either you can enter three backticks in a row, followed by \{r\}, or you can click on the green \texttt{Chunks}button and chose\texttt{Insert\ Chunk}. Additionally, there's a keyboard short cut which is \texttt{ctrl}+\texttt{alt}+\texttt{i}which will also pop up a chunk in an R Markdown document.
+
+In the chunk, let's just examine the dimensions of the \texttt{car}mdataset:
+
+You can actually send the code straight from the chunks over to console to be evaluated in two ways. First, you can highlight the code you want to run in the chunk and hit the \texttt{Run} button, which is located in the top right corner of the pane.
+
+\hypertarget{knit-r-markdown}{%
+\subsection{Knit R Markdown}\label{knit-r-markdown}}
+
+These are the basics of writing R Markdown, but we still need to generate a report. To do this, click on the button on the top bar that says ``Knit HMTL''. This will prompt you to save the file. Go ahead and save this file as \texttt{Rmarkdown\_demo.Rmd} in the altmetrics directory. The ending of the file \texttt{.Rmd} indicates that this is an R Markdown file.
+
+\includegraphics{img/kh.png}
+
+When you click on this link, you see in the console that RStudio is running and rendering your R Markdown file. What is actually happening is RStudio is running the function \texttt{render}, which is part of the rmarkdown package. There are two things the command \texttt{render} does. First, it converts the R Markdown file to a Markdown file using the command \texttt{knit} from the knitr package (hence why rendering is called knitting). The second step is then the Markdown file is converted to the final file format (HTML, PDF, or Word).
+
+The final result is that an HMTL file will pop up where you'll see the report. You can see the header has been rendered, there are code and results chunks displayed, and even plots are shown right in the report.
+
+Also, if you now look in the altmetrics folder, you'll see an HTML file of the name Rmarkdown\_demo.html. When \texttt{render} is run, it saves the current version of the .Rmd file and the generated HTML file in the directory it is stored in.
+
+\hypertarget{knitr-chunk-options}{%
+\section{Knitr Chunk Options}\label{knitr-chunk-options}}
+
+\hypertarget{learning-objectives-4}{%
+\subsubsection*{Learning Objectives}\label{learning-objectives-4}}
+\addcontentsline{toc}{subsubsection}{Learning Objectives}
+
+Learn how to format chunks in R Markdown to display only the information you want to display.
+
+You've learned the basics of how to incorporate markdown syntax with code chunks in an R Markdown file. Let's explore some additional options for making your code chunks appear the way you want them to appear in your reports. There are many ways to customize your chunks and you can explore all of the options by examining the \href{http://yihui.name/knitr/options/\#chunk_options}{documentation}. Here, we'll introduce you to some of the most useful options that you might use frequently.
+
+Chunk output can be customized with~\href{http://yihui.name/knitr/options/}{knitr options ⧉}, arguments set in the~\texttt{\{\}}~of a chunk header. Above, we use five arguments:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{include\ =\ FALSE}~prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.
+\item
+  \texttt{echo\ =\ FALSE}~prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.
+\item
+  \texttt{message\ =\ FALSE}~prevents messages that are generated by code from appearing in the finished file.
+\item
+  \texttt{warning\ =\ FALSE}~prevents warnings that are generated by code from appearing in the finished.
+\item
+  \texttt{fig.cap\ =\ "..."}~adds a caption to graphical results.
+\end{itemize}
+
+The first thing you may want to consider is naming your code chunks, which makes degubbing easier, especially if you have a long script. Chunk names must be unique to each chunk.
+
+Write the name of your chunk after the \{r\}, like: \texttt{\{r\ chunk\_name\}}
+
+R Markdown:
+
+Rendered:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(cars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+\end{verbatim}
+
+You can use RStudio to navigate to chunks based on their names, which can be especially useful as your script gets long. Click on the bottom left bar where it says \texttt{(Top\ Level)} and you'll see all of the chunk names in your script appear. Additionally, naming your chunks will be beneficial to identify errors in your code or slow sections when knitting your report.
+
+Sometimes you may not want to see the code that produced a particular result in your report. You can have codeblocks in your R Markdown that are evaluated, but the code is not displayed in the final report by including \texttt{echo=FALSE} after the \texttt{\{r\ chunk\_name\}}.
+
+R Markdown:
+
+Rendered:
+
+\begin{verbatim}
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+\end{verbatim}
+
+Conversely, sometimes you may want to see the code, but not the output once the code is evalutated. To do so, you can include \texttt{results="hide"} after the chunk\_name:
+
+R Markdown:
+
+Rendered:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(cars)}
+\end{Highlighting}
+\end{Shaded}
+
+Sometimes, you may want to write a report where both the code and the output are suppressed. Why would you want to do that? Perhaps you're sending a report to a collaborator and you only want them to see the final figures, but not any data manipulation steps in the middle. To include a chunk that is evaluated, but no output is displayed - neither the code nor the results - put \texttt{include=FALSE} after the chunk\_name:
+
+R Markdown:
+
+Rendered (I swear there's a chunk after this! It's just invisible!):
+
+There are tons of other options you can include in your chunks: sizing your figures and whether or not to display error or warning messages. As you write reports of your own data analysis, you can look up these options to create a report formatted in the way you want.
+
+In addition to code chunks, you may want to include the results of an evaluation in line with regular text. For instance, you may want to describe the data in a paragraph, and include the number of individuals in that paragraph. To do so, you can indicate that a code box should be evaluated as R by including a lowercase r.
+
+R Markdown:
+
+\begin{verbatim}
+The _cars_ dataset included in this analysis contains records for `r dim(cars)[1]` cars. 
+\end{verbatim}
+
+Rendered:
+
+\begin{verbatim}
+The _cars_ dataset included in this analysis contains records for 50 cars.
+\end{verbatim}
+
+\hypertarget{project}{%
+\chapter{Project}\label{project}}
+
+\hypertarget{setup-1}{%
+\section{Setup}\label{setup-1}}
+
+Please download the files form
+
+\hypertarget{task-1}{%
+\section{Task 1}\label{task-1}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calculate variance of each column in golub. Hint use one of the apply() function
+\item
+  Order these variances in decreasing order. Use the order() function.
+\item
+  Use the ordered list to order the golub dataframe.
+\item
+  Download the corrplot pacakge and use the corrplot function to plot the correlations for the first 20 rows of the ordered golub datafram.
+\end{enumerate}
+
+\hypertarget{task-2}{%
+\section{Task 2}\label{task-2}}
+
+\hypertarget{interesting-packages}{%
+\chapter{Interesting Packages}\label{interesting-packages}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Cowplot
+\item
+  forcats
+\item
+  biobroom
+\item
+\end{enumerate}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
