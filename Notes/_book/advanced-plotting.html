@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Advanced Plotting | Intermediate R Workshop Notes</title>
   <meta name="description" content="Lecture notes from the workshop" />
-  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Advanced Plotting | Intermediate R Workshop Notes" />
   <meta property="og:type" content="book" />
@@ -53,9 +53,9 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -64,16 +64,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +80,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,35 +137,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#day-2"><i class="fa fa-check"></i>Day 2</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#important-links"><i class="fa fa-check"></i><b>1.2</b> Important links</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#setting-up-a-project"><i class="fa fa-check"></i><b>1.3</b> Setting up a project</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#learning-objectives"><i class="fa fa-check"></i><b>1.4</b> Learning Objectives</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#finding-your-location"><i class="fa fa-check"></i><b>1.5</b> Finding your location</a></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#downloading-files-from-the-command-line"><i class="fa fa-check"></i><b>1.6</b> Downloading files from the command line</a></li>
-<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#organizing-a-larger-project"><i class="fa fa-check"></i><b>1.7</b> Organizing a larger project</a></li>
-<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#create-a-readme-file"><i class="fa fa-check"></i><b>1.8</b> Create a README file</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html"><i class="fa fa-check"></i><b>2</b> Conditionals and Loops</a><ul>
-<li class="chapter" data-level="2.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
-<li class="chapter" data-level="2.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>2.2</b> Conditional statements</a></li>
-<li class="chapter" data-level="2.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i><b>2.3</b> if</a></li>
-<li class="chapter" data-level="2.4" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i><b>2.4</b> if…else</a></li>
-<li class="chapter" data-level="2.5" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i><b>2.5</b> Nested if…else statements</a></li>
-<li class="chapter" data-level="2.6" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>2.6</b> Loops</a></li>
+<li class="chapter" data-level="2.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#setup"><i class="fa fa-check"></i><b>2.1</b> Setup</a></li>
+<li class="chapter" data-level="2.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>2.2</b> Conditional statements</a><ul>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i>if</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i>if…else</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i>Nested if…else statements</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.1"><i class="fa fa-check"></i>EXERCISE 2.1</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>2.3</b> Loops</a><ul>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.2"><i class="fa fa-check"></i>EXERCISE 2.2</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
-<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#the-parts-of-a-function"><i class="fa fa-check"></i><b>3.1.1</b> The parts of a function</a></li>
-<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#the-principle-of-encapsulation"><i class="fa fa-check"></i><b>3.1.2</b> The principle of encapsulation</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#environments-are-complicated"><i class="fa fa-check"></i><b>3.2</b> Environments are complicated</a></li>
-<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#the-return-statement"><i class="fa fa-check"></i><b>3.3</b> The return statement</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="functions.html"><a href="functions.html#challenges"><i class="fa fa-check"></i><b>3.3.1</b> Challenges</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#write-your-own-function"><i class="fa fa-check"></i><b>3.4</b> Write your own function</a></li>
+<li class="chapter" data-level="3.0.1" data-path="functions.html"><a href="functions.html#the-parts-of-a-function"><i class="fa fa-check"></i><b>3.0.1</b> The parts of a function</a></li>
+<li class="chapter" data-level="3.0.2" data-path="functions.html"><a href="functions.html#the-principle-of-encapsulation"><i class="fa fa-check"></i><b>3.0.2</b> The principle of encapsulation</a></li>
+<li class="chapter" data-level="3.0.3" data-path="functions.html"><a href="functions.html#challenges"><i class="fa fa-check"></i><b>3.0.3</b> Challenges</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="apply-functions-with-purrr-package.html"><a href="apply-functions-with-purrr-package.html"><i class="fa fa-check"></i><b>4</b> Apply Functions with purrr package</a></li>
 <li class="chapter" data-level="5" data-path="advanced-plotting.html"><a href="advanced-plotting.html"><i class="fa fa-check"></i><b>5</b> Advanced Plotting</a><ul>
-<li class="chapter" data-level="5.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
+<li class="chapter" data-level="5.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup-1"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
 <li class="chapter" data-level="5.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>5.2</b> Review of ggplot2 basics</a></li>
 <li class="chapter" data-level="5.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#scales"><i class="fa fa-check"></i><b>5.3</b> Scales</a></li>
 <li class="chapter" data-level="5.4" data-path="advanced-plotting.html"><a href="advanced-plotting.html#faceting"><i class="fa fa-check"></i><b>5.4</b> Faceting</a></li>
@@ -180,10 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.8" data-path="advanced-plotting.html"><a href="advanced-plotting.html#additional-resources"><i class="fa fa-check"></i><b>5.8</b> Additional Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> Rmarkdown</a><ul>
-<li class="chapter" data-level="6.1" data-path="rmarkdown.html"><a href="rmarkdown.html#writing-in-r-markdown"><i class="fa fa-check"></i><b>6.1</b> Writing in R Markdown</a></li>
-<li class="chapter" data-level="6.2" data-path="rmarkdown.html"><a href="rmarkdown.html#learning-objectives-3"><i class="fa fa-check"></i><b>6.2</b> Learning Objectives</a></li>
-</ul></li>
+<li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> Rmarkdown</a></li>
 <li class="chapter" data-level="7" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>7</b> Project</a></li>
 <li class="chapter" data-level="8" data-path="interesting-packages.html"><a href="interesting-packages.html"><i class="fa fa-check"></i><b>8</b> Interesting Packages</a></li>
 <li class="chapter" data-level="9" data-path="faqs.html"><a href="faqs.html"><i class="fa fa-check"></i><b>9</b> FAQs</a></li>
@@ -211,25 +198,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 5</span> Advanced Plotting</h1>
 <p>“The greatest value of a picture is when it forces us to notice what we never expected to see”
 -John Tukey</p>
-<div id="setup" class="section level2">
+<hr />
+<div id="setup-1" class="section level2">
 <h2><span class="header-section-number">5.1</span> Setup</h2>
 <p><strong>1. Install the <code>tidyverse</code> package.</strong></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="advanced-plotting.html#cb33-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching packages ───────────────────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.0     ✓ purrr   0.3.4
-## ✓ tibble  3.0.1     ✓ dplyr   0.8.5
-## ✓ tidyr   1.0.3     ✓ stringr 1.4.0
-## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>## ── Conflicts ──────────────────────────────────── tidyverse_conflicts() ──
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
+<pre><code>## ── Attaching packages ────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.0     ✓ purrr   0.3.3
+## ✓ tibble  2.1.3     ✓ dplyr   0.8.4
+## ✓ tidyr   1.0.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.4.0</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
-<p><strong>2. Download datasets.</strong></p>
-<p>We will be using a dataset containing citation and alternative metrics for articles published in the PLOS family of journals between 2003 and 2010. The data set was compiled by Priem et al 2012 (<a href="http://arxiv.org/abs/1203.4745">publication</a>).</p>
-<p>Download the data onto your computer from <a href="https://www.dropbox.com/s/up38z3fd4llanrb/counts-raw.txt?dl=0">this</a> dropbox link and move it into a directory on your computer that makes sense.</p>
-<p><strong>3. Read in data into R.</strong></p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="advanced-plotting.html#cb37-1"></a>counts &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;data/counts-raw.txt&quot;</span>)</span>
-<span id="cb37-2"><a href="advanced-plotting.html#cb37-2"></a></span>
-<span id="cb37-3"><a href="advanced-plotting.html#cb37-3"></a>research &lt;-<span class="st"> </span><span class="kw">filter</span>(counts, articleType <span class="op">==</span><span class="st"> &quot;Research Article&quot;</span>)</span></code></pre></div>
+<p><strong>2. Filter data.</strong></p>
+<p>We will be using the publication dataset that we read into R in Chapter 2 as <code>counts</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">research &lt;-<span class="st"> </span><span class="kw">filter</span>(counts, articleType <span class="op">==</span><span class="st"> &quot;Research Article&quot;</span>)</a></code></pre></div>
 </div>
 <div id="review-of-ggplot2-basics" class="section level2">
 <h2><span class="header-section-number">5.2</span> Review of ggplot2 basics</h2>
@@ -250,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>scales - what scale an aesthetic map uses (ex. male = red, female = blue)</li>
 </ul>
 <p>To build a ggplot, we will use the following basic template that can be used for different types of plots:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="advanced-plotting.html#cb38-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>)) <span class="op">+</span><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>)) <span class="op">+</span><span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>()</a></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Specify which data set to use for the plot using the <code>data</code> argument.</p></li>
 <li><p>Define a “mapping” (using the aesthetic (<code>aes</code>) function), by selecting the variables to be plotted and specifying how to present them in the graph, e.g. as x/y positions or characteristics such as size, shape, color, etc.</p></li>
@@ -263,9 +247,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>geom_barplot()</code> for barplots.</li>
 <li><code>geom_line()</code> for trend lines, time series, etc.</li>
 </ul>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="advanced-plotting.html#cb39-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>( <span class="dt">x =</span> pdfDownloadsCount, <span class="dt">y =</span> wosCountThru2011)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</span>
-<span id="cb39-2"><a href="advanced-plotting.html#cb39-2"></a>p</span></code></pre></div>
-<p><img src="Notes_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>( <span class="dt">x =</span> pdfDownloadsCount, <span class="dt">y =</span> wosCountThru2011)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">p</a></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="scales" class="section level2">
 <h2><span class="header-section-number">5.3</span> Scales</h2>
@@ -283,20 +267,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You can create your own color palettes using the <code>colorRamp()</code> or <code>colorRampPalette()</code> function.</p>
 <p><code>colorRamp()</code> returns a function that takes values between 0 and 1, indicating the extremes of the color palette.</p>
 <p><code>colorRampPalette()</code> returns a function that takes integer arguments and returns a vector of colours.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="advanced-plotting.html#cb40-1"></a>cols &lt;-<span class="st"> </span><span class="kw">colorRamp</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span>
-<span id="cb40-2"><a href="advanced-plotting.html#cb40-2"></a><span class="kw">cols</span>(<span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">cols &lt;-<span class="st"> </span><span class="kw">colorRamp</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>))</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">cols</span>(<span class="dv">0</span>)</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]  255    0    0</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="advanced-plotting.html#cb42-1"></a><span class="kw">cols</span>(<span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">cols</span>(<span class="fl">0.5</span>)</a></code></pre></div>
 <pre><code>##       [,1] [,2]  [,3]
 ## [1,] 127.5    0 127.5</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="advanced-plotting.html#cb44-1"></a><span class="kw">cols</span>(<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">cols</span>(<span class="dv">1</span>)</a></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    0    0  255</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="advanced-plotting.html#cb46-1"></a>cols &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span>
-<span id="cb46-2"><a href="advanced-plotting.html#cb46-2"></a><span class="kw">cols</span>(<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">cols &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>))</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw">cols</span>(<span class="dv">2</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;#FF0000&quot; &quot;#0000FF&quot;</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="advanced-plotting.html#cb48-1"></a><span class="kw">cols</span>(<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">cols</span>(<span class="dv">10</span>)</a></code></pre></div>
 <pre><code>##  [1] &quot;#FF0000&quot; &quot;#E2001C&quot; &quot;#C60038&quot; &quot;#AA0055&quot; &quot;#8D0071&quot; &quot;#71008D&quot; &quot;#5500AA&quot;
 ##  [8] &quot;#3800C6&quot; &quot;#1C00E2&quot; &quot;#0000FF&quot;</code></pre>
 <p>Or, you can use the <code>RColorBrewer</code> package to get a premade colour palette.</p>
@@ -304,9 +288,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 * Sequential
 * Diverging
 * Qualitative</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="advanced-plotting.html#cb50-1"></a><span class="kw">library</span>(RColorBrewer)</span>
-<span id="cb50-2"><a href="advanced-plotting.html#cb50-2"></a><span class="kw">display.brewer.all</span>()</span></code></pre></div>
-<p><img src="Notes_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">library</span>(RColorBrewer)</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">display.brewer.all</span>()</a></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="multiple-plots" class="section level2">
 <h2><span class="header-section-number">5.7</span> Multiple plots</h2>

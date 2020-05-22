@@ -3,6 +3,8 @@
 "The greatest value of a picture is when it forces us to notice what we never expected to see"
 -John Tukey
 
+---
+
 ## Setup
 
 **1. Install the `tidyverse` package.**
@@ -11,22 +13,17 @@
 library(tidyverse)
 ```
 
-**2. Download datasets.**
+**2. Filter data.**
 
-We will be using a dataset containing citation and alternative metrics for articles published in the PLOS family of journals between 2003 and 2010. The data set was compiled by Priem et al 2012 ([publication](http://arxiv.org/abs/1203.4745)). 
+We will be using the publication dataset that we read into R in Chapter 2 as `counts`. 
 
-Download the data onto your computer from [this](https://www.dropbox.com/s/up38z3fd4llanrb/counts-raw.txt?dl=0) dropbox link and move it into a directory on your computer that makes sense.
-
-**3. Read in data into R.**
-
-```{r}
+```{r, include = FALSE}
 counts <- read.delim("data/counts-raw.txt")
-
-research <- filter(counts, articleType == "Research Article")
 ```
 
-
-
+```{r}
+research <- filter(counts, articleType == "Research Article")
+```
 
 ## Review of ggplot2 basics
 
