@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 Project | Intermediate R Workshop Notes</title>
+  <title>Chapter 6 Project | Intermediate R Workshop Notes</title>
   <meta name="description" content="Lecture notes from the workshop" />
   <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 Project | Intermediate R Workshop Notes" />
+  <meta property="og:title" content="Chapter 6 Project | Intermediate R Workshop Notes" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 Project | Intermediate R Workshop Notes" />
+  <meta name="twitter:title" content="Chapter 6 Project | Intermediate R Workshop Notes" />
   
   <meta name="twitter:description" content="Lecture notes from the workshop" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Hena R. Ramay" />
 
 
-<meta name="date" content="2020-05-21" />
+<meta name="date" content="2020-05-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -147,15 +147,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#create-a-readme-file"><i class="fa fa-check"></i><b>1.8</b> Create a README file</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html"><i class="fa fa-check"></i><b>2</b> Conditionals and Loops</a><ul>
-<li class="chapter" data-level="2.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
-<li class="chapter" data-level="2.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>2.2</b> Conditional statements</a></li>
-<li class="chapter" data-level="2.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i><b>2.3</b> if</a></li>
-<li class="chapter" data-level="2.4" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i><b>2.4</b> if…else</a></li>
-<li class="chapter" data-level="2.5" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i><b>2.5</b> Nested if…else statements</a></li>
-<li class="chapter" data-level="2.6" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>2.6</b> Loops</a></li>
+<li class="chapter" data-level="2.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#setup"><i class="fa fa-check"></i><b>2.1</b> Setup</a></li>
+<li class="chapter" data-level="2.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>2.2</b> Conditional statements</a><ul>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i>if</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i>if…else</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i>Nested if…else statements</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.1"><i class="fa fa-check"></i>EXERCISE 2.1</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>2.3</b> Loops</a><ul>
+<li><a href="conditionals-and-loops.html#for-loop"><code>for</code> loop</a></li>
+<li><a href="conditionals-and-loops.html#while-loop"><code>while</code> loop</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.2"><i class="fa fa-check"></i>EXERCISE 2.2</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
-<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a><ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#learning-objectives-1"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#the-parts-of-a-function"><i class="fa fa-check"></i><b>3.1.1</b> The parts of a function</a></li>
 <li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#the-principle-of-encapsulation"><i class="fa fa-check"></i><b>3.1.2</b> The principle of encapsulation</a></li>
 </ul></li>
@@ -164,29 +170,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="functions.html"><a href="functions.html#challenges"><i class="fa fa-check"></i><b>3.3.1</b> Challenges</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#write-your-own-function"><i class="fa fa-check"></i><b>3.4</b> Write your own function</a></li>
+<li class="chapter" data-level="3.5" data-path="functions.html"><a href="functions.html#the-apply-family"><i class="fa fa-check"></i><b>3.5</b> The apply family</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="functions.html"><a href="functions.html#use-lapply-with-a-built-in-r-function"><i class="fa fa-check"></i><b>3.5.1</b> Use lapply with a built-in R function</a></li>
+<li class="chapter" data-level="3.5.2" data-path="functions.html"><a href="functions.html#use-lapply-with-your-own-function"><i class="fa fa-check"></i><b>3.5.2</b> Use lapply with your own function</a></li>
+<li class="chapter" data-level="3.5.3" data-path="functions.html"><a href="functions.html#lapply-and-anonymous-functions"><i class="fa fa-check"></i><b>3.5.3</b> lapply and anonymous functions</a></li>
+<li class="chapter" data-level="3.5.4" data-path="functions.html"><a href="functions.html#use-lapply-with-additional-arguments"><i class="fa fa-check"></i><b>3.5.4</b> Use lapply with additional arguments</a></li>
+<li class="chapter" data-level="3.5.5" data-path="functions.html"><a href="functions.html#apply-functions-that-return-null"><i class="fa fa-check"></i><b>3.5.5</b> Apply functions that return NULL</a></li>
+<li class="chapter" data-level="3.5.6" data-path="functions.html"><a href="functions.html#how-to-use-sapply"><i class="fa fa-check"></i><b>3.5.6</b> How to use sapply</a></li>
+<li class="chapter" data-level="3.5.7" data-path="functions.html"><a href="functions.html#sapply-with-your-own-function"><i class="fa fa-check"></i><b>3.5.7</b> sapply with your own function</a></li>
+<li class="chapter" data-level="3.5.8" data-path="functions.html"><a href="functions.html#sapply-with-function-returning-vector"><i class="fa fa-check"></i><b>3.5.8</b> sapply with function returning vector</a></li>
+<li class="chapter" data-level="3.5.9" data-path="functions.html"><a href="functions.html#sapply-cant-simplify-now-what"><i class="fa fa-check"></i><b>3.5.9</b> sapply can’t simplify, now what?</a></li>
+<li class="chapter" data-level="3.5.10" data-path="functions.html"><a href="functions.html#sapply-with-functions-that-return-null"><i class="fa fa-check"></i><b>3.5.10</b> sapply with functions that return NULL</a></li>
+<li class="chapter" data-level="3.5.11" data-path="functions.html"><a href="functions.html#reverse-engineering-sapply"><i class="fa fa-check"></i><b>3.5.11</b> Reverse engineering sapply</a></li>
+<li class="chapter" data-level="3.5.12" data-path="functions.html"><a href="functions.html#use-vapply"><i class="fa fa-check"></i><b>3.5.12</b> Use vapply</a></li>
+<li class="chapter" data-level="3.5.13" data-path="functions.html"><a href="functions.html#use-vapply-2"><i class="fa fa-check"></i><b>3.5.13</b> Use vapply (2)</a></li>
+<li class="chapter" data-level="3.5.14" data-path="functions.html"><a href="functions.html#from-sapply-to-vapply"><i class="fa fa-check"></i><b>3.5.14</b> From sapply to vapply</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="apply-functions-with-purrr-package.html"><a href="apply-functions-with-purrr-package.html"><i class="fa fa-check"></i><b>4</b> Apply Functions with purrr package</a></li>
-<li class="chapter" data-level="5" data-path="advanced-plotting.html"><a href="advanced-plotting.html"><i class="fa fa-check"></i><b>5</b> Advanced Plotting</a><ul>
-<li class="chapter" data-level="5.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
-<li class="chapter" data-level="5.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>5.2</b> Review of ggplot2 basics</a></li>
-<li class="chapter" data-level="5.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#scales"><i class="fa fa-check"></i><b>5.3</b> Scales</a></li>
-<li class="chapter" data-level="5.4" data-path="advanced-plotting.html"><a href="advanced-plotting.html#faceting"><i class="fa fa-check"></i><b>5.4</b> Faceting</a></li>
-<li class="chapter" data-level="5.5" data-path="advanced-plotting.html"><a href="advanced-plotting.html#themes"><i class="fa fa-check"></i><b>5.5</b> Themes</a></li>
-<li class="chapter" data-level="5.6" data-path="advanced-plotting.html"><a href="advanced-plotting.html#color-palettes"><i class="fa fa-check"></i><b>5.6</b> Color palettes</a></li>
-<li class="chapter" data-level="5.7" data-path="advanced-plotting.html"><a href="advanced-plotting.html#multiple-plots"><i class="fa fa-check"></i><b>5.7</b> Multiple plots</a><ul>
-<li class="chapter" data-level="5.7.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#the-gridextra-package"><i class="fa fa-check"></i><b>5.7.1</b> The <code>gridExtra</code> package</a></li>
-<li class="chapter" data-level="5.7.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#the-cowplot-package"><i class="fa fa-check"></i><b>5.7.2</b> The <code>cowplot</code> package</a></li>
-<li class="chapter" data-level="5.7.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#saving-plots"><i class="fa fa-check"></i><b>5.7.3</b> Saving plots</a></li>
 </ul></li>
-<li class="chapter" data-level="5.8" data-path="advanced-plotting.html"><a href="advanced-plotting.html#additional-resources"><i class="fa fa-check"></i><b>5.8</b> Additional Resources</a></li>
+<li class="chapter" data-level="4" data-path="advanced-plotting.html"><a href="advanced-plotting.html"><i class="fa fa-check"></i><b>4</b> Advanced Plotting</a><ul>
+<li class="chapter" data-level="4.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup-1"><i class="fa fa-check"></i><b>4.1</b> Setup</a></li>
+<li class="chapter" data-level="4.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>4.2</b> Review of ggplot2 basics</a></li>
+<li class="chapter" data-level="4.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#scales"><i class="fa fa-check"></i><b>4.3</b> Scales</a></li>
+<li class="chapter" data-level="4.4" data-path="advanced-plotting.html"><a href="advanced-plotting.html#faceting"><i class="fa fa-check"></i><b>4.4</b> Faceting</a></li>
+<li class="chapter" data-level="4.5" data-path="advanced-plotting.html"><a href="advanced-plotting.html#themes"><i class="fa fa-check"></i><b>4.5</b> Themes</a></li>
+<li class="chapter" data-level="4.6" data-path="advanced-plotting.html"><a href="advanced-plotting.html#color-palettes"><i class="fa fa-check"></i><b>4.6</b> Color palettes</a></li>
+<li class="chapter" data-level="4.7" data-path="advanced-plotting.html"><a href="advanced-plotting.html#multiple-plots"><i class="fa fa-check"></i><b>4.7</b> Multiple plots</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#the-gridextra-package"><i class="fa fa-check"></i><b>4.7.1</b> The <code>gridExtra</code> package</a></li>
+<li class="chapter" data-level="4.7.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#the-cowplot-package"><i class="fa fa-check"></i><b>4.7.2</b> The <code>cowplot</code> package</a></li>
+<li class="chapter" data-level="4.7.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#saving-plots"><i class="fa fa-check"></i><b>4.7.3</b> Saving plots</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> Rmarkdown</a><ul>
-<li class="chapter" data-level="6.1" data-path="rmarkdown.html"><a href="rmarkdown.html#writing-in-r-markdown"><i class="fa fa-check"></i><b>6.1</b> Writing in R Markdown</a></li>
-<li class="chapter" data-level="6.2" data-path="rmarkdown.html"><a href="rmarkdown.html#learning-objectives-3"><i class="fa fa-check"></i><b>6.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.8" data-path="advanced-plotting.html"><a href="advanced-plotting.html#additional-resources"><i class="fa fa-check"></i><b>4.8</b> Additional Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>7</b> Project</a></li>
-<li class="chapter" data-level="8" data-path="interesting-packages.html"><a href="interesting-packages.html"><i class="fa fa-check"></i><b>8</b> Interesting Packages</a></li>
-<li class="chapter" data-level="9" data-path="faqs.html"><a href="faqs.html"><i class="fa fa-check"></i><b>9</b> FAQs</a></li>
+<li class="chapter" data-level="5" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Rmarkdown</a><ul>
+<li class="chapter" data-level="5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#set-up-new-r-markdown-file"><i class="fa fa-check"></i><b>5.1</b> Set up new R Markdown file</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="rmarkdown.html"><a href="rmarkdown.html#r-markdown-componenets"><i class="fa fa-check"></i><b>5.1.1</b> R Markdown componenets</a></li>
+<li class="chapter" data-level="5.1.2" data-path="rmarkdown.html"><a href="rmarkdown.html#knit-r-markdown"><i class="fa fa-check"></i><b>5.1.2</b> Knit R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#knitr-chunk-options"><i class="fa fa-check"></i><b>5.2</b> Knitr Chunk Options</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>6</b> Project</a></li>
+<li class="chapter" data-level="7" data-path="interesting-packages.html"><a href="interesting-packages.html"><i class="fa fa-check"></i><b>7</b> Interesting Packages</a></li>
+<li class="chapter" data-level="8" data-path="faqs.html"><a href="faqs.html"><i class="fa fa-check"></i><b>8</b> FAQs</a><ul>
+<li class="chapter" data-level="8.1" data-path="faqs.html"><a href="faqs.html#r-markdown"><i class="fa fa-check"></i><b>8.1</b> R Markdown</a></li>
+<li class="chapter" data-level="8.2" data-path="faqs.html"><a href="faqs.html#including-plots"><i class="fa fa-check"></i><b>8.2</b> Including Plots</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -208,7 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="project" class="section level1">
-<h1><span class="header-section-number">Chapter 7</span> Project</h1>
+<h1><span class="header-section-number">Chapter 6</span> Project</h1>
 <p>2 hours project in which we make plots, write functions and generate a nice html report</p>
 
 </div>

@@ -24,7 +24,7 @@
 <meta name="author" content="Hena R. Ramay" />
 
 
-<meta name="date" content="2020-05-21" />
+<meta name="date" content="2020-05-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="conditionals-and-loops.html"/>
-<link rel="next" href="apply-functions-with-purrr-package.html"/>
+<link rel="next" href="the-apply-family.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,70 +52,6 @@
 
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -139,35 +75,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#day-2"><i class="fa fa-check"></i>Day 2</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#important-links"><i class="fa fa-check"></i><b>1.2</b> Important links</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#setting-up-a-project"><i class="fa fa-check"></i><b>1.3</b> Setting up a project</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#learning-objectives"><i class="fa fa-check"></i><b>1.4</b> Learning Objectives</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#finding-your-location"><i class="fa fa-check"></i><b>1.5</b> Finding your location</a></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#downloading-files-from-the-command-line"><i class="fa fa-check"></i><b>1.6</b> Downloading files from the command line</a></li>
-<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#organizing-a-larger-project"><i class="fa fa-check"></i><b>1.7</b> Organizing a larger project</a></li>
-<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#create-a-readme-file"><i class="fa fa-check"></i><b>1.8</b> Create a README file</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html"><i class="fa fa-check"></i><b>2</b> Conditionals and Loops</a><ul>
-<li class="chapter" data-level="2.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#learning-objectives-1"><i class="fa fa-check"></i><b>2.1</b> Learning Objectives</a></li>
-<li class="chapter" data-level="2.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>2.2</b> Conditional statements</a></li>
-<li class="chapter" data-level="2.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i><b>2.3</b> if</a></li>
-<li class="chapter" data-level="2.4" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i><b>2.4</b> if…else</a></li>
-<li class="chapter" data-level="2.5" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i><b>2.5</b> Nested if…else statements</a></li>
-<li class="chapter" data-level="2.6" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>2.6</b> Loops</a></li>
+<li class="chapter" data-level="2.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#setup"><i class="fa fa-check"></i><b>2.1</b> Setup</a></li>
+<li class="chapter" data-level="2.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>2.2</b> Conditional statements</a><ul>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i>if</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i>if…else</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i>Nested if…else statements</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.1"><i class="fa fa-check"></i>EXERCISE 2.1</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>2.3</b> Loops</a><ul>
+<li><a href="conditionals-and-loops.html#for-loop"><code>for</code> loop</a></li>
+<li><a href="conditionals-and-loops.html#while-loop"><code>while</code> loop</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.2"><i class="fa fa-check"></i>EXERCISE 2.2</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
-<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#learning-objectives-2"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="functions.html"><a href="functions.html#the-parts-of-a-function"><i class="fa fa-check"></i><b>3.1.1</b> The parts of a function</a></li>
-<li class="chapter" data-level="3.1.2" data-path="functions.html"><a href="functions.html#the-principle-of-encapsulation"><i class="fa fa-check"></i><b>3.1.2</b> The principle of encapsulation</a></li>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#parts-of-a-function"><i class="fa fa-check"></i><b>3.1</b> Parts of a function</a></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#the-principle-of-encapsulation"><i class="fa fa-check"></i><b>3.2</b> The principle of encapsulation</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="functions.html"><a href="functions.html#environments"><i class="fa fa-check"></i><b>3.2.1</b> Environments</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#environments-are-complicated"><i class="fa fa-check"></i><b>3.2</b> Environments are complicated</a></li>
-<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#the-return-statement"><i class="fa fa-check"></i><b>3.3</b> The return statement</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="functions.html"><a href="functions.html#challenges"><i class="fa fa-check"></i><b>3.3.1</b> Challenges</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#the-return-statement"><i class="fa fa-check"></i><b>3.3</b> The return statement</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#write-your-own-function"><i class="fa fa-check"></i><b>3.4</b> Write your own function</a></li>
+<li class="chapter" data-level="4" data-path="the-apply-family.html"><a href="the-apply-family.html"><i class="fa fa-check"></i><b>4</b> The apply family</a><ul>
+<li class="chapter" data-level="4.1" data-path="the-apply-family.html"><a href="the-apply-family.html#apply"><i class="fa fa-check"></i><b>4.1</b> apply()</a></li>
+<li class="chapter" data-level="4.2" data-path="the-apply-family.html"><a href="the-apply-family.html#lapply"><i class="fa fa-check"></i><b>4.2</b> lapply()</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="the-apply-family.html"><a href="the-apply-family.html#use-lapply-with-your-own-function"><i class="fa fa-check"></i><b>4.2.1</b> Use lapply with your own function</a></li>
+<li class="chapter" data-level="4.2.2" data-path="the-apply-family.html"><a href="the-apply-family.html#lapply-and-anonymous-functions"><i class="fa fa-check"></i><b>4.2.2</b> lapply and anonymous functions</a></li>
+<li class="chapter" data-level="4.2.3" data-path="the-apply-family.html"><a href="the-apply-family.html#use-lapply-with-additional-arguments"><i class="fa fa-check"></i><b>4.2.3</b> Use lapply with additional arguments</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="apply-functions-with-purrr-package.html"><a href="apply-functions-with-purrr-package.html"><i class="fa fa-check"></i><b>4</b> Apply Functions with purrr package</a></li>
+<li class="chapter" data-level="4.3" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply"><i class="fa fa-check"></i><b>4.3</b> sapply()</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply-with-your-own-function"><i class="fa fa-check"></i><b>4.3.1</b> sapply with your own function</a></li>
+<li class="chapter" data-level="4.3.2" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply-with-function-returning-vector"><i class="fa fa-check"></i><b>4.3.2</b> sapply with function returning vector</a></li>
+<li class="chapter" data-level="4.3.3" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply-cant-simplify-now-what"><i class="fa fa-check"></i><b>4.3.3</b> sapply can’t simplify, now what?</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="the-apply-family.html"><a href="the-apply-family.html#use-vapply"><i class="fa fa-check"></i><b>4.4</b> Use vapply</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="advanced-plotting.html"><a href="advanced-plotting.html"><i class="fa fa-check"></i><b>5</b> Advanced Plotting</a><ul>
-<li class="chapter" data-level="5.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
+<li class="chapter" data-level="5.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup-1"><i class="fa fa-check"></i><b>5.1</b> Setup</a></li>
 <li class="chapter" data-level="5.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>5.2</b> Review of ggplot2 basics</a></li>
 <li class="chapter" data-level="5.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#scales"><i class="fa fa-check"></i><b>5.3</b> Scales</a></li>
 <li class="chapter" data-level="5.4" data-path="advanced-plotting.html"><a href="advanced-plotting.html#faceting"><i class="fa fa-check"></i><b>5.4</b> Faceting</a></li>
@@ -181,12 +126,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.8" data-path="advanced-plotting.html"><a href="advanced-plotting.html#additional-resources"><i class="fa fa-check"></i><b>5.8</b> Additional Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>6</b> Rmarkdown</a><ul>
-<li class="chapter" data-level="6.1" data-path="rmarkdown.html"><a href="rmarkdown.html#writing-in-r-markdown"><i class="fa fa-check"></i><b>6.1</b> Writing in R Markdown</a></li>
-<li class="chapter" data-level="6.2" data-path="rmarkdown.html"><a href="rmarkdown.html#learning-objectives-3"><i class="fa fa-check"></i><b>6.2</b> Learning Objectives</a></li>
+<li class="chapter" data-level="6.1" data-path="rmarkdown.html"><a href="rmarkdown.html#set-up-new-r-markdown-file"><i class="fa fa-check"></i><b>6.1</b> Set up new R Markdown file</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="rmarkdown.html"><a href="rmarkdown.html#r-markdown-componenets"><i class="fa fa-check"></i><b>6.1.1</b> R Markdown componenets</a></li>
+<li class="chapter" data-level="6.1.2" data-path="rmarkdown.html"><a href="rmarkdown.html#knit-r-markdown"><i class="fa fa-check"></i><b>6.1.2</b> Knit R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="rmarkdown.html"><a href="rmarkdown.html#knitr-chunk-options"><i class="fa fa-check"></i><b>6.2</b> Knitr Chunk Options</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>7</b> Project</a></li>
 <li class="chapter" data-level="8" data-path="interesting-packages.html"><a href="interesting-packages.html"><i class="fa fa-check"></i><b>8</b> Interesting Packages</a></li>
-<li class="chapter" data-level="9" data-path="faqs.html"><a href="faqs.html"><i class="fa fa-check"></i><b>9</b> FAQs</a></li>
+<li class="chapter" data-level="9" data-path="faqs.html"><a href="faqs.html"><i class="fa fa-check"></i><b>9</b> FAQs</a><ul>
+<li class="chapter" data-level="9.1" data-path="faqs.html"><a href="faqs.html#r-markdown"><i class="fa fa-check"></i><b>9.1</b> R Markdown</a></li>
+<li class="chapter" data-level="9.2" data-path="faqs.html"><a href="faqs.html#including-plots"><i class="fa fa-check"></i><b>9.2</b> Including Plots</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -211,16 +162,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Functions</h1>
 <p>“Intelligence is the ability to avoid doing work, yet getting the work done.”
 ― Linus Torvalds</p>
-<div id="learning-objectives-2" class="section level2">
-<h2><span class="header-section-number">3.1</span> Learning Objectives</h2>
+<div class="box">
+<h4 id="learning-objectives" class="unnumbered">Learning Objectives</h4>
 <ul>
 <li>Functions have two parts: arguments and body</li>
 <li>Functions have their own environment</li>
 <li>Functions help you repeat code chunks</li>
 </ul>
+</div>
 <p>In the last lesson we learnt to write loops to avoid writing the same code multiple time. Now lets learn how to make our code even more efficient and re-use the same code multiple times without copy-paste!</p>
-<div id="the-parts-of-a-function" class="section level3">
-<h3><span class="header-section-number">3.1.1</span> The parts of a function</h3>
+<div id="parts-of-a-function" class="section level2">
+<h2><span class="header-section-number">3.1</span> Parts of a function</h2>
 <p>We’ve already been using built-in R functions: <code>read.csv</code>, <code>mean</code>, <code>length</code>, etc. These functions allow us to run the same routine with different inputs.</p>
 <p>Let’s explore <code>read.csv</code> further. All functions in R have two parts: the input arguments and the body. We can see the arguments of a function with the <code>args</code>.</p>
 <pre><code>args(read.csv)</code></pre>
@@ -239,8 +191,8 @@ NULL</code></pre>
   body
 }</code></pre>
 </div>
-<div id="the-principle-of-encapsulation" class="section level3">
-<h3><span class="header-section-number">3.1.2</span> The principle of encapsulation</h3>
+<div id="the-principle-of-encapsulation" class="section level2">
+<h2><span class="header-section-number">3.2</span> The principle of encapsulation</h2>
 <p>An important feature of functions is the principle of encapsulation: the environment inside the function is distinct from the environment outside the function. In other words, variables defined inside a function are separate from variables defined outside the function.</p>
 <p>Here’s an small example to demonstrate this idea. The function <code>ex_fun</code> takes two input arguments, <code>x</code> and <code>y</code>. It calculates <code>z</code> and returns its value.</p>
 <pre><code>ex_fun &lt;- function(x, y) {
@@ -254,22 +206,21 @@ NULL</code></pre>
 <pre><code>z</code></pre>
 <pre><code>Error in eval(expr, envir, enclos): object &#39;z&#39; not found
 </code></pre>
-</div>
-</div>
-<div id="environments-are-complicated" class="section level2">
-<h2><span class="header-section-number">3.2</span> Environments are complicated</h2>
+<div id="environments" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Environments</h3>
 <p>The situation presented above is a simplified version of environments which will serve you well if you treat functions as truly encapsulated. In reality, things are more complicated. For example, if inside a function you have a variable that has not been defined in the function, it will actually search the global environment for this variable. To learn the advanced details, see the chapter <a href="http://adv-r.had.co.nz/Environments.html">Environments</a> in Advanced R by Hadley Wickham.</p>
+</div>
 </div>
 <div id="the-return-statement" class="section level2">
 <h2><span class="header-section-number">3.3</span> The return statement</h2>
 <p>R provides the shortcut of not needing to use <code>return</code> at the end of the function. Instead, the variable on the last line of the body of the function is returned. This is useful for writing very small functions, but in these lessons we will use <code>return</code> to be more explicit about what is happening.</p>
-<div id="challenges" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> Challenges</h3>
+<div class="box">
+<h4 id="exercise" class="unnumbered">Exercise</h4>
+<ul>
+<li>Write your own function called <code>select_first</code>. It should take a vector as input and returns the first element of the list.</li>
+<li>Now use articleType column from counts dataframe and use it as input to select_first function.</li>
+</ul>
 </div>
-</div>
-<div id="write-your-own-function" class="section level2">
-<h2><span class="header-section-number">3.4</span> Write your own function</h2>
-<p>Write your own function to calculate the mean called <code>my_mean</code>. It should take one input argument, <code>x</code>, which is a numeric vector. Compare your results with the results from R’s function <code>mean</code>. Do you receive the same answer?</p>
 
 </div>
 </div>
@@ -279,7 +230,7 @@ NULL</code></pre>
         </div>
       </div>
 <a href="conditionals-and-loops.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="apply-functions-with-purrr-package.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="the-apply-family.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

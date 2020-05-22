@@ -12,3 +12,8 @@ pre {
 pre code {
   white-space: inherit;
 }
+.box {
+  border: 2px solid black;
+  margin: 20px 0px;
+  padding: 0px 10px 0px 25px;
+}

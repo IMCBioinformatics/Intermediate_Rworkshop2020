@@ -1,2 +1,7 @@
 # Project
-2 hours project in which we make plots, write functions and generate a nice html report 
+
+## Setup
+Please download the files form 
+
+1. Calculate variance and rearrange columns by variance decreasingly. Hint (use var() function for variance)
+2.

@@ -3,13 +3,14 @@
 “If I went back to college again, I’d concentrate on two areas: learning to write and to speak before an audience. Nothing in life is more important than the ability to communicate effectively.”
 – Gerald R. Ford
 
-Writing in R Markdown
----------------------
+<br>
 
-Learning Objectives
--------------------
-
+<div class="box">
+#### Learning Objectives {-}
 Learn how to generate reproducible reports that display your code and results.
+</div>
+
+## Set up new R Markdown file
 
 When you perform wet lab experiments, what information do you put in your lab notebook? You probably include the protocol you used to run the experiment, information about the samples and reagents used in the protocol, and at the end you'll likely include your results (for instance, a picture of a gel). This essentially creates a report of your experiment.
 
@@ -19,24 +20,27 @@ You can do the same with your dry lab analyses using a tool called R Markdown. W
 
 -   If you update your methodology, you can easily update your results with the click of a button, rather than copying and pasting.
 
--   You *could* cut and paste your code and results into Word or Power Point, but that will make rerunning your code challenging, as Word often introduces hidden characters.
+-   You *could* cut and paste your code and results into Word or Power Point, but that will make rerunning your code challenging, as Word often introduces hidden characters.
+<br>
 
 R Markdown is a fairly simple language you can use to generate reports that incorporate bits of R code along with the output they produce. There are two steps to generating reports with R Markdown and RStudio:
 
 1.  Write your code in R Markdown.
 2.  Assemble your report as either HTML or a PDF using the package rmarkdown.
 
-Next, let's run through the demo R Markdown file to see some of the options. Go up to `File` -> `New File` -> `R Markdown`.
+<br>
 
-![Set up new R Markdown file](img/markdown.png)
+Next, let's run through the demo R Markdown file to see some of the options. Go up to `File` -> `New File` -> `R Markdown`.
 
-Set up new R Markdown file
+![](img/markdown.png)
+
+
 
 A screen will pop up asking us what kind of document we wish to create. Let's name our demo report "Trial Report" and fill in your name. Ensure that "Document" is highlighted to the left and that "HTML" is chosen. Click "Ok".
 
-![Choose HTML](img/mdname.png)
+![](img/mdname.png)
 
-Choose HTML
+
 
 Now we have the example R Markdown file open. The first thing you'll notice at the top is a header which includes your name, the title of the document, the date, and a field called output. This header tells the package rmarkdown some information it might need about your document, including what format you want the final report rendered in.
 
@@ -44,17 +48,23 @@ The next thing you'll notice is white space with some text describing an R Markd
 
 In this trial script, you'll see how some of these markdown elements are used. For example, the word knit is in bolded (using asterisks), and there are code chucks near the bottom that say echo = FALSE.
 
-![Demo R Markdown Document](img/firstmd.png)
+![](img/firstmd.png)
 
-Demo R Markdown Document
+### R Markdown componenets
+
+Notice that the file contains three types of content:
+
+1. An (optional) YAML header surrounded by ---s
+2. R code chunks surrounded by ```s
+3. text mixed with simple text formatting
 
 In addition to the white space, you'll gray blocks that have ``` at the top and bottom. These are called chunks. If the start of a chunk has {r} at the end of the ticks, the code will be run and both it and its output will be displayed in the rendered HTML. In your R Markdown, the code will look like:
 
-```
-```{r}
+<pre>
+```{r, eval=F}
 summary(cars)
 ```
-```
+</pre>
 
 In your final report, the code will look like:
 
@@ -65,25 +75,25 @@ summary(cars)
 
 Let's add a new chunk to end this demo document. To do so, either you can enter three backticks in a row, followed by {r}, or you can click on the green `Chunks`button and chose`Insert Chunk`. Additionally, there's a keyboard short cut which is `ctrl`+`alt`+`i`which will also pop up a chunk in an R Markdown document.
 
-![Insert Chunk](https://jdblischak.github.io/r-intermediate-altmetrics/fig/insert-chunk.png)
+![](https://jdblischak.github.io/r-intermediate-altmetrics/fig/insert-chunk.png)
 
-Insert Chunk
 
 In the chunk, let's just examine the dimensions of the `car`mdataset:
 
-```
-```{r}
+<pre>
+```{r, eval=FALSE}
 dim(cars)
 ```
-```
+</pre>
 
-You can actually send the code straight from the chunks over to console to be evaluated in two ways. First, you can highlight the code you want to run in the chunk and hit the `Run` button, which is located in the top right corner of the pane. Additionally, you can use the keyboard shortcut `ctrl`+`alt`+`c`. This allows you to iteratively write an test code in RStudio, rather than having to render the full report everytime you add a bit of new code.
+You can actually send the code straight from the chunks over to console to be evaluated in two ways. First, you can highlight the code you want to run in the chunk and hit the `Run` button, which is located in the top right corner of the pane. 
+
+### Knit R Markdown
 
 These are the basics of writing R Markdown, but we still need to generate a report. To do this, click on the button on the top bar that says "Knit HMTL". This will prompt you to save the file. Go ahead and save this file as `Rmarkdown_demo.Rmd` in the altmetrics directory. The ending of the file `.Rmd` indicates that this is an R Markdown file.
 
-![Knit R Markdown](https://jdblischak.github.io/r-intermediate-altmetrics/fig/knit_rmarkdown.png)
+![](img/kh.png)
 
-Knit R Markdown
 
 When you click on this link, you see in the console that RStudio is running and rendering your R Markdown file. What is actually happening is RStudio is running the function `render`, which is part of the rmarkdown package. There are two things the command `render` does. First, it converts the R Markdown file to a Markdown file using the command `knit` from the knitr package (hence why rendering is called knitting). The second step is then the Markdown file is converted to the final file format (HTML, PDF, or Word).
 
@@ -92,15 +102,25 @@ The final result is that an HMTL file will pop up where you'll see the report. Y
 Also, if you now look in the altmetrics folder, you'll see an HTML file of the name Rmarkdown_demo.html. When `render` is run, it saves the current version of the .Rmd file and the generated HTML file in the directory it is stored in.
 
 
-Knitr Chunk Options
--------------------
+## Knitr Chunk Options
 
-Learning Objectives
--------------------
+<div class="box">
+#### Learning Objectives {-}
 
-Learn how format chunks in R Markdown to display only the information you want to display.
+Learn how to format chunks in R Markdown to display only the information you want to display.
+</div>
+<br>
 
 You've learned the basics of how to incorporate markdown syntax with code chunks in an R Markdown file. Let's explore some additional options for making your code chunks appear the way you want them to appear in your reports. There are many ways to customize your chunks and you can explore all of the options by examining the [documentation](http://yihui.name/knitr/options/#chunk_options). Here, we'll introduce you to some of the most useful options that you might use frequently.
+
+Chunk output can be customized with [knitr options ⧉](http://yihui.name/knitr/options/), arguments set in the `{}` of a chunk header. Above, we use five arguments:
+
+-   `include = FALSE` prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.
+-   `echo = FALSE` prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.
+-   `message = FALSE` prevents messages that are generated by code from appearing in the finished file.
+-   `warning = FALSE` prevents warnings that are generated by code from appearing in the finished.
+-   `fig.cap = "..."` adds a caption to graphical results.
+
 
 The first thing you may want to consider is naming your code chunks, which makes degubbing easier, especially if you have a long script. Chunk names must be unique to each chunk.
 
@@ -108,19 +128,14 @@ Write the name of your chunk after the {r}, like: `{r chunk_name}`
 
 R Markdown:
 
-```
+<pre> ```{r chunky_monkey}
+summary(cars)
+``` </pre>
+Rendered:
 
 ```{r chunky_monkey}
 summary(cars)
 ```
-```
-
-Rendered:
-
-```
-summary(cars)
-```
-
 
 
 You can use RStudio to navigate to chunks based on their names, which can be especially useful as your script gets long. Click on the bottom left bar where it says `(Top Level)` and you'll see all of the chunk names in your script appear. Additionally, naming your chunks will be beneficial to identify errors in your code or slow sections when knitting your report.
@@ -129,15 +144,13 @@ Sometimes you may not want to see the code that produced a particular result in 
 
 R Markdown:
 
-```
-```{r funky_monkey, echo=FALSE}
+<pre>```{r funky_monkey, echo=FALSE}
 summary(cars)
-```
-```
+```</pre>
 
 Rendered:
 
-```
+```{r funky_monkey, echo=FALSE}
 summary(cars)
 ```
 
@@ -145,15 +158,13 @@ Conversely, sometimes you may want to see the code, but not the output once the 
 
 R Markdown:
 
-```
-```{r brass_monkey, results="hide"}
+<pre>```{r brass_monkey, results="hide"}
 summary(cars)
-```
-```
+```</pre>
 
 Rendered:
 
-```
+```{r brass_monkey, results="hide"}
 summary(cars)
 ```
 
@@ -161,11 +172,9 @@ Sometimes, you may want to write a report where both the code and the output are
 
 R Markdown:
 
-```
-```{r brass_section, include=FALSE}
+<pre>```{r brass_section, include=FALSE}
 summary(cars)
-```
-```
+```</pre>
 
 Rendered (I swear there's a chunk after this! It's just invisible!):
 
@@ -176,9 +185,7 @@ In addition to code chunks, you may want to include the results of an evaluation
 R Markdown:
 
 ```
-```
-The _cars_ dataset included in this analysis contains records for `r dim(cars)[1]` cars.
-```
+The _cars_ dataset included in this analysis contains records for `r '\x60r dim(cars)[1]\x60'` cars. 
 ```
 
 Rendered:

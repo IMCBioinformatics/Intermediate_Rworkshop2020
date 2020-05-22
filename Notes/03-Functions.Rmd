@@ -3,20 +3,17 @@
 “Intelligence is the ability to avoid doing work, yet getting the work done.”
 ― Linus Torvalds
 
-
-Learning Objectives
--------------------
+<div class="box">
+#### Learning Objectives {-}
 
 -   Functions have two parts: arguments and body
 -   Functions have their own environment
 -   Functions help you repeat code chunks
+</div>
 
 In the last lesson we learnt to write loops to avoid writing the same code multiple time. Now lets learn how to make our code even more efficient and re-use the same code multiple times without copy-paste!
 
-
-
-
-### The parts of a function
+## Parts of a function
 
 We've already been using built-in R functions: `read.csv`, `mean`, `length`, etc. These functions allow us to run the same routine with different inputs.
 
@@ -56,7 +53,7 @@ function_name <- function(args) {
 }
 ```
 
-### The principle of encapsulation
+## The principle of encapsulation
 
 An important feature of functions is the principle of encapsulation: the environment inside the function is distinct from the environment outside the function. In other words, variables defined inside a function are separate from variables defined outside the function.
 
@@ -89,21 +86,20 @@ Error in eval(expr, envir, enclos): object 'z' not found
 
 ```
 
-Environments are complicated
-----------------------------
+### Environments
+
 
 The situation presented above is a simplified version of environments which will serve you well if you treat functions as truly encapsulated. In reality, things are more complicated. For example, if inside a function you have a variable that has not been defined in the function, it will actually search the global environment for this variable. To learn the advanced details, see the chapter [Environments](http://adv-r.had.co.nz/Environments.html) in Advanced R by Hadley Wickham.
 
-The return statement
---------------------
+## The return statement
+
 
 R provides the shortcut of not needing to use `return` at the end of the function. Instead, the variable on the last line of the body of the function is returned. This is useful for writing very small functions, but in these lessons we will use `return` to be more explicit about what is happening.
 
 
+<div class="box">
+#### Exercise {-}
 
-### Challenges
-
-Write your own function
------------------------
-
-Write your own function to calculate the mean called `my_mean`. It should take one input argument, `x`, which is a numeric vector. Compare your results with the results from R's function `mean`. Do you receive the same answer?
+- Write your own function called `select_first`. It should take a vector as input and returns the first element of the list.
+- Now use articleType column from counts dataframe and use it as input to select_first function.
+</div>
