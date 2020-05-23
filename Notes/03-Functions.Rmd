@@ -100,6 +100,6 @@ R provides the shortcut of not needing to use `return` at the end of the funct
 <div class="box">
 #### Exercise {-}
 
-- Write your own function called `select_first`. It should take a vector as input and returns the first element of the list.
+- Write your own function called `select_first`. It should take a vector as input and return the first element of the list.
 - Now use articleType column from counts dataframe and use it as input to select_first function.
 </div>

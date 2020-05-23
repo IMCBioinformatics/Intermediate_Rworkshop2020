@@ -1,7 +1,16 @@
-# Interesting Packages
+# Usefull links
+
+## CheatSheets
+This is a useful set of cheat sheets that can be handy for you.
+
+1. [Importing data](img/data-import.pdf)
+2. [rmarkdown](img/rmarkdown-2.0.pdf)
+3. [ggplot2](img/ggplot2-cheatsheet.pdf)
+
+Packages not discussed in the workshop but worth a try!
+
+1. [forcats](img/factors.pdf)
+2. [Purrr](img/purrr.pdf)
+3. [strings](img/strings.pdf)
 
 
-1. Cowplot
-2. forcats
-3. biobroom
-4. 

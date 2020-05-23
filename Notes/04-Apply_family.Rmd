@@ -191,10 +191,8 @@ It seems like we've hit the jackpot with `sapply()`. On all of the examples so f
 
 We already created a function, `below_zero()`, that takes a vector of numerical values and returns a vector that only contains the values that are strictly below zero.
 
-#### Instructions
-* *Apply* `below_zero()` *over* `temp` *using* `lapply()` *and store the result in* `freezing_s`*.*
-* *Apply* `below_zero()` *over* `temp` *using* `sapply()`*. Save the resulting list in a variable* `freezing_l`*.*
-* *Compare* `freezing_l` *to* `freezing_s` *using the* `identical()` *function.*
+#### Example 
+
 ```{r}
 # temp is already prepared for you in the workspace
 # Definition of below_zero()

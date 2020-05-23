@@ -1,0 +1,55 @@
+BEGIN:VCALENDAR
+PRODID:-//zoom.us//iCalendar Event//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+CLASS:PUBLIC
+BEGIN:VTIMEZONE
+TZID:America/New_York
+TZURL:http://tzurl.org/zoneinfo-outlook/America/New_York
+X-LIC-LOCATION:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20200523T061255Z
+DTSTART;TZID=America/New_York:20200526T130000
+DTEND;TZID=America/New_York:20200526T140000
+SUMMARY:DFCI Data Science Zoominar: Jeff Leek
+UID:20200523T061255Z-92707011471@fe80:0:0:0:c3f:a3ff:fe29:9095eth0
+TZID:America/New_York
+DESCRIPTION:Join from a PC\, Mac\, iPad\, iPhone or Android device:\n    
+ Please click this URL to join. https://dfci.zoom.us/w/92707011471?tk=Rcx
+ -dsK9xDvq8ayI6qcf8J0RM529vpxjIiPh9DbWphM.DQIAAAAVlcS7jxZCdkFTVGg1WlFTU3F
+ rUEM4eFctTzJnAAAAAAAAAAAAAAAAAAAAAAAAAAAA&pwd=Q3NuQlNMc2wrSDdON3d3aW94cn
+ Z5Zz09&uuid=WN_XscX-d21RqylhDCXzvP2-Q\n	Password: 685275\n	Description: 
+ Teaching Data Science to the Masses\n\nA conversation with \nJeff Leek\,
+  PhD\nJohns Hopkins University\n\nModerator: Rafael Irizarry\n\nOr join 
+ by phone:\n    Dial(for higher quality\, dial a number based on your cur
+ rent location):\n        US: +1 346 248 7799  or +1 669 900 6833  or +1 
+ 929 205 6099  or +1 253 215 8782  or +1 301 715 8592  or +1 312 626 6799
+  \n    Webinar ID: 927 0701 1471\n    International numbers available: h
+ ttps://dfci.zoom.us/u/ab5PfILF84\n\n
+LOCATION:https://dfci.zoom.us/w/92707011471?tk=Rcx-dsK9xDvq8ayI6qcf8J0RM5
+ 29vpxjIiPh9DbWphM.DQIAAAAVlcS7jxZCdkFTVGg1WlFTU3FrUEM4eFctTzJnAAAAAAAAAA
+ AAAAAAAAAAAAAAAAAA&pwd=Q3NuQlNMc2wrSDdON3d3aW94cnZ5Zz09&uuid=WN_XscX-d21
+ RqylhDCXzvP2-Q
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

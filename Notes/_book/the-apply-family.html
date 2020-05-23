@@ -24,7 +24,7 @@
 <meta name="author" content="Hena R. Ramay" />
 
 
-<meta name="date" content="2020-05-22" />
+<meta name="date" content="2020-05-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -204,6 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="project.html"><a href="project.html#setup-1"><i class="fa fa-check"></i><b>6.1</b> Setup</a></li>
 <li class="chapter" data-level="6.2" data-path="project.html"><a href="project.html#task-1"><i class="fa fa-check"></i><b>6.2</b> Task 1</a></li>
 <li class="chapter" data-level="6.3" data-path="project.html"><a href="project.html#task-2"><i class="fa fa-check"></i><b>6.3</b> Task 2</a></li>
+<li class="chapter" data-level="6.4" data-path="project.html"><a href="project.html#task3"><i class="fa fa-check"></i><b>6.4</b> Task3</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="interesting-packages.html"><a href="interesting-packages.html"><i class="fa fa-check"></i><b>7</b> Interesting Packages</a></li>
 <li class="divider"></li>
@@ -383,13 +384,8 @@ lapply(list(1,2,3), multiply, factor = 3)</code></pre>
 <h3><span class="header-section-number">4.3.3</span> sapply can’t simplify, now what?</h3>
 <p>It seems like we’ve hit the jackpot with <code>sapply()</code>. On all of the examples so far, <code>sapply()</code> was able to nicely simplify the rather bulky output of <code>lapply()</code>. But, as with life, there are things you can’t simplify. How does <code>sapply()</code> react?</p>
 <p>We already created a function, <code>below_zero()</code>, that takes a vector of numerical values and returns a vector that only contains the values that are strictly below zero.</p>
-<div id="instructions" class="section level4">
-<h4><span class="header-section-number">4.3.3.1</span> Instructions</h4>
-<ul>
-<li><em>Apply</em> <code>below_zero()</code> <em>over</em> <code>temp</code> <em>using</em> <code>lapply()</code> <em>and store the result in</em> <code>freezing_s</code><em>.</em></li>
-<li><em>Apply</em> <code>below_zero()</code> <em>over</em> <code>temp</code> <em>using</em> <code>sapply()</code><em>. Save the resulting list in a variable</em> <code>freezing_l</code><em>.</em></li>
-<li><em>Compare</em> <code>freezing_l</code> <em>to</em> <code>freezing_s</code> <em>using the</em> <code>identical()</code> <em>function.</em></li>
-</ul>
+<div id="example-6" class="section level4">
+<h4><span class="header-section-number">4.3.3.1</span> Example</h4>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="the-apply-family.html#cb57-1"></a><span class="co"># temp is already prepared for you in the workspace</span></span>
 <span id="cb57-2"><a href="the-apply-family.html#cb57-2"></a><span class="co"># Definition of below_zero()</span></span>
 <span id="cb57-3"><a href="the-apply-family.html#cb57-3"></a>below_zero &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
@@ -411,7 +407,7 @@ lapply(list(1,2,3), multiply, factor = 3)</code></pre>
 <pre><code>vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)</code></pre>
 <p>Over the elements inside <code>X</code>, the function <code>FUN</code> is applied. The <code>FUN.VALUE</code> argument expects a template for the return argument of this function <code>FUN</code>. <code>USE.NAMES</code> is <code>TRUE</code> by default; in this case <code>vapply()</code> tries to generate a named array, if possible.</p>
 <p>For the next set of exercises, you’ll be working on the <code>temp</code> list again, that contains 7 numerical vectors of length 5. We also coded a function <code>basics()</code> that takes a vector, and returns a named vector of length 3, containing the minimum, mean and maximum value of the vector respectively.</p>
-<div id="example-6" class="section level4">
+<div id="example-7" class="section level4">
 <h4><span class="header-section-number">4.4.0.1</span> Example</h4>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="the-apply-family.html#cb60-1"></a><span class="co"># temp is already available in the workspace</span></span>
 <span id="cb60-2"><a href="the-apply-family.html#cb60-2"></a><span class="co"># Definition of basics()</span></span>

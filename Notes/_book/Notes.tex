@@ -113,7 +113,7 @@
 
 \title{Intermediate R Workshop Notes}
 \author{Hena R. Ramay}
-\date{2020-05-22}
+\date{2020-05-23}
 
 \begin{document}
 \maketitle
@@ -623,7 +623,7 @@ R provides the shortcut of not needing to use~\texttt{return}~at the end of the 
 \begin{itemize}
 \tightlist
 \item
-  Write your own function called~\texttt{select\_first}. It should take a vector as input and returns the first element of the list.
+  Write your own function called~\texttt{select\_first}. It should take a vector as input and return the first element of the list.
 \item
   Now use articleType column from counts dataframe and use it as input to select\_first function.
 \end{itemize}
@@ -886,18 +886,8 @@ It seems like we've hit the jackpot with \texttt{sapply()}. On all of the exampl
 
 We already created a function, \texttt{below\_zero()}, that takes a vector of numerical values and returns a vector that only contains the values that are strictly below zero.
 
-\hypertarget{instructions}{%
-\subsubsection{Instructions}\label{instructions}}
-
-\begin{itemize}
-\tightlist
-\item
-  \emph{Apply} \texttt{below\_zero()} \emph{over} \texttt{temp} \emph{using} \texttt{lapply()} \emph{and store the result in} \texttt{freezing\_s}\emph{.}
-\item
-  \emph{Apply} \texttt{below\_zero()} \emph{over} \texttt{temp} \emph{using} \texttt{sapply()}\emph{. Save the resulting list in a variable} \texttt{freezing\_l}\emph{.}
-\item
-  \emph{Compare} \texttt{freezing\_l} \emph{to} \texttt{freezing\_s} \emph{using the} \texttt{identical()} \emph{function.}
-\end{itemize}
+\hypertarget{example-6}{%
+\subsubsection{Example}\label{example-6}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -932,8 +922,8 @@ Over the elements inside \texttt{X}, the function \texttt{FUN} is applied. The \
 
 For the next set of exercises, you'll be working on the \texttt{temp} list again, that contains 7 numerical vectors of length 5. We also coded a function \texttt{basics()} that takes a vector, and returns a named vector of length 3, containing the minimum, mean and maximum value of the vector respectively.
 
-\hypertarget{example-6}{%
-\subsubsection{Example}\label{example-6}}
+\hypertarget{example-7}{%
+\subsubsection{Example}\label{example-7}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1557,7 +1547,7 @@ The _cars_ dataset included in this analysis contains records for 50 cars.
 \hypertarget{setup-1}{%
 \section{Setup}\label{setup-1}}
 
-Please download the files form
+Please download the data folder from Dropbox
 
 \hypertarget{task-1}{%
 \section{Task 1}\label{task-1}}
@@ -1566,17 +1556,41 @@ Please download the files form
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Calculate variance of each column in golub. Hint use one of the apply() function
+  Create a new R Project for this case study.
 \item
-  Order these variances in decreasing order. Use the order() function.
+  Create a new Rmd file to complete your project.
 \item
-  Use the ordered list to order the golub dataframe.
+  Change the auther name of the .Rmd file to your name and add today's date.
 \item
-  Download the corrplot pacakge and use the corrplot function to plot the correlations for the first 20 rows of the ordered golub datafram.
+  Read in all the files in the data folder into single dataframe. Hint: Use for loops to read in all the files.Functions that can be helpful : list.files,read\_csv,rbind,data.frame(NULL)
 \end{enumerate}
 
 \hypertarget{task-2}{%
 \section{Task 2}\label{task-2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write a function that takes a dataframe as input and if present, converts Monthin to 4 yearly quaters and add an extra column to your dataframe/tibble called Quarters with 4 levels: Q1,Q2,Q3 and, Q4.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  When Month is Jan-Mar, Quarter = ``Q1''
+\item
+  When Month is Apr-Jun, Quarter = ``Q2''
+\item
+  When Month is Jul-Sep, Quarter = ``Q3''
+\item
+  When Month is Oct-Dec, Quarter = ``Q4''
+\end{itemize}
+
+Hint: Use mutate and case\_when(), \%in\% and stop() function
+
+\hypertarget{task3}{%
+\section{Task3}\label{task3}}
 
 \hypertarget{interesting-packages}{%
 \chapter{Interesting Packages}\label{interesting-packages}}

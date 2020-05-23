@@ -1,14 +1,56 @@
 # Project
 
 ## Setup
-Please download the files form 
+Please download the data folder from <a href="https://www.dropbox.com/sh/qghmd34hekp1pb9/AAB2cnKXcoYmQbx6Xtuws8Zwa?dl=0">Dropbox</a>
+
 
 
 ## Task 1
-1. Calculate variance of each column in golub. Hint use one of the apply() function
-2. Order these variances in decreasing order. Use the order() function.
-3. Use the ordered list to order the golub dataframe.
-4. Download the corrplot pacakge and use the corrplot function to plot the correlations for the first 20 rows of the ordered golub datafram.
+1. Create a new R Project for this case study. 
+2. Create a new Rmd file to complete your project.
+3. Change the auther name of the .Rmd file to your name and add today's date.
+4. Read in all the files in the data folder into single dataframe. Hint: Use for loops to read in all the files.Functions that can be helpful : list.files,read_csv,rbind,data.frame(NULL)
 
-## Task 2
+<!-- df <- data.frame(NULL) -->
+<!-- list.files(path = "../data/",full.names = T)->files -->
+<!-- for(i in 1:11) { -->
+<!-- +     file_name <-files[i] -->
+<!-- +     df_import <- readr::read_csv(file_name, progress = FALSE) -->
+<!-- +     df <- rbind(df, df_import) -->
+<!-- +     rm(df_import, file_name) -->
+<!-- + } -->
+
+
+## Task 2 
+
+1. Write a function that takes a dataframe as input and if present, converts Monthin to 4 yearly quaters and add an extra column to your dataframe/tibble called Quarters with 4 levels: Q1,Q2,Q3 and, Q4. 
+- When Month is Jan-Mar, Quarter = "Q1"
+- When Month is Apr-Jun, Quarter = "Q2"
+- When Month is Jul-Sep, Quarter = "Q3"
+- When Month is Oct-Dec, Quarter = "Q4"
+
+Hint: Use mutate and case_when(), %in% and stop() function
+
+<!-- m_to_q<-function(dataframe) -->
+<!-- { -->
+<!--  if("Month" %in% colnames(dataframe) ){ -->
+<!-- dataframe <- dataframe %>% -->
+<!--   mutate(Quarter = case_when( -->
+<!--     as.numeric(Month) <= 3 ~ "Q1", -->
+<!--     as.numeric(Month) <= 6 ~ "Q2", -->
+<!--     as.numeric(Month) <= 9 ~ "Q3", -->
+<!--     TRUE                   ~ "Q4" -->
+<!--   ))} else stop("Column Month not found") -->
+<!-- return(dataframe) -->
+<!-- } -->
+
+## Task3
+
+
+
+
+
+
+
+
 
