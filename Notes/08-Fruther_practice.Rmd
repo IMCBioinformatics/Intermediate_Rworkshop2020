@@ -14,3 +14,4 @@ Packages not discussed in the workshop but worth a try!
 3. [strings](img/strings.pdf)
 
 
+These notes are modified from and at some places directly taken from https://jdblischak.github.io/r-intermediate-altmetrics/

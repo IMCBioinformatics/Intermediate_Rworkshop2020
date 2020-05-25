@@ -100,6 +100,17 @@ R provides the shortcut of not needing to use `return` at the end of the funct
 <div class="box">
 #### Exercise {-}
 
-- Write your own function called `select_first`. It should take a vector as input and return the first element of the list.
-- Now use articleType column from counts dataframe and use it as input to select_first function.
+1. Write your own function called `select_first`. It should take a vector as input and return the first element of the list.
+s
+2. Now use articleType column from counts dataframe and use it as input to select_first function.
+3. Now create a function called 'select_el' which takes two arguments, a vector and an index. It should return the value in the index of the vector. For example if I give it a vector x=(10,22,49) and index=2, it should return 22.
+select_el(x,index)
+4. Now add to select_el funciton some code that will spit out an error if the index > length(x). Hint you can use if statement and stop() function.
+
+
+
+
+
+
+
 </div>

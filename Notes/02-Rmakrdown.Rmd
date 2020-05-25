@@ -20,7 +20,7 @@ You can do the same with your dry lab analyses using a tool called R Markdown. W
 
 -   If you update your methodology, you can easily update your results with the click of a button, rather than copying and pasting.
 
--   You *could* cut and paste your code and results into Word or Power Point, but that will make rerunning your code challenging, as Word often introduces hidden characters.
+-   *DONOT* cut and paste your code and results into Word or Power Point as Word often introduces hidden characters and it is not good practice to save your code in Word instread of an R script.
 <br>
 
 R Markdown is a fairly simple language you can use to generate reports that incorporate bits of R code along with the output they produce. There are two steps to generating reports with R Markdown and RStudio:
@@ -80,11 +80,9 @@ Let's add a new chunk to end this demo document. To do so, either you can enter 
 
 In the chunk, let's just examine the dimensions of the `car`mdataset:
 
-<pre>
-```{r, eval=FALSE}
+<pre>```{r}
 dim(cars)
-```
-</pre>
+```</pre>
 
 You can actually send the code straight from the chunks over to console to be evaluated in two ways. First, you can highlight the code you want to run in the chunk and hit the `Run` button, which is located in the top right corner of the pane. 
 
@@ -100,6 +98,19 @@ When you click on this link, you see in the console that RStudio is running and 
 The final result is that an HMTL file will pop up where you'll see the report. You can see the header has been rendered, there are code and results chunks displayed, and even plots are shown right in the report.
 
 Also, if you now look in the altmetrics folder, you'll see an HTML file of the name Rmarkdown_demo.html. When `render` is run, it saves the current version of the .Rmd file and the generated HTML file in the directory it is stored in.
+
+
+<div class="box">
+
+#### Exercise
+
+1. Create a new project for this workshop.
+2. In this project create a new markdown file called rworkshop.Rmd
+3. Change the name of author to yours.
+4. Click on the settings icon next to the knit button and go to output options. Try different themes and see how it changes you html output. Chose a theme that you like!
+</div>
+
+
 
 
 ## Knitr Chunk Options
@@ -193,3 +204,13 @@ Rendered:
 ```
 The _cars_ dataset included in this analysis contains records for `r dim(cars)[1]` cars.
 ```
+
+
+<div class="box">
+
+#### Exercise
+
+Now that you are familiar with chunks, create a chunk in which you do sum=1+1. Now by searching on the web, how can you re-use this chunk later in your rmd file. 
+
+
+</div>
