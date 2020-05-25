@@ -102,7 +102,7 @@ Also, if you now look in the altmetrics folder, you'll see an HTML file of the n
 
 <div class="box">
 
-#### Exercise
+#### Exercise {-}
 
 1. Create a new project for this workshop.
 2. In this project create a new markdown file called rworkshop.Rmd
@@ -208,7 +208,7 @@ The _cars_ dataset included in this analysis contains records for `r dim(cars)[1
 
 <div class="box">
 
-#### Exercise
+#### Exercise {-}
 
 Now that you are familiar with chunks, create a chunk in which you do sum=1+1. Now by searching on the web, how can you re-use this chunk later in your rmd file. 
 
