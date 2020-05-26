@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Intermediate R Workshop Notes</title>
+  <meta name="description" content="Lecture notes from the workshop" />
+  <meta name="generator" content="bookdown 0.18.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Intermediate R Workshop Notes" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Lecture notes from the workshop" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Intermediate R Workshop Notes" />
+  
+  <meta name="twitter:description" content="Lecture notes from the workshop" />
+  
+
+<meta name="author" content="Hena R. Ramay" />
+
+
+<meta name="date" content="2020-05-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="rmarkdown.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Workshop Notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#workshop-schedule"><i class="fa fa-check"></i><b>1.1</b> Workshop Schedule</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#day-1"><i class="fa fa-check"></i>Day 1</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#day-2"><i class="fa fa-check"></i>Day 2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>2</b> Rmarkdown</a><ul>
+<li class="chapter" data-level="2.1" data-path="rmarkdown.html"><a href="rmarkdown.html#set-up-new-r-markdown-file"><i class="fa fa-check"></i><b>2.1</b> Set up new R Markdown file</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="rmarkdown.html"><a href="rmarkdown.html#r-markdown-componenets"><i class="fa fa-check"></i><b>2.1.1</b> R Markdown componenets</a></li>
+<li class="chapter" data-level="2.1.2" data-path="rmarkdown.html"><a href="rmarkdown.html#knit-r-markdown"><i class="fa fa-check"></i><b>2.1.2</b> Knit R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="rmarkdown.html"><a href="rmarkdown.html#knitr-chunk-options"><i class="fa fa-check"></i><b>2.2</b> Knitr Chunk Options</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html"><i class="fa fa-check"></i><b>3</b> Conditionals and Loops</a><ul>
+<li class="chapter" data-level="3.1" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#setup"><i class="fa fa-check"></i><b>3.1</b> Setup</a></li>
+<li class="chapter" data-level="3.2" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#conditional-statements"><i class="fa fa-check"></i><b>3.2</b> Conditional statements</a><ul>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#if"><i class="fa fa-check"></i>if</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#ifelse"><i class="fa fa-check"></i>if…else</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#nested-ifelse-statements"><i class="fa fa-check"></i>Nested if…else statements</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.1"><i class="fa fa-check"></i>EXERCISE 2.1</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#loops"><i class="fa fa-check"></i><b>3.3</b> Loops</a><ul>
+<li><a href="conditionals-and-loops.html#for-loop"><code>for</code> loop</a></li>
+<li><a href="conditionals-and-loops.html#while-loop"><code>while</code> loop</a></li>
+<li class="chapter" data-level="" data-path="conditionals-and-loops.html"><a href="conditionals-and-loops.html#exercise-2.2"><i class="fa fa-check"></i>EXERCISE 2.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>4</b> Functions</a><ul>
+<li class="chapter" data-level="4.1" data-path="functions.html"><a href="functions.html#parts-of-a-function"><i class="fa fa-check"></i><b>4.1</b> Parts of a function</a></li>
+<li class="chapter" data-level="4.2" data-path="functions.html"><a href="functions.html#the-principle-of-encapsulation"><i class="fa fa-check"></i><b>4.2</b> The principle of encapsulation</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="functions.html"><a href="functions.html#environments"><i class="fa fa-check"></i><b>4.2.1</b> Environments</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="functions.html"><a href="functions.html#the-return-statement"><i class="fa fa-check"></i><b>4.3</b> The return statement</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-apply-family.html"><a href="the-apply-family.html"><i class="fa fa-check"></i><b>5</b> The apply family</a><ul>
+<li class="chapter" data-level="5.1" data-path="the-apply-family.html"><a href="the-apply-family.html#apply"><i class="fa fa-check"></i><b>5.1</b> apply()</a></li>
+<li class="chapter" data-level="5.2" data-path="the-apply-family.html"><a href="the-apply-family.html#lapply"><i class="fa fa-check"></i><b>5.2</b> lapply()</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="the-apply-family.html"><a href="the-apply-family.html#use-lapply-with-your-own-function"><i class="fa fa-check"></i><b>5.2.1</b> Use lapply with your own function</a></li>
+<li class="chapter" data-level="5.2.2" data-path="the-apply-family.html"><a href="the-apply-family.html#lapply-and-anonymous-functions"><i class="fa fa-check"></i><b>5.2.2</b> lapply and anonymous functions</a></li>
+<li class="chapter" data-level="5.2.3" data-path="the-apply-family.html"><a href="the-apply-family.html#use-lapply-with-additional-arguments"><i class="fa fa-check"></i><b>5.2.3</b> Use lapply with additional arguments</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply"><i class="fa fa-check"></i><b>5.3</b> sapply()</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply-with-your-own-function"><i class="fa fa-check"></i><b>5.3.1</b> sapply with your own function</a></li>
+<li class="chapter" data-level="5.3.2" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply-with-function-returning-vector"><i class="fa fa-check"></i><b>5.3.2</b> sapply with function returning vector</a></li>
+<li class="chapter" data-level="5.3.3" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply-cant-simplify-now-what"><i class="fa fa-check"></i><b>5.3.3</b> sapply can’t simplify, now what?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="the-apply-family.html"><a href="the-apply-family.html#vapply"><i class="fa fa-check"></i><b>5.4</b> vapply()</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="advanced-plotting.html"><a href="advanced-plotting.html"><i class="fa fa-check"></i><b>6</b> Advanced Plotting</a><ul>
+<li class="chapter" data-level="6.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup-1"><i class="fa fa-check"></i><b>6.1</b> Setup</a></li>
+<li class="chapter" data-level="6.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>6.2</b> Review of ggplot2 basics</a></li>
+<li class="chapter" data-level="6.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#statistics"><i class="fa fa-check"></i><b>6.3</b> Statistics</a></li>
+<li class="chapter" data-level="6.4" data-path="advanced-plotting.html"><a href="advanced-plotting.html#scales"><i class="fa fa-check"></i><b>6.4</b> Scales</a></li>
+<li class="chapter" data-level="6.5" data-path="advanced-plotting.html"><a href="advanced-plotting.html#colour-palettes"><i class="fa fa-check"></i><b>6.5</b> Colour palettes</a><ul>
+<li><a href="advanced-plotting.html#colorramp"><code>colorRamp()</code></a></li>
+<li><a href="advanced-plotting.html#colorramppalette"><code>colorRampPalette()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="advanced-plotting.html"><a href="advanced-plotting.html#faceting"><i class="fa fa-check"></i><b>6.6</b> Faceting</a><ul>
+<li><a href="advanced-plotting.html#facet_wrap"><code>facet_wrap()</code></a></li>
+<li><a href="advanced-plotting.html#facet_grid"><code>facet_grid()</code></a></li>
+<li class="chapter" data-level="" data-path="advanced-plotting.html"><a href="advanced-plotting.html#exercise-5.6"><i class="fa fa-check"></i>Exercise 5.6</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="advanced-plotting.html"><a href="advanced-plotting.html#themes"><i class="fa fa-check"></i><b>6.7</b> Themes</a></li>
+<li class="chapter" data-level="6.8" data-path="advanced-plotting.html"><a href="advanced-plotting.html#multiple-plots"><i class="fa fa-check"></i><b>6.8</b> Multiple plots</a><ul>
+<li><a href="advanced-plotting.html#the-gridextra-package">The <code>gridExtra</code> package</a></li>
+<li><a href="advanced-plotting.html#the-cowplot-package">The <code>cowplot</code> package</a></li>
+<li class="chapter" data-level="6.8.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#saving-plots"><i class="fa fa-check"></i><b>6.8.1</b> Saving plots</a></li>
+<li class="chapter" data-level="" data-path="advanced-plotting.html"><a href="advanced-plotting.html#exercise-8.1"><i class="fa fa-check"></i>Exercise 8.1</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="advanced-plotting.html"><a href="advanced-plotting.html#additional-resources"><i class="fa fa-check"></i><b>6.9</b> Additional Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html"><i class="fa fa-check"></i><b>7</b> Advanced Rmardown</a><ul>
+<li class="chapter" data-level="7.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#yaml-options-for-html-documents"><i class="fa fa-check"></i><b>7.1</b> YAML options for HTML documents</a></li>
+<li class="chapter" data-level="7.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#cool-stuff-in-rmarkdown"><i class="fa fa-check"></i><b>7.2</b> Cool stuff in rmarkdown</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#cheatsheet"><i class="fa fa-check"></i><b>7.2.1</b> CHEATSHEET</a></li>
+<li class="chapter" data-level="7.2.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#making-cools-tables-in-rmarkdown-from-r-code"><i class="fa fa-check"></i><b>7.2.2</b> Making cools tables in rmarkdown from R code</a></li>
+<li class="chapter" data-level="7.2.3" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#making-tabs-in-rmarkdown"><i class="fa fa-check"></i><b>7.2.3</b> Making tabs in rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#html-and-css-basics"><i class="fa fa-check"></i><b>7.3</b> HTML and CSS basics</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#html"><i class="fa fa-check"></i><b>7.3.1</b> HTML</a></li>
+<li class="chapter" data-level="7.3.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#css"><i class="fa fa-check"></i><b>7.3.2</b> CSS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>8</b> Project</a><ul>
+<li class="chapter" data-level="8.1" data-path="project.html"><a href="project.html#setup-2"><i class="fa fa-check"></i><b>8.1</b> Setup</a></li>
+<li class="chapter" data-level="8.2" data-path="project.html"><a href="project.html#task-1"><i class="fa fa-check"></i><b>8.2</b> Task 1</a></li>
+<li class="chapter" data-level="8.3" data-path="project.html"><a href="project.html#task-2"><i class="fa fa-check"></i><b>8.3</b> Task 2</a></li>
+<li class="chapter" data-level="8.4" data-path="project.html"><a href="project.html#task-3"><i class="fa fa-check"></i><b>8.4</b> Task 3</a></li>
+<li class="chapter" data-level="8.5" data-path="project.html"><a href="project.html#task-4"><i class="fa fa-check"></i><b>8.5</b> Task 4</a></li>
+<li class="chapter" data-level="8.6" data-path="project.html"><a href="project.html#task-5"><i class="fa fa-check"></i><b>8.6</b> Task 5</a></li>
+<li class="chapter" data-level="8.7" data-path="project.html"><a href="project.html#task-6"><i class="fa fa-check"></i><b>8.7</b> Task 6</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="usefull-links.html"><a href="usefull-links.html"><i class="fa fa-check"></i><b>9</b> Usefull links</a><ul>
+<li class="chapter" data-level="9.1" data-path="usefull-links.html"><a href="usefull-links.html#cheatsheets"><i class="fa fa-check"></i><b>9.1</b> CheatSheets</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intermediate R Workshop Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Intermediate R Workshop Notes</h1>
+<p class="author"><em>Hena R. Ramay</em></p>
+<p class="date"><em>2020-05-26</em></p>
+</div>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p>This notebook is created so that the particpants of the workshop can follow along with the instructors. We will constantly update this notebook during the workshop to include answers to the questions asked during the workshop. So Please ask a lot of questions!!</p>
+<div id="workshop-schedule" class="section level2">
+<h2><span class="header-section-number">1.1</span> Workshop Schedule</h2>
+<p>We will try to cover the following material in the course:</p>
+<div id="day-1" class="section level3 unnumbered">
+<h3>Day 1</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Time</th>
+<th align="left">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9:00</td>
+<td align="left">Introductions and R markdown basics</td>
+</tr>
+<tr class="even">
+<td align="left">9:30</td>
+<td align="left">Conditionals and Loops</td>
+</tr>
+<tr class="odd">
+<td align="left">10:45</td>
+<td align="left">Functions</td>
+</tr>
+<tr class="even">
+<td align="left">13:00</td>
+<td align="left">Apply family</td>
+</tr>
+<tr class="odd">
+<td align="left">14:00</td>
+<td align="left">Advanced plotting ggplot2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="day-2" class="section level3 unnumbered">
+<h3>Day 2</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Time</th>
+<th align="left">Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9:00</td>
+<td align="left">ggplot continued</td>
+</tr>
+<tr class="even">
+<td align="left">10:45</td>
+<td align="left">Rmarkdown themes, adding html and custom css styling</td>
+</tr>
+<tr class="odd">
+<td align="left">14:00</td>
+<td align="left">A short project to bring it all together!</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="rmarkdown.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Notes.pdf", "Notes.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
