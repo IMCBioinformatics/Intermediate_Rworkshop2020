@@ -24,7 +24,7 @@
 <meta name="author" content="Hena R. Ramay" />
 
 
-<meta name="date" content="2020-05-25" />
+<meta name="date" content="2020-05-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="functions.html"/>
-<link rel="next" href="advanced-plotting.html"/>
+<link rel="next" href="advanced-rmardown.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,6 +50,21 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.13/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<script src="libs/jszip-1.10.20/jszip.min.js"></script>
+<link href="libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
 
 
 <style type="text/css">
@@ -180,35 +195,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.3" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply-cant-simplify-now-what"><i class="fa fa-check"></i><b>5.3.3</b> sapply can’t simplify, now what?</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="the-apply-family.html"><a href="the-apply-family.html#vapply"><i class="fa fa-check"></i><b>5.4</b> vapply()</a></li>
+<li class="chapter" data-level="5.5" data-path="the-apply-family.html"><a href="the-apply-family.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>5.5</b> Review of ggplot2 basics</a></li>
+<li class="chapter" data-level="5.6" data-path="the-apply-family.html"><a href="the-apply-family.html#statistics"><i class="fa fa-check"></i><b>5.6</b> Statistics</a></li>
+<li class="chapter" data-level="5.7" data-path="the-apply-family.html"><a href="the-apply-family.html#scales"><i class="fa fa-check"></i><b>5.7</b> Scales</a></li>
+<li class="chapter" data-level="5.8" data-path="the-apply-family.html"><a href="the-apply-family.html#colour-palettes"><i class="fa fa-check"></i><b>5.8</b> Colour palettes</a><ul>
+<li><a href="the-apply-family.html#colorramp"><code>colorRamp()</code></a></li>
+<li><a href="the-apply-family.html#colorramppalette"><code>colorRampPalette()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="advanced-plotting.html"><a href="advanced-plotting.html"><i class="fa fa-check"></i><b>6</b> Advanced Plotting</a><ul>
-<li class="chapter" data-level="6.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup-1"><i class="fa fa-check"></i><b>6.1</b> Setup</a></li>
-<li class="chapter" data-level="6.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>6.2</b> Review of ggplot2 basics</a></li>
-<li class="chapter" data-level="6.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#statistics"><i class="fa fa-check"></i><b>6.3</b> Statistics</a></li>
-<li class="chapter" data-level="6.4" data-path="advanced-plotting.html"><a href="advanced-plotting.html#scales"><i class="fa fa-check"></i><b>6.4</b> Scales</a></li>
-<li class="chapter" data-level="6.5" data-path="advanced-plotting.html"><a href="advanced-plotting.html#colour-palettes"><i class="fa fa-check"></i><b>6.5</b> Colour palettes</a><ul>
-<li><a href="advanced-plotting.html#colorramp"><code>colorRamp()</code></a></li>
-<li><a href="advanced-plotting.html#colorramppalette"><code>colorRampPalette()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="the-apply-family.html"><a href="the-apply-family.html#faceting"><i class="fa fa-check"></i><b>5.9</b> Faceting</a><ul>
+<li><a href="the-apply-family.html#facet_wrap"><code>facet_wrap()</code></a></li>
+<li><a href="the-apply-family.html#facet_grid"><code>facet_grid()</code></a></li>
+<li class="chapter" data-level="" data-path="the-apply-family.html"><a href="the-apply-family.html#exercise-5.6"><i class="fa fa-check"></i>Exercise 5.6</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="advanced-plotting.html"><a href="advanced-plotting.html#faceting"><i class="fa fa-check"></i><b>6.6</b> Faceting</a><ul>
-<li><a href="advanced-plotting.html#facet_wrap"><code>facet_wrap()</code></a></li>
-<li><a href="advanced-plotting.html#facet_grid"><code>facet_grid()</code></a></li>
-<li class="chapter" data-level="" data-path="advanced-plotting.html"><a href="advanced-plotting.html#exercise-5.6"><i class="fa fa-check"></i>Exercise 5.6</a></li>
+<li class="chapter" data-level="5.10" data-path="the-apply-family.html"><a href="the-apply-family.html#themes"><i class="fa fa-check"></i><b>5.10</b> Themes</a></li>
+<li class="chapter" data-level="5.11" data-path="the-apply-family.html"><a href="the-apply-family.html#multiple-plots"><i class="fa fa-check"></i><b>5.11</b> Multiple plots</a><ul>
+<li><a href="the-apply-family.html#the-gridextra-package">The <code>gridExtra</code> package</a></li>
+<li><a href="the-apply-family.html#the-cowplot-package">The <code>cowplot</code> package</a></li>
+<li class="chapter" data-level="5.11.1" data-path="the-apply-family.html"><a href="the-apply-family.html#saving-plots"><i class="fa fa-check"></i><b>5.11.1</b> Saving plots</a></li>
+<li class="chapter" data-level="" data-path="the-apply-family.html"><a href="the-apply-family.html#exercise-8.1"><i class="fa fa-check"></i>Exercise 8.1</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="advanced-plotting.html"><a href="advanced-plotting.html#themes"><i class="fa fa-check"></i><b>6.7</b> Themes</a></li>
-<li class="chapter" data-level="6.8" data-path="advanced-plotting.html"><a href="advanced-plotting.html#multiple-plots"><i class="fa fa-check"></i><b>6.8</b> Multiple plots</a><ul>
-<li><a href="advanced-plotting.html#the-gridextra-package">The <code>gridExtra</code> package</a></li>
-<li><a href="advanced-plotting.html#the-cowplot-package">The <code>cowplot</code> package</a></li>
-<li class="chapter" data-level="6.8.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#saving-plots"><i class="fa fa-check"></i><b>6.8.1</b> Saving plots</a></li>
-<li class="chapter" data-level="" data-path="advanced-plotting.html"><a href="advanced-plotting.html#exercise-8.1"><i class="fa fa-check"></i>Exercise 8.1</a></li>
+<li class="chapter" data-level="5.12" data-path="the-apply-family.html"><a href="the-apply-family.html#additional-resources"><i class="fa fa-check"></i><b>5.12</b> Additional Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6.9" data-path="advanced-plotting.html"><a href="advanced-plotting.html#additional-resources"><i class="fa fa-check"></i><b>6.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="6" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html"><i class="fa fa-check"></i><b>6</b> Advanced Rmardown</a><ul>
+<li class="chapter" data-level="6.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#yaml-options-for-html-documents"><i class="fa fa-check"></i><b>6.1</b> YAML options for HTML documents</a></li>
+<li class="chapter" data-level="6.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#cool-stuff-in-rmarkdown"><i class="fa fa-check"></i><b>6.2</b> Cool stuff in rmarkdown</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#making-tabs-in-rmarkdown"><i class="fa fa-check"></i><b>6.2.1</b> Making tabs in rmarkdown</a></li>
+<li class="chapter" data-level="6.2.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#css"><i class="fa fa-check"></i><b>6.2.2</b> CSS</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>7</b> Project</a><ul>
-<li class="chapter" data-level="7.1" data-path="project.html"><a href="project.html#setup-2"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
+<li class="chapter" data-level="7.1" data-path="project.html"><a href="project.html#setup-1"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
 <li class="chapter" data-level="7.2" data-path="project.html"><a href="project.html#task-1"><i class="fa fa-check"></i><b>7.2</b> Task 1</a></li>
 <li class="chapter" data-level="7.3" data-path="project.html"><a href="project.html#task-2"><i class="fa fa-check"></i><b>7.3</b> Task 2</a></li>
-<li class="chapter" data-level="7.4" data-path="project.html"><a href="project.html#task3"><i class="fa fa-check"></i><b>7.4</b> Task3</a></li>
+<li class="chapter" data-level="7.4" data-path="project.html"><a href="project.html#task-3"><i class="fa fa-check"></i><b>7.4</b> Task 3</a></li>
+<li class="chapter" data-level="7.5" data-path="project.html"><a href="project.html#task-4"><i class="fa fa-check"></i><b>7.5</b> Task 4</a></li>
+<li class="chapter" data-level="7.6" data-path="project.html"><a href="project.html#task-5"><i class="fa fa-check"></i><b>7.6</b> Task 5</a></li>
+<li class="chapter" data-level="7.7" data-path="project.html"><a href="project.html#task-6"><i class="fa fa-check"></i><b>7.7</b> Task 6</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="usefull-links.html"><a href="usefull-links.html"><i class="fa fa-check"></i><b>8</b> Usefull links</a><ul>
 <li class="chapter" data-level="8.1" data-path="usefull-links.html"><a href="usefull-links.html#cheatsheets"><i class="fa fa-check"></i><b>8.1</b> CheatSheets</a></li>
@@ -246,16 +268,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This function takes 3 arguments:</p>
 <pre><code>apply(X, MARGIN, FUN)</code></pre>
 <p>apply() takes an array or matrix <code>X</code>, a <code>Margin</code> that takes a value 1 for rows or 2 for columns and applies a functoin <code>FUN</code> to it.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="the-apply-family.html#cb2-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(C&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>),<span class="dt">nrow=</span><span class="dv">5</span>, <span class="dt">ncol=</span><span class="dv">6</span>)</span>
-<span id="cb2-2"><a href="the-apply-family.html#cb2-2"></a>m1</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="the-apply-family.html#cb36-1"></a>m1 &lt;-<span class="st"> </span><span class="kw">matrix</span>(C&lt;-(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>),<span class="dt">nrow=</span><span class="dv">5</span>, <span class="dt">ncol=</span><span class="dv">6</span>)</span>
+<span id="cb36-2"><a href="the-apply-family.html#cb36-2"></a>m1</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]    1    6    1    6    1    6
 ## [2,]    2    7    2    7    2    7
 ## [3,]    3    8    3    8    3    8
 ## [4,]    4    9    4    9    4    9
 ## [5,]    5   10    5   10    5   10</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="the-apply-family.html#cb4-1"></a>a_m1 &lt;-<span class="st"> </span><span class="kw">apply</span>(m1, <span class="dv">2</span>, sum)</span>
-<span id="cb4-2"><a href="the-apply-family.html#cb4-2"></a>a_m1</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="the-apply-family.html#cb38-1"></a>a_m1 &lt;-<span class="st"> </span><span class="kw">apply</span>(m1, <span class="dv">2</span>, sum)</span>
+<span id="cb38-2"><a href="the-apply-family.html#cb38-2"></a>a_m1</span></code></pre></div>
 <pre><code>## [1] 15 40 15 40 15 40</code></pre>
 <p><img src="img/apply.png" /></p>
 <div class="box">
@@ -276,15 +298,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Now that you are truly brushing up on your data science skills, let’s revisit some of the most relevant figures in data science history. We’ve compiled a vector of famous mathematicians/statisticians and the year they were born. Up to you to extract some information!</p>
 <div id="example" class="section level4">
 <h4><span class="header-section-number">5.2.0.1</span> Example</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="the-apply-family.html#cb7-1"></a><span class="co"># The vector pioneers has already been created for you</span></span>
-<span id="cb7-2"><a href="the-apply-family.html#cb7-2"></a>pioneers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;GAUSS:1777&quot;</span>, <span class="st">&quot;BAYES:1702&quot;</span>, <span class="st">&quot;PASCAL:1623&quot;</span>, <span class="st">&quot;PEARSON:1857&quot;</span>)</span>
-<span id="cb7-3"><a href="the-apply-family.html#cb7-3"></a></span>
-<span id="cb7-4"><a href="the-apply-family.html#cb7-4"></a><span class="co"># Split names from birth year to make split_math a list</span></span>
-<span id="cb7-5"><a href="the-apply-family.html#cb7-5"></a>split_math &lt;-<span class="st"> </span><span class="kw">strsplit</span>(pioneers, <span class="dt">split =</span> <span class="st">&quot;:&quot;</span>)</span>
-<span id="cb7-6"><a href="the-apply-family.html#cb7-6"></a><span class="co"># Convert to lowercase strings: split_low</span></span>
-<span id="cb7-7"><a href="the-apply-family.html#cb7-7"></a>split_low &lt;-<span class="st"> </span><span class="kw">lapply</span>(split_math, tolower)</span>
-<span id="cb7-8"><a href="the-apply-family.html#cb7-8"></a><span class="co"># Take a look at the structure of split_low</span></span>
-<span id="cb7-9"><a href="the-apply-family.html#cb7-9"></a><span class="kw">str</span>(split_low)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="the-apply-family.html#cb41-1"></a><span class="co"># The vector pioneers has already been created for you</span></span>
+<span id="cb41-2"><a href="the-apply-family.html#cb41-2"></a>pioneers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;GAUSS:1777&quot;</span>, <span class="st">&quot;BAYES:1702&quot;</span>, <span class="st">&quot;PASCAL:1623&quot;</span>, <span class="st">&quot;PEARSON:1857&quot;</span>)</span>
+<span id="cb41-3"><a href="the-apply-family.html#cb41-3"></a></span>
+<span id="cb41-4"><a href="the-apply-family.html#cb41-4"></a><span class="co"># Split names from birth year to make split_math a list</span></span>
+<span id="cb41-5"><a href="the-apply-family.html#cb41-5"></a>split_math &lt;-<span class="st"> </span><span class="kw">strsplit</span>(pioneers, <span class="dt">split =</span> <span class="st">&quot;:&quot;</span>)</span>
+<span id="cb41-6"><a href="the-apply-family.html#cb41-6"></a><span class="co"># Convert to lowercase strings: split_low</span></span>
+<span id="cb41-7"><a href="the-apply-family.html#cb41-7"></a>split_low &lt;-<span class="st"> </span><span class="kw">lapply</span>(split_math, tolower)</span>
+<span id="cb41-8"><a href="the-apply-family.html#cb41-8"></a><span class="co"># Take a look at the structure of split_low</span></span>
+<span id="cb41-9"><a href="the-apply-family.html#cb41-9"></a><span class="kw">str</span>(split_low)</span></code></pre></div>
 <pre><code>## List of 4
 ##  $ : chr [1:2] &quot;gauss&quot; &quot;1777&quot;
 ##  $ : chr [1:2] &quot;bayes&quot; &quot;1702&quot;
@@ -317,8 +339,8 @@ select_first &lt;- function(x) { x[1] }
 lapply(list(1,2,3), function(x) {x[1]})</code></pre>
 <div id="example-1" class="section level4">
 <h4><span class="header-section-number">5.2.2.1</span> Example</h4>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="the-apply-family.html#cb10-1"></a><span class="co"># Transform: use anonymous function inside lapply</span></span>
-<span id="cb10-2"><a href="the-apply-family.html#cb10-2"></a>names &lt;-<span class="st"> </span><span class="kw">lapply</span>(split_low, <span class="cf">function</span>(x) { x[<span class="dv">1</span>] })</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="the-apply-family.html#cb44-1"></a><span class="co"># Transform: use anonymous function inside lapply</span></span>
+<span id="cb44-2"><a href="the-apply-family.html#cb44-2"></a>names &lt;-<span class="st"> </span><span class="kw">lapply</span>(split_low, <span class="cf">function</span>(x) { x[<span class="dv">1</span>] })</span></code></pre></div>
 </div>
 </div>
 <div id="use-lapply-with-additional-arguments" class="section level3">
@@ -332,13 +354,13 @@ lapply(list(1,2,3), multiply, factor = 3)</code></pre>
 <p>On the right we’ve included a generic version of the select functions that you’ve coded earlier: <code>select_el()</code>. It takes a vector as its first argument, and an index as its second argument. It returns the vector’s element at the specified index.</p>
 <div id="example-2" class="section level4">
 <h4><span class="header-section-number">5.2.3.1</span> Example</h4>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="the-apply-family.html#cb12-1"></a><span class="co"># Generic select function</span></span>
-<span id="cb12-2"><a href="the-apply-family.html#cb12-2"></a>select_el &lt;-<span class="st"> </span><span class="cf">function</span>(x, index) {</span>
-<span id="cb12-3"><a href="the-apply-family.html#cb12-3"></a>  x[index]</span>
-<span id="cb12-4"><a href="the-apply-family.html#cb12-4"></a>}</span>
-<span id="cb12-5"><a href="the-apply-family.html#cb12-5"></a><span class="co"># Use lapply() twice on split_low: names and years</span></span>
-<span id="cb12-6"><a href="the-apply-family.html#cb12-6"></a>names &lt;-<span class="st"> </span><span class="kw">lapply</span>(split_low, select_el, <span class="dt">index =</span> <span class="dv">1</span>)</span>
-<span id="cb12-7"><a href="the-apply-family.html#cb12-7"></a>years &lt;-<span class="st"> </span><span class="kw">lapply</span>(split_low, select_el, <span class="dt">index =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="the-apply-family.html#cb46-1"></a><span class="co"># Generic select function</span></span>
+<span id="cb46-2"><a href="the-apply-family.html#cb46-2"></a>select_el &lt;-<span class="st"> </span><span class="cf">function</span>(x, index) {</span>
+<span id="cb46-3"><a href="the-apply-family.html#cb46-3"></a>  x[index]</span>
+<span id="cb46-4"><a href="the-apply-family.html#cb46-4"></a>}</span>
+<span id="cb46-5"><a href="the-apply-family.html#cb46-5"></a><span class="co"># Use lapply() twice on split_low: names and years</span></span>
+<span id="cb46-6"><a href="the-apply-family.html#cb46-6"></a>names &lt;-<span class="st"> </span><span class="kw">lapply</span>(split_low, select_el, <span class="dt">index =</span> <span class="dv">1</span>)</span>
+<span id="cb46-7"><a href="the-apply-family.html#cb46-7"></a>years &lt;-<span class="st"> </span><span class="kw">lapply</span>(split_low, select_el, <span class="dt">index =</span> <span class="dv">2</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -348,8 +370,8 @@ lapply(list(1,2,3), multiply, factor = 3)</code></pre>
 <pre><code>sapply(X, FUN, ...)</code></pre>
 <div id="example-3" class="section level4">
 <h4><span class="header-section-number">5.3.0.1</span> Example</h4>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="the-apply-family.html#cb14-1"></a><span class="co"># Constructing temp variable</span></span>
-<span id="cb14-2"><a href="the-apply-family.html#cb14-2"></a>names &lt;-<span class="st"> </span><span class="kw">sapply</span>(split_low, select_el, <span class="dt">index =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="the-apply-family.html#cb48-1"></a><span class="co"># Constructing temp variable</span></span>
+<span id="cb48-2"><a href="the-apply-family.html#cb48-2"></a>names &lt;-<span class="st"> </span><span class="kw">sapply</span>(split_low, select_el, <span class="dt">index =</span> <span class="dv">1</span>)</span></code></pre></div>
 </div>
 <div id="sapply-with-your-own-function" class="section level3">
 <h3><span class="header-section-number">5.3.1</span> sapply with your own function</h3>
@@ -362,13 +384,13 @@ lapply(list(1,2,3), multiply, factor = 3)</code></pre>
 <p>In the previous exercises, you’ve seen how <code>sapply()</code> simplifies the list that <code>lapply()</code> would return by turning it into a vector. But what if the function you’re applying over a list or a vector returns a vector of length greater than 1? If you don’t remember from the video, don’t waste more time in the valley of ignorance and head over to the instructions!</p>
 <div id="example-4" class="section level4">
 <h4><span class="header-section-number">5.3.2.1</span> Example</h4>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="the-apply-family.html#cb16-1"></a>temp=<span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>),<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>))</span>
-<span id="cb16-2"><a href="the-apply-family.html#cb16-2"></a><span class="co"># Create a function that returns min and max of a vector: extremes</span></span>
-<span id="cb16-3"><a href="the-apply-family.html#cb16-3"></a>extremes &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb16-4"><a href="the-apply-family.html#cb16-4"></a>  <span class="kw">c</span>(<span class="dt">min =</span> <span class="kw">min</span>(x), <span class="dt">max =</span> <span class="kw">max</span>(x))</span>
-<span id="cb16-5"><a href="the-apply-family.html#cb16-5"></a>}</span>
-<span id="cb16-6"><a href="the-apply-family.html#cb16-6"></a><span class="co"># Apply extremes() over temp with lapply()</span></span>
-<span id="cb16-7"><a href="the-apply-family.html#cb16-7"></a><span class="kw">lapply</span>(temp, extremes)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="the-apply-family.html#cb50-1"></a>temp=<span class="kw">list</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>),<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">9</span>))</span>
+<span id="cb50-2"><a href="the-apply-family.html#cb50-2"></a><span class="co"># Create a function that returns min and max of a vector: extremes</span></span>
+<span id="cb50-3"><a href="the-apply-family.html#cb50-3"></a>extremes &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb50-4"><a href="the-apply-family.html#cb50-4"></a>  <span class="kw">c</span>(<span class="dt">min =</span> <span class="kw">min</span>(x), <span class="dt">max =</span> <span class="kw">max</span>(x))</span>
+<span id="cb50-5"><a href="the-apply-family.html#cb50-5"></a>}</span>
+<span id="cb50-6"><a href="the-apply-family.html#cb50-6"></a><span class="co"># Apply extremes() over temp with lapply()</span></span>
+<span id="cb50-7"><a href="the-apply-family.html#cb50-7"></a><span class="kw">lapply</span>(temp, extremes)</span></code></pre></div>
 <pre><code>## [[1]]
 ## min max 
 ##   1   6 
@@ -376,8 +398,8 @@ lapply(list(1,2,3), multiply, factor = 3)</code></pre>
 ## [[2]]
 ## min max 
 ##   3   9</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="the-apply-family.html#cb18-1"></a><span class="co"># Apply extremes() over temp with sapply()</span></span>
-<span id="cb18-2"><a href="the-apply-family.html#cb18-2"></a><span class="kw">sapply</span>(temp, extremes)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="the-apply-family.html#cb52-1"></a><span class="co"># Apply extremes() over temp with sapply()</span></span>
+<span id="cb52-2"><a href="the-apply-family.html#cb52-2"></a><span class="kw">sapply</span>(temp, extremes)</span></code></pre></div>
 <pre><code>##     [,1] [,2]
 ## min    1    3
 ## max    6    9</code></pre>
@@ -389,17 +411,17 @@ lapply(list(1,2,3), multiply, factor = 3)</code></pre>
 <p>We already created a function, <code>below_zero()</code>, that takes a vector of numerical values and returns a vector that only contains the values that are strictly below zero.</p>
 <div id="example-5" class="section level4">
 <h4><span class="header-section-number">5.3.3.1</span> Example</h4>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="the-apply-family.html#cb20-1"></a><span class="co"># temp is already prepared for you in the workspace</span></span>
-<span id="cb20-2"><a href="the-apply-family.html#cb20-2"></a><span class="co"># Definition of below_zero()</span></span>
-<span id="cb20-3"><a href="the-apply-family.html#cb20-3"></a>below_zero &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb20-4"><a href="the-apply-family.html#cb20-4"></a>  <span class="kw">return</span>(x[x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>])</span>
-<span id="cb20-5"><a href="the-apply-family.html#cb20-5"></a>}</span>
-<span id="cb20-6"><a href="the-apply-family.html#cb20-6"></a><span class="co"># Apply below_zero over temp using lapply(): freezing_l</span></span>
-<span id="cb20-7"><a href="the-apply-family.html#cb20-7"></a>freezing_l &lt;-<span class="st"> </span><span class="kw">lapply</span>(temp, below_zero)</span>
-<span id="cb20-8"><a href="the-apply-family.html#cb20-8"></a><span class="co"># Apply below_zero over temp using sapply(): freezing_s</span></span>
-<span id="cb20-9"><a href="the-apply-family.html#cb20-9"></a>freezing_s &lt;-<span class="st"> </span><span class="kw">sapply</span>(temp, below_zero)</span>
-<span id="cb20-10"><a href="the-apply-family.html#cb20-10"></a><span class="co"># Are freezing_l and freezing_s identical?</span></span>
-<span id="cb20-11"><a href="the-apply-family.html#cb20-11"></a><span class="kw">identical</span>(freezing_l, freezing_s)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="the-apply-family.html#cb54-1"></a><span class="co"># temp is already prepared for you in the workspace</span></span>
+<span id="cb54-2"><a href="the-apply-family.html#cb54-2"></a><span class="co"># Definition of below_zero()</span></span>
+<span id="cb54-3"><a href="the-apply-family.html#cb54-3"></a>below_zero &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb54-4"><a href="the-apply-family.html#cb54-4"></a>  <span class="kw">return</span>(x[x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>])</span>
+<span id="cb54-5"><a href="the-apply-family.html#cb54-5"></a>}</span>
+<span id="cb54-6"><a href="the-apply-family.html#cb54-6"></a><span class="co"># Apply below_zero over temp using lapply(): freezing_l</span></span>
+<span id="cb54-7"><a href="the-apply-family.html#cb54-7"></a>freezing_l &lt;-<span class="st"> </span><span class="kw">lapply</span>(temp, below_zero)</span>
+<span id="cb54-8"><a href="the-apply-family.html#cb54-8"></a><span class="co"># Apply below_zero over temp using sapply(): freezing_s</span></span>
+<span id="cb54-9"><a href="the-apply-family.html#cb54-9"></a>freezing_s &lt;-<span class="st"> </span><span class="kw">sapply</span>(temp, below_zero)</span>
+<span id="cb54-10"><a href="the-apply-family.html#cb54-10"></a><span class="co"># Are freezing_l and freezing_s identical?</span></span>
+<span id="cb54-11"><a href="the-apply-family.html#cb54-11"></a><span class="kw">identical</span>(freezing_l, freezing_s)</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 </div>
 </div>
@@ -412,26 +434,394 @@ lapply(list(1,2,3), multiply, factor = 3)</code></pre>
 <p>For the next set of exercises, you’ll be working on the <code>temp</code> list again, that contains 7 numerical vectors of length 5. We also coded a function <code>basics()</code> that takes a vector, and returns a named vector of length 3, containing the minimum, mean and maximum value of the vector respectively.</p>
 <div id="example-6" class="section level4">
 <h4><span class="header-section-number">5.4.0.1</span> Example</h4>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="the-apply-family.html#cb23-1"></a><span class="co"># temp is already available in the workspace</span></span>
-<span id="cb23-2"><a href="the-apply-family.html#cb23-2"></a><span class="co"># Definition of basics()</span></span>
-<span id="cb23-3"><a href="the-apply-family.html#cb23-3"></a>basics &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb23-4"><a href="the-apply-family.html#cb23-4"></a>  <span class="kw">c</span>(<span class="dt">min =</span> <span class="kw">min</span>(x), <span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">max =</span> <span class="kw">max</span>(x))</span>
-<span id="cb23-5"><a href="the-apply-family.html#cb23-5"></a>}</span>
-<span id="cb23-6"><a href="the-apply-family.html#cb23-6"></a><span class="co"># Apply basics() over temp using vapply()</span></span>
-<span id="cb23-7"><a href="the-apply-family.html#cb23-7"></a><span class="kw">vapply</span>(temp, basics, <span class="kw">numeric</span>(<span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="the-apply-family.html#cb57-1"></a><span class="co"># temp is already available in the workspace</span></span>
+<span id="cb57-2"><a href="the-apply-family.html#cb57-2"></a><span class="co"># Definition of basics()</span></span>
+<span id="cb57-3"><a href="the-apply-family.html#cb57-3"></a>basics &lt;-<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb57-4"><a href="the-apply-family.html#cb57-4"></a>  <span class="kw">c</span>(<span class="dt">min =</span> <span class="kw">min</span>(x), <span class="dt">mean =</span> <span class="kw">mean</span>(x), <span class="dt">max =</span> <span class="kw">max</span>(x))</span>
+<span id="cb57-5"><a href="the-apply-family.html#cb57-5"></a>}</span>
+<span id="cb57-6"><a href="the-apply-family.html#cb57-6"></a><span class="co"># Apply basics() over temp using vapply()</span></span>
+<span id="cb57-7"><a href="the-apply-family.html#cb57-7"></a><span class="kw">vapply</span>(temp, basics, <span class="kw">numeric</span>(<span class="dv">3</span>))</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## min   1.0    3
 ## mean  3.6    6
 ## max   6.0    9</code></pre>
 <div class="box">
-<h4 id="exercise-5"><span class="header-section-number">5.4.0.1</span> Exercise</h4>
-<p><code>article&lt;-list(counts$year,counts$articleType)</code>
-<br>
-Use the table() function and one of the apply functions to see how many counts of each year and articleType are available.
-Explain which function you used and what does the output look like?</p>
 </div>
+<div id="exercise-5" class="section level4">
+<h4><span class="header-section-number">5.4.0.2</span> Exercise</h4>
+<pre class="article&lt;-list(counts$year,counts$articletype)```"><code>&lt;br&gt;
+Use the table() function and one of the apply functions to see how many counts of each year and articleType are available. 
+Explain which function you used and what does the output look like?
 
+&lt;/div&gt;
+
+
+
+
+
+
+
+&lt;!--chapter:end:05-Apply_family.Rmd--&gt;
+
+# Advanced Plotting 
+
+&quot;The greatest value of a picture is when it forces us to notice what we never expected to see&quot;
+-John Tukey
+
+---
+
+## Setup
+
+**1. Install the `tidyverse` package.**
+
+
+```r
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ tibble  3.0.1     ✓ dplyr   0.8.5
+## ✓ tidyr   1.0.3     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0
+## ✓ purrr   0.3.4</code></pre>
+<pre><code>## ── Conflicts ───────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<p><strong>2. Filter data.</strong></p>
+<p>We will be using the publication dataset that we read into R in Chapter 2 as <code>counts</code>.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="the-apply-family.html#cb63-1"></a>research &lt;-<span class="st"> </span><span class="kw">filter</span>(counts, articleType <span class="op">==</span><span class="st"> &quot;Research Article&quot;</span>)</span></code></pre></div>
 </div>
+</div>
+<div id="review-of-ggplot2-basics" class="section level2">
+<h2><span class="header-section-number">5.5</span> Review of ggplot2 basics</h2>
+<p><code>ggplot2</code> is a plotting package that makes it simple to create complex plots from data in a data frame. Graphics are built step by step by adding new elements. Adding layers in this fashion allows for extensive flexibility and customization of plots.</p>
+<p>A plot can be divided into different fundamental parts:</p>
+<p><strong>Plot = data + aesthetics + geom</strong></p>
+<p>Required building blocks:</p>
+<ul>
+<li>data</li>
+<li>aesthetics - describe how data are mapped to colour, size, shape, location</li>
+<li>geoms - geometric objects like points, lines, shapes</li>
+</ul>
+<p>Optional building blocks:</p>
+<ul>
+<li>facets - describes how panel plots should be constructed</li>
+<li>stats - statistical transformations like binning, quantiles, smoothing</li>
+<li>coordinates - describes the system in which the locations of the geoms will be drawn</li>
+<li>scales - what scale an aesthetic map uses (ex. male = red, female = blue)</li>
+</ul>
+<p>To build a ggplot, we will use the following basic template that can be used for different types of plots:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="the-apply-family.html#cb64-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>)) <span class="op">+</span><span class="st"> </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>()</span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>Specify which data set to use for the plot using the <code>data</code> argument.</p></li>
+<li><p>Define a “mapping” (using the aesthetic (<code>aes</code>) function), by selecting the variables to be plotted and specifying how to present them in the graph, e.g. as x/y positions or characteristics such as size, shape, color, etc.</p></li>
+<li><p>Add “geoms” – graphical representations of the data in the plot (points, lines, bars). <code>ggplot2</code> offers many different geoms; common ones include:</p></li>
+</ol>
+<ul>
+<li><code>geom_point()</code> for scatter plots, dot plots, etc.</li>
+<li><code>geom_boxplot()</code> for boxplots.</li>
+<li><code>geom_histogram()</code> for histograms.</li>
+<li><code>geom_barplot()</code> for barplots.</li>
+<li><code>geom_line()</code> for trend lines, time series, etc.</li>
+</ul>
+<p>Example:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="the-apply-family.html#cb65-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>( <span class="dt">x =</span> pdfDownloadsCount, <span class="dt">y =</span> wosCountThru2011)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>()</span>
+<span id="cb65-2"><a href="the-apply-family.html#cb65-2"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>Adding aesthetics:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="the-apply-family.html#cb66-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> pdfDownloadsCount,</span>
+<span id="cb66-2"><a href="the-apply-family.html#cb66-2"></a>                          <span class="dt">y =</span> wosCountThru2011)) <span class="op">+</span></span>
+<span id="cb66-3"><a href="the-apply-family.html#cb66-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> journal))</span>
+<span id="cb66-4"><a href="the-apply-family.html#cb66-4"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+</div>
+<div id="statistics" class="section level2">
+<h2><span class="header-section-number">5.6</span> Statistics</h2>
+<p>The function <code>geom_smooth()</code> adds a loess curve to the data along with a 95% confidence interval.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="the-apply-family.html#cb67-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> pdfDownloadsCount,</span>
+<span id="cb67-2"><a href="the-apply-family.html#cb67-2"></a>                          <span class="dt">y =</span> wosCountThru2011)) <span class="op">+</span></span>
+<span id="cb67-3"><a href="the-apply-family.html#cb67-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> journal)) <span class="op">+</span></span>
+<span id="cb67-4"><a href="the-apply-family.html#cb67-4"></a><span class="st">  </span><span class="kw">geom_smooth</span>()</span>
+<span id="cb67-5"><a href="the-apply-family.html#cb67-5"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>If we move the colour to the base ggplot call, we get loess curves for each level of that factor.</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="the-apply-family.html#cb68-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> pdfDownloadsCount, </span>
+<span id="cb68-2"><a href="the-apply-family.html#cb68-2"></a>                          <span class="dt">y =</span> wosCountThru2011, </span>
+<span id="cb68-3"><a href="the-apply-family.html#cb68-3"></a>                          <span class="dt">color =</span> journal)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb68-4"><a href="the-apply-family.html#cb68-4"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb68-5"><a href="the-apply-family.html#cb68-5"></a><span class="st">  </span><span class="kw">geom_smooth</span>()</span>
+<span id="cb68-6"><a href="the-apply-family.html#cb68-6"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p>Check the help page for the function <code>geom_smooth()</code> for more information about how the curve is made. For example, to map a linear model onto the plot, you can choose <code>method = "lm"</code>.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="the-apply-family.html#cb69-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> pdfDownloadsCount, </span>
+<span id="cb69-2"><a href="the-apply-family.html#cb69-2"></a>                          <span class="dt">y =</span> wosCountThru2011, </span>
+<span id="cb69-3"><a href="the-apply-family.html#cb69-3"></a>                          <span class="dt">color =</span> journal)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb69-4"><a href="the-apply-family.html#cb69-4"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb69-5"><a href="the-apply-family.html#cb69-5"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb69-6"><a href="the-apply-family.html#cb69-6"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+</div>
+<div id="scales" class="section level2">
+<h2><span class="header-section-number">5.7</span> Scales</h2>
+<p>Now let’s look at the relationship between days since published and citation count.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="the-apply-family.html#cb70-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb70-2"><a href="the-apply-family.html#cb70-2"></a>                          <span class="dt">y =</span> wosCountThru2011)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb70-3"><a href="the-apply-family.html#cb70-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span> journal))</span>
+<span id="cb70-4"><a href="the-apply-family.html#cb70-4"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p>It looks like most of the citation counts are close to 0. We can quickly check the distribution of this variable using a qplot.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="the-apply-family.html#cb71-1"></a><span class="kw">qplot</span>(<span class="dt">data =</span> research, <span class="dt">x =</span> wosCountThru2011)</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p>To control the plot axes, we use variants of the functions <code>scale_x_*</code> and <code>scale_y_*</code>.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="the-apply-family.html#cb72-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb72-2"><a href="the-apply-family.html#cb72-2"></a>                          <span class="dt">y =</span> wosCountThru2011)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb72-3"><a href="the-apply-family.html#cb72-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span> journal)) <span class="op">+</span></span>
+<span id="cb72-4"><a href="the-apply-family.html#cb72-4"></a><span class="st">  </span><span class="kw">scale_y_log10</span>()</span>
+<span id="cb72-5"><a href="the-apply-family.html#cb72-5"></a>p</span></code></pre></div>
+<pre><code>## Warning: Transformation introduced infinite values in continuous y-axis</code></pre>
+<p><img src="Notes_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>How can we fix this?</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="the-apply-family.html#cb74-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb74-2"><a href="the-apply-family.html#cb74-2"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb74-3"><a href="the-apply-family.html#cb74-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span> journal))</span>
+<span id="cb74-4"><a href="the-apply-family.html#cb74-4"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p>Notice what this fix has done to the way the y-axis is labelled. To manually update the axis label, we can use the <code>scale_y_continuous()</code> function.</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="the-apply-family.html#cb75-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb75-2"><a href="the-apply-family.html#cb75-2"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb75-3"><a href="the-apply-family.html#cb75-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span> journal)) <span class="op">+</span></span>
+<span id="cb75-4"><a href="the-apply-family.html#cb75-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>), <span class="dt">name =</span> <span class="st">&quot;Citations&quot;</span>)</span>
+<span id="cb75-5"><a href="the-apply-family.html#cb75-5"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p>The scale family of functions can also be used to change the colours.</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="the-apply-family.html#cb76-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb76-2"><a href="the-apply-family.html#cb76-2"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb76-3"><a href="the-apply-family.html#cb76-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span> journal)) <span class="op">+</span></span>
+<span id="cb76-4"><a href="the-apply-family.html#cb76-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>,<span class="dv">1000</span>), <span class="dt">name =</span> <span class="st">&quot;Citations&quot;</span>) <span class="op">+</span></span>
+<span id="cb76-5"><a href="the-apply-family.html#cb76-5"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;purple&quot;</span>, <span class="st">&quot;orange&quot;</span>,<span class="st">&quot;cyan&quot;</span>), <span class="dt">name =</span> <span class="st">&quot;Journal&quot;</span>)</span>
+<span id="cb76-6"><a href="the-apply-family.html#cb76-6"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="the-apply-family.html#cb77-1"></a><span class="kw">library</span>(viridis)</span></code></pre></div>
+<pre><code>## Loading required package: viridisLite</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="the-apply-family.html#cb79-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb79-2"><a href="the-apply-family.html#cb79-2"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb79-3"><a href="the-apply-family.html#cb79-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span> journal)) <span class="op">+</span></span>
+<span id="cb79-4"><a href="the-apply-family.html#cb79-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>,<span class="dv">1000</span>), <span class="dt">name =</span> <span class="st">&quot;Citations&quot;</span>) <span class="op">+</span></span>
+<span id="cb79-5"><a href="the-apply-family.html#cb79-5"></a><span class="st">  </span><span class="kw">scale_colour_manual</span>(<span class="dt">values =</span> <span class="kw">viridis</span>(<span class="dv">7</span>), <span class="dt">name =</span> <span class="st">&quot;Journal&quot;</span>)</span>
+<span id="cb79-6"><a href="the-apply-family.html#cb79-6"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-36-2.png" width="672" /></p>
+</div>
+<div id="colour-palettes" class="section level2">
+<h2><span class="header-section-number">5.8</span> Colour palettes</h2>
+<p>Choosing good colours to aid visualization is not trivial and requires some (or a lot of) thought. A set of colour palettes have been developed for easy use with ggplot2 through a package called <code>RColorBrewer</code>.</p>
+<p>There are three types of these premade palettes:
+* Sequential
+* Diverging
+* Qualitative</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="the-apply-family.html#cb80-1"></a><span class="kw">library</span>(RColorBrewer)</span>
+<span id="cb80-2"><a href="the-apply-family.html#cb80-2"></a><span class="kw">display.brewer.all</span>()</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p>Or, you can create your own color palettes using the <code>colorRamp()</code> or <code>colorRampPalette()</code> function.</p>
+<p><code>colorRamp()</code> returns a function that takes values between 0 and 1, indicating the extremes of the color palette.</p>
+<p><code>colorRampPalette()</code> returns a function that takes integer arguments and returns a vector of colours.</p>
+<div id="colorramp" class="section level3 unnumbered">
+<h3><code>colorRamp()</code></h3>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="the-apply-family.html#cb81-1"></a>cols &lt;-<span class="st"> </span><span class="kw">colorRamp</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span>
+<span id="cb81-2"><a href="the-apply-family.html#cb81-2"></a><span class="kw">cols</span>(<span class="dv">0</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]  255    0    0</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="the-apply-family.html#cb83-1"></a><span class="kw">cols</span>(<span class="fl">0.5</span>)</span></code></pre></div>
+<pre><code>##       [,1] [,2]  [,3]
+## [1,] 127.5    0 127.5</code></pre>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="the-apply-family.html#cb85-1"></a><span class="kw">cols</span>(<span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    0    0  255</code></pre>
+</div>
+<div id="colorramppalette" class="section level3 unnumbered">
+<h3><code>colorRampPalette()</code></h3>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="the-apply-family.html#cb87-1"></a>cols &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(<span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>))</span>
+<span id="cb87-2"><a href="the-apply-family.html#cb87-2"></a><span class="kw">cols</span>(<span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;#FF0000&quot; &quot;#0000FF&quot;</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="the-apply-family.html#cb89-1"></a><span class="kw">cols</span>(<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;#FF0000&quot; &quot;#E2001C&quot; &quot;#C60038&quot; &quot;#AA0055&quot; &quot;#8D0071&quot; &quot;#71008D&quot; &quot;#5500AA&quot;
+##  [8] &quot;#3800C6&quot; &quot;#1C00E2&quot; &quot;#0000FF&quot;</code></pre>
+</div>
+</div>
+<div id="faceting" class="section level2">
+<h2><span class="header-section-number">5.9</span> Faceting</h2>
+<p>There are two functions to control how plots are divided into facets: <code>facet_wrap()</code> and <code>facet_grid()</code>.</p>
+<div id="facet_wrap" class="section level3 unnumbered">
+<h3><code>facet_wrap()</code></h3>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="the-apply-family.html#cb91-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb91-2"><a href="the-apply-family.html#cb91-2"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),</span>
+<span id="cb91-3"><a href="the-apply-family.html#cb91-3"></a>                          <span class="dt">color =</span> journal)) <span class="op">+</span></span>
+<span id="cb91-4"><a href="the-apply-family.html#cb91-4"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span></span>
+<span id="cb91-5"><a href="the-apply-family.html#cb91-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>,<span class="dv">1000</span>), <span class="dt">name =</span> <span class="st">&quot;Citations&quot;</span>) <span class="op">+</span></span>
+<span id="cb91-6"><a href="the-apply-family.html#cb91-6"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>journal) <span class="op">+</span></span>
+<span id="cb91-7"><a href="the-apply-family.html#cb91-7"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb91-8"><a href="the-apply-family.html#cb91-8"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p>It is still difficult to see the spread of the data. Try making the points smaller and transparent.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="the-apply-family.html#cb92-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb92-2"><a href="the-apply-family.html#cb92-2"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),</span>
+<span id="cb92-3"><a href="the-apply-family.html#cb92-3"></a>                          <span class="dt">color =</span> journal)) <span class="op">+</span></span>
+<span id="cb92-4"><a href="the-apply-family.html#cb92-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="fl">0.5</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb92-5"><a href="the-apply-family.html#cb92-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>,<span class="dv">1000</span>), <span class="dt">name =</span> <span class="st">&quot;Citations&quot;</span>) <span class="op">+</span></span>
+<span id="cb92-6"><a href="the-apply-family.html#cb92-6"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>journal) <span class="op">+</span></span>
+<span id="cb92-7"><a href="the-apply-family.html#cb92-7"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb92-8"><a href="the-apply-family.html#cb92-8"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+</div>
+<div id="facet_grid" class="section level3 unnumbered">
+<h3><code>facet_grid()</code></h3>
+<p>What about faceting by two variables? For example, let’s say we want to look at the relationship between days since published and citations for low impact versus high impact articles.</p>
+<p>First, let’s recreate a variable categorizing high and low impact based on the variable <code>f1000Factor</code>.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="the-apply-family.html#cb93-1"></a>research &lt;-<span class="st"> </span>research <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">impact =</span> <span class="kw">cut</span>(f1000Factor, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="op">-</span><span class="ot">Inf</span>,<span class="dv">1</span>,<span class="ot">Inf</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;low&quot;</span>, <span class="st">&quot;high&quot;</span>)))</span>
+<span id="cb93-2"><a href="the-apply-family.html#cb93-2"></a></span>
+<span id="cb93-3"><a href="the-apply-family.html#cb93-3"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb93-4"><a href="the-apply-family.html#cb93-4"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),</span>
+<span id="cb93-5"><a href="the-apply-family.html#cb93-5"></a>                          <span class="dt">color =</span> journal)) <span class="op">+</span></span>
+<span id="cb93-6"><a href="the-apply-family.html#cb93-6"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="fl">0.5</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb93-7"><a href="the-apply-family.html#cb93-7"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>,<span class="dv">1000</span>), <span class="dt">name =</span> <span class="st">&quot;Citations&quot;</span>) <span class="op">+</span></span>
+<span id="cb93-8"><a href="the-apply-family.html#cb93-8"></a><span class="st">  </span><span class="kw">facet_grid</span>(journal<span class="op">~</span>impact) <span class="op">+</span></span>
+<span id="cb93-9"><a href="the-apply-family.html#cb93-9"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb93-10"><a href="the-apply-family.html#cb93-10"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p>By default, R will plot each panel on the same axes. You can override this using the option <code>scales</code>, setting it to <code>free_x</code> to vary the scale across rows, <code>scale_y</code> to vary it across columns, or <code>free</code> to vary across both.</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="the-apply-family.html#cb94-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb94-2"><a href="the-apply-family.html#cb94-2"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),</span>
+<span id="cb94-3"><a href="the-apply-family.html#cb94-3"></a>                          <span class="dt">color =</span> journal)) <span class="op">+</span></span>
+<span id="cb94-4"><a href="the-apply-family.html#cb94-4"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="fl">0.5</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb94-5"><a href="the-apply-family.html#cb94-5"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>,<span class="dv">1000</span>), <span class="dt">name =</span> <span class="st">&quot;Citations&quot;</span>) <span class="op">+</span></span>
+<span id="cb94-6"><a href="the-apply-family.html#cb94-6"></a><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>journal, <span class="dt">scale =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span></span>
+<span id="cb94-7"><a href="the-apply-family.html#cb94-7"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb94-8"><a href="the-apply-family.html#cb94-8"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="exercise-5.6" class="section level3 unnumbered">
+<h3>Exercise 5.6</h3>
+<p>Use what you’ve learned to generate the plot below.</p>
+<p><img src="Notes_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="themes" class="section level2">
+<h2><span class="header-section-number">5.10</span> Themes</h2>
+<p>In addition to <code>theme_bw()</code>, which changes the plot background to white, <code>ggplot2</code> comes with several other themes which can be useful to quickly change the look of your visualization. The complete list of themes is available at <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="uri">https://ggplot2.tidyverse.org/reference/ggtheme.html</a>. <code>theme_minimal()</code> and <code>theme_light()</code> are popular, and <code>theme_void()</code> can be useful as a starting point to create a new hand-crafted theme.</p>
+<p>The <code>ggthemes</code> package provides a wide variety of options (including an Excel 2003 theme). The <code>ggplot2</code> <a href="https://www.ggplot2-exts.org">extensions website</a> provides a list of packages that extend the capabilities of <code>ggplot2</code>, including additional themes.</p>
+<p>This is also the place you can customize the text of your plot.</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="the-apply-family.html#cb95-1"></a>p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> daysSincePublished, </span>
+<span id="cb95-2"><a href="the-apply-family.html#cb95-2"></a>                          <span class="dt">y =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb95-3"><a href="the-apply-family.html#cb95-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span> journal)) <span class="op">+</span></span>
+<span id="cb95-4"><a href="the-apply-family.html#cb95-4"></a><span class="st">  </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>), <span class="dt">name =</span> <span class="st">&quot;Citations&quot;</span>) <span class="op">+</span></span>
+<span id="cb95-5"><a href="the-apply-family.html#cb95-5"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb95-6"><a href="the-apply-family.html#cb95-6"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Days Since Published&quot;</span>) <span class="op">+</span></span>
+<span id="cb95-7"><a href="the-apply-family.html#cb95-7"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">14</span>, <span class="dt">face =</span> <span class="st">&quot;bold&quot;</span>))</span>
+<span id="cb95-8"><a href="the-apply-family.html#cb95-8"></a>p</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+</div>
+<div id="multiple-plots" class="section level2">
+<h2><span class="header-section-number">5.11</span> Multiple plots</h2>
+<p>There are two useful packages for combining multiple plots: <code>gridExtra</code> and <code>cowplot</code>.</p>
+<p><code>gridExtra</code> has two useful functions: <code>grid.arrange()</code> and <code>arrangeGrob()</code>. However, these functions make no attempt at aligning the plot panels; instead, the plots are simply placed into the grid as they are, so the axes are not aligned. If axis alignment is required, the <code>plot_grid()</code> function of the <code>cowplot</code> package is better. We will try using both here.</p>
+<div id="the-gridextra-package" class="section level3 unnumbered">
+<h3>The <code>gridExtra</code> package</h3>
+<p>Let’s say we want to combine the following three plots:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="the-apply-family.html#cb96-1"></a>plot1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> journal, <span class="dt">fill =</span> journal)) <span class="op">+</span></span>
+<span id="cb96-2"><a href="the-apply-family.html#cb96-2"></a><span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>) <span class="op">+</span></span>
+<span id="cb96-3"><a href="the-apply-family.html#cb96-3"></a><span class="st">    </span><span class="kw">theme_bw</span>()</span>
+<span id="cb96-4"><a href="the-apply-family.html#cb96-4"></a>plot1</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-46-1.png" width="384" /></p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="the-apply-family.html#cb97-1"></a>plot2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">log10</span>(wosCountThru2011 <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),</span>
+<span id="cb97-2"><a href="the-apply-family.html#cb97-2"></a>                              <span class="dt">y =</span> <span class="kw">log10</span>(pdfDownloadsCount <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),</span>
+<span id="cb97-3"><a href="the-apply-family.html#cb97-3"></a>                              <span class="dt">color =</span> journal)) <span class="op">+</span></span>
+<span id="cb97-4"><a href="the-apply-family.html#cb97-4"></a><span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="fl">0.5</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span></span>
+<span id="cb97-5"><a href="the-apply-family.html#cb97-5"></a><span class="st">    </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb97-6"><a href="the-apply-family.html#cb97-6"></a><span class="st">    </span><span class="kw">geom_smooth</span>() <span class="op">+</span></span>
+<span id="cb97-7"><a href="the-apply-family.html#cb97-7"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Citations&quot;</span>) <span class="op">+</span></span>
+<span id="cb97-8"><a href="the-apply-family.html#cb97-8"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Downloads&quot;</span>) <span class="op">+</span></span>
+<span id="cb97-9"><a href="the-apply-family.html#cb97-9"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb97-10"><a href="the-apply-family.html#cb97-10"></a>plot2</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-46-2.png" width="384" /></p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="the-apply-family.html#cb98-1"></a>plot3 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(research, <span class="kw">aes</span>(<span class="dt">x =</span> impact,</span>
+<span id="cb98-2"><a href="the-apply-family.html#cb98-2"></a>                              <span class="dt">y =</span> <span class="kw">log10</span>(pdfDownloadsCount <span class="op">+</span><span class="st"> </span><span class="dv">1</span>),</span>
+<span id="cb98-3"><a href="the-apply-family.html#cb98-3"></a>                              <span class="dt">fill =</span> journal)) <span class="op">+</span></span>
+<span id="cb98-4"><a href="the-apply-family.html#cb98-4"></a><span class="st">    </span><span class="kw">geom_boxplot</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb98-5"><a href="the-apply-family.html#cb98-5"></a><span class="st">    </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb98-6"><a href="the-apply-family.html#cb98-6"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Downloads&quot;</span>)</span>
+<span id="cb98-7"><a href="the-apply-family.html#cb98-7"></a>plot3</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-46-3.png" width="384" /></p>
+<p>To arrange them together, use the <code>grid.arrange()</code> function.</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="the-apply-family.html#cb99-1"></a><span class="kw">library</span>(gridExtra)</span>
+<span id="cb99-2"><a href="the-apply-family.html#cb99-2"></a><span class="kw">grid.arrange</span>(plot1, plot2, plot3)</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p>To modify how they are arranged, you can use the <code>layout_matrix</code> argument.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="the-apply-family.html#cb100-1"></a><span class="kw">grid.arrange</span>(plot1, plot2, plot3, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">nrow =</span> <span class="dv">2</span>, </span>
+<span id="cb100-2"><a href="the-apply-family.html#cb100-2"></a>             <span class="dt">layout_matrix =</span> <span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>)))</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+</div>
+<div id="the-cowplot-package" class="section level3 unnumbered">
+<h3>The <code>cowplot</code> package</h3>
+<p>We can also arrange these plots using the <code>plot_grid()</code> function.</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="the-apply-family.html#cb101-1"></a><span class="kw">library</span>(cowplot)</span>
+<span id="cb101-2"><a href="the-apply-family.html#cb101-2"></a></span>
+<span id="cb101-3"><a href="the-apply-family.html#cb101-3"></a><span class="kw">plot_grid</span>(plot1, plot2, plot3)</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="the-apply-family.html#cb102-1"></a>row1 &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(plot1, plot2, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>), <span class="dt">nrow =</span> <span class="dv">1</span>)</span>
+<span id="cb102-2"><a href="the-apply-family.html#cb102-2"></a>row2 &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(plot3, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;C&quot;</span>), <span class="dt">nrow =</span> <span class="dv">1</span>)</span>
+<span id="cb102-3"><a href="the-apply-family.html#cb102-3"></a></span>
+<span id="cb102-4"><a href="the-apply-family.html#cb102-4"></a><span class="kw">plot_grid</span>(row1, row2, <span class="dt">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="Notes_files/figure-html/unnamed-chunk-49-2.png" width="672" /></p>
+</div>
+<div id="saving-plots" class="section level3">
+<h3><span class="header-section-number">5.11.1</span> Saving plots</h3>
+<p>The easiest way to save a plot is using the <code>ggsave()</code> function.</p>
+<hr />
+</div>
+<div id="exercise-8.1" class="section level3 unnumbered">
+<h3>Exercise 8.1</h3>
+<p>Using the publication dataset we’ve been using, complete the following tasks.</p>
+<ol style="list-style-type: decimal">
+<li>Generate a table containing the mean and standard error of the number of tweets per journal. It should look something like this:</li>
+</ol>
+<pre><code>## # A tibble: 7 x 4
+##   journal   num   mean     sem
+##   &lt;fct&gt;   &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+## 1 pbio     1325 0.0581 0.0202 
+## 2 pcbi     1351 0.127  0.0522 
+## 3 pgen     1619 0.0655 0.0204 
+## 4 pmed      643 0.311  0.188  
+## 5 pntd      621 0.0258 0.00906
+## 6 pone    14078 0.493  0.0345 
+## 7 ppat     1459 0.0260 0.00881</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Use this table to create a bar plot of mean tweets per journal, including standard error. It should look something like this:</li>
+</ol>
+<p><img src="Notes_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<p>Hint: you will want to use the function <code>geom_errorbar()</code> to add the error bars.</p>
+<p><br></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Create a box plot of the number of citations per journal (ie. the variable wosCountThur2011). Colour the journals using the <code>Accent</code> palette from the <code>RColorBrewer</code> package. It should look something like this:</li>
+</ol>
+<p><img src="Notes_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Generate a plot that shows the number of downloads over time, coloured by journal. It should look something like this:</li>
+</ol>
+<p><img src="Notes_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="additional-resources" class="section level2">
+<h2><span class="header-section-number">5.12</span> Additional Resources</h2>
+<p><a href="http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization" class="uri">http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization</a></p>
+<p><a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html" class="uri">http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html</a></p>
+<ul>
+<li>Mailing list: <a href="http://groups.google.com/group/ggplot2" class="uri">http://groups.google.com/group/ggplot2</a></li>
+<li>Wiki: <a href="https://github.com/hadley/ggplot2/wiki" class="uri">https://github.com/hadley/ggplot2/wiki</a></li>
+<li>Website: <a href="http://had.co.nz/ggplot2/" class="uri">http://had.co.nz/ggplot2/</a></li>
+<li>StackOverflow: <a href="http://stackoverflow.com/questions/tagged/ggplot" class="uri">http://stackoverflow.com/questions/tagged/ggplot</a></li>
+</ul>
+<p>Cheatsheet</p>
+
 </div>
 </div>
             </section>
@@ -440,7 +830,7 @@ Explain which function you used and what does the output look like?</p>
         </div>
       </div>
 <a href="functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="advanced-plotting.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="advanced-rmardown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
