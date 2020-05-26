@@ -1,6 +1,6 @@
-# Advanced Rmardown
+# Advanced Rmarkdown
 
-So far we have use default settings to create our rmarkdown documents. Lets **prettify** our documents!!
+So far we have use default settings to create our Rmarkdown documents. Lets **prettify** our documents!!
 
 
 
@@ -85,14 +85,14 @@ output:
 ```
 
 
-## Cool stuff in rmarkdown
+## Cool stuff in Rmarkdown
 <br> 
 ### CHEATSHEET
-This cheat sheet has all the details on how to add figures, links, bullets, headings and tables in rmarkdown!
+This cheat sheet has all the details on how to add figures, links, bullets, headings and tables in Rmarkdown!
 [](img/rmarkdown-2.0.pdf)
 <br> 
 <br> 
-### Making cools tables in rmarkdown from R code
+### Making cools tables in Rmarkdown from R code
 Tables generated from your R code are very useful to share modified output with other users.
 Simplest tables in markdown can be generated using the kable function but these table are static and to be honest boring!
 <br> 
@@ -145,7 +145,7 @@ datatable(cars,
 <br> 
 <br> 
 
-### Making tabs in rmarkdown
+### Making tabs in Rmarkdown
 You can organize content using tabs by applying the .tabset class attribute to headers within a document. This will cause all sub-headers of the header with the .tabset attribute to appear within tabs rather than as standalone sections. For example:
 
 <br> 
@@ -187,7 +187,7 @@ HTML, **HyperText Markup Language**, gives content structure and meaning by defi
 
 Lets look at the following examples
 
-[Simple html generated from rmarkdown](data/case_study_default.html)
+[Simple html generated from Rmarkdown](data/case_study_default.html)
 
 [Simple html styled by css from themes](data/case_study_theme.html)
 
@@ -214,7 +214,7 @@ Lets look at the following examples
 <p>My first paragraph.</p>
 
 
-You will not have to worry about html too much in rmarkdown. However,
+You will not have to worry about html too much in Rmarkdown. However,
 once in a while you might want to add color to some text or other simple things:
 
 ```
@@ -283,3 +283,7 @@ p {
 
  To learn more visit https://www.w3schools.com/css/css_syntax.asp
 
+
+<div class="box">
+#### Exercise {-}
+Start a new Rmarkdown file for your project. In the same folder, create a styles.css file.In this file write CSS code to change the color of h1 and h2 to one you like. Now link this file to your project Rmarkdown file.

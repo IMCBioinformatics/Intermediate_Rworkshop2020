@@ -49,6 +49,21 @@ lapply(split_list,tolower)
 #vector
 lapply(pioneers,tolower)
 
-lapply()
+lapply(split_list,select_first)
+
+apply(X = m1,MARGIN = 1,FUN = select_first)
+
+apply(X=m1,MARGIN = 2,FUN = function(x){
+  x[1]})
+
+# sapply
+
+temp=list(c(1,3,4,4,6),c(3,4,6,8,9))
+
+extremes <- function(x) {
+  c(min = min(x), max = max(x))
+}
+
+sapply(temp,extremes)
 
 ```
