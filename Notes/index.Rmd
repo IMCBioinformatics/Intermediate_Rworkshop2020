@@ -24,19 +24,18 @@ We will try to cover the following material in the course:
 
 Time | Topic
 :-------| :----------------------------------
-9:00  | Introductions and workshop overview
+9:00  | Introductions and R markdown basics
 9:30  | Conditionals and Loops
-10:45 |  Functions
+10:45 | Functions
 13:00 | Apply family
-14:00 |  Advanced plotting ggplot2
+14:00 | Advanced plotting ggplot2
 
 ### Day 2 {-}
 
 Time | Topic
 :-------| :----------------------------------
-9:00 | R markdown basics
-10:45 | Knitr chunks
-13:00 |  Rmarkdown themes, adding html and custom css styling
+9:00  |  ggplot continued
+10:45 |  Rmarkdown themes, adding html and custom css styling
 14:00 |  A short project to bring it all together!
 
 

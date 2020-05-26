@@ -1,0 +1,152 @@
+---
+title: "Case Study"
+author: "Alana Schick"
+date: "25/05/2020"
+output: 
+  html_document:
+    theme: yeti
+    highlight: kate
+    css: styles.css
+    toc: true
+    toc_float: 
+      collapsed: false
+    toc_depth: 4
+    code_folding: hide
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+## Load libraries
+library(tidyverse)
+library(knitr)
+library(RColorBrewer)
+```
+
+## Project Description
+
+This report investigates financial transactions over an 11 month period. 
+
+```{r, message = FALSE}
+setwd("/Users/hena/projects/workshops/Intermediate_Rworkshop2020")
+
+## Task 1 Read in data
+df <- data.frame(NULL)
+files<-list.files(path = "data",full.names = T)
+for(i in 1:11) {
+  file_name <-files[i]
+  df_import <- readr::read_csv(file_name, progress = FALSE)
+  df <- rbind(df, df_import)
+  rm(df_import, file_name)
+}
+```
+
+## Overview
+
+```{r summary}
+
+month_levels <- c(
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+)
+
+df$Month <- factor(df$Month, levels = month_levels)
+
+bb <- ggplot(df, aes(x = Month)) +
+  geom_bar() +
+  labs(title = "Total Number of Transactions", y = "Transactions") +
+  theme_bw() +
+  coord_cartesian(ylim = c(40000,95000))
+bb
+```
+
+## Quarters
+
+```{r}
+## Task 2 Write a function
+
+m_to_q<-function(dataframe) 
+{
+  if("Month" %in% colnames(dataframe) ){
+    dataframe <- dataframe %>%
+      mutate(Month = as.factor(Month))  %>%
+      mutate(Quarter = case_when(
+          Month %in% c("Jan", "Feb", "Mar") ~ "Q1",
+          Month %in% c("Apr", "May", "Jun") ~ "Q2",
+          Month %in% c("Jul", "Aug", "Sep") ~ "Q3",
+          TRUE ~ "Q4"
+    ))} else stop("Column Month not found")
+  return(dataframe)
+}
+```
+
+Test your function from Task 2 by using it:
+
+```{r, echo = TRUE}
+df2 <- m_to_q(df)
+table(df2$Quarter)
+```
+
+## Card Types per Quarter
+
+```{r, fig.width = 5, fig.height = 5}
+ct <- ggplot(df2, aes(x = Factor_C, fill = Factor_C)) +
+  geom_bar(color = "black") +
+  facet_wrap(~Quarter) +
+  theme_bw() +
+  scale_fill_brewer(name = "Card Type", type= "qual", palette = "Set1") +
+  labs(y = "Count", x = NULL) +
+  theme(legend.position = "top", axis.text.x = element_blank(), axis.ticks = element_blank())
+ct
+```
+
+## Account ID over time {.tabset .tabset-fade}
+
+### By Quarter
+
+```{r, message = FALSE, warning = FALSE, fig.width = 4}
+cols <- colorRampPalette(c("yellow", "blue"))
+
+ct <- ggplot(df2, aes(x = Account_ID, fill = Quarter)) +
+  geom_histogram(aes(y = ..density..)) +
+  facet_wrap(~Quarter, nrow = 4) +
+  theme_bw() +
+  geom_density() +
+  theme(legend.position = "none") +
+  scale_fill_manual(values = cols(4))
+ct
+```
+
+### By Month
+
+```{r}
+ct <- ggplot(df2, aes(x = Account_ID, fill = Month)) +
+  theme_bw() +
+  geom_density(alpha = 0.7) +
+  scale_fill_manual(values = cols(11))
+ct
+```
+
+## Proportion Approved
+
+```{r, fig.width = 4, fig.height = 3}
+df2$Factor_C <- as.factor(df2$Factor_C)
+df2$Transaction_Status <- as.factor(df2$Transaction_Status)
+
+## Summarize proportion of approved to declined transactions across type of card. 
+
+prop <- df2 %>% group_by(Factor_C, Transaction_Status) %>%
+  summarize(n = n()) %>%
+  mutate(prop = n/sum(n))
+
+pp <- ggplot(prop, aes(x = Factor_C, y = prop, fill = Transaction_Status)) +
+  geom_bar(stat = "identity", colour = "black") +
+  labs(y = "Proportion", x = "Card Type") +
+  scale_fill_manual(values = c("darkgreen", "grey"), name = "Status") +
+  theme_bw() +
+  coord_flip()
+pp
+
+```
+

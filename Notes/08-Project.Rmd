@@ -44,7 +44,31 @@ Hint: Use mutate and case_when(), %in% and stop() function
 <!-- return(dataframe) -->
 <!-- } -->
 
-## Task3
+## Task 3
+
+1. Generate a bar plot that shows the number of transactions of each card type per quarter. (The card type is called `Factor_C`).
+2. Place the legend at the top of the plot. 
+3. Remove the x axis labels and tick marks.
+4. Colour the card types using a palette of your choice from the RColorBrewer package.
+
+
+## Task 4
+
+1. Use the `colorRampPalette()` function to generate a colour ramp between any two colours.
+2. Plot the distribution (ie. histogram) of Account ID for each quarter.
+3. Add a density line.
+4. Remove the legend.
+5. Plot the density lines only for Account ID for each month on the same plot.
+
+## Task 5
+
+1. Use the dplyr functions to generate a dataframe containing the proportion of Approved and Declined transactions for each card type.
+2. Generate a bar plot showing the proportion for each card type.
+3. Flip the coordinates so that each card type is a row. 
+
+## Task 6
+
+Generate an html report of all the above tasks using R Markdown. Use [this file](data/case_study_theme.html) as a guide.
 
 
 
