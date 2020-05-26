@@ -24,18 +24,28 @@ We will try to cover the following material in the course:
 
 Time | Topic
 :-------| :----------------------------------
-9:00  | Introductions and R markdown basics
-9:30  | Conditionals and Loops
-10:45 | Functions
-13:00 | Apply family
-14:00 | Advanced plotting ggplot2
+9:00  | Introductions and Housekeeping
+9:20  | R Markdown Basics
+10:30 | Break
+10:45 | R Markdown Basics (cont)
+11:00 | Conditionals and Loops
+12:00 | Lunch
+13:00 | Functions
+14:00 | Apply family
+14:30 | Break
+14:45 | Apply family (cont)
+15:00 | Advanced plotting
+16:00 | Finish
 
 ### Day 2 {-}
 
 Time | Topic
 :-------| :----------------------------------
-9:00  |  ggplot continued
-10:45 |  Rmarkdown themes, adding html and custom css styling
-14:00 |  A short project to bring it all together!
+9:00  | Advanced plotting (cont)
+10:30 | Break
+10:45 | Advanced plotting (cont)
+11:15 | Advanced R Markdown
+12:00 | Lunch
+13:00 | A short project to bring it all together!
 
 
