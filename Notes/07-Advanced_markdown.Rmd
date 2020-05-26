@@ -1,5 +1,7 @@
 # Advanced Rmardown
+
 So far we have use default settings to create our rmarkdown documents. Lets **prettify** our documents!!
+
 
 
 ## YAML options for HTML documents
@@ -168,10 +170,20 @@ You can also specify two additional attributes to control the appearance and beh
 ![tabset](img/tabset.png)
 
 
+
+### Rmarkdown to HTML conversion
+![](img/rmarkdown_html.png)
+
+
 <br> 
 <br> 
+
 ## HTML and CSS basics
 HTML, **HyperText Markup Language**, gives content structure and meaning by defining that content as, for example, headings, paragraphs, or images. CSS, ** Cascading Style Sheets**, is a presentation language created to style the appearance of content—using, for example, fonts or colors.
+
+![](img/js_css_html.png)
+
+
 
 Lets look at the following examples
 
@@ -243,7 +255,7 @@ To learn more html go to https://www.w3schools.com/default.asp .
 #### CSS Syntax
 A CSS rule-set consists of a selector and a declaration block:
 
-![](img/css_selector.gif)
+![](img/css_selector.png)
 
 - The selector points to the HTML element you want to style.
 

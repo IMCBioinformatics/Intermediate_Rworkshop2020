@@ -50,8 +50,87 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.13/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<script src="libs/jszip-1.10.20/jszip.min.js"></script>
+<link href="libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -116,53 +195,48 @@
 <li class="chapter" data-level="5.3.3" data-path="the-apply-family.html"><a href="the-apply-family.html#sapply-cant-simplify-now-what"><i class="fa fa-check"></i><b>5.3.3</b> sapply can’t simplify, now what?</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="the-apply-family.html"><a href="the-apply-family.html#vapply"><i class="fa fa-check"></i><b>5.4</b> vapply()</a></li>
+<li class="chapter" data-level="5.5" data-path="the-apply-family.html"><a href="the-apply-family.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>5.5</b> Review of ggplot2 basics</a></li>
+<li class="chapter" data-level="5.6" data-path="the-apply-family.html"><a href="the-apply-family.html#statistics"><i class="fa fa-check"></i><b>5.6</b> Statistics</a></li>
+<li class="chapter" data-level="5.7" data-path="the-apply-family.html"><a href="the-apply-family.html#scales"><i class="fa fa-check"></i><b>5.7</b> Scales</a></li>
+<li class="chapter" data-level="5.8" data-path="the-apply-family.html"><a href="the-apply-family.html#colour-palettes"><i class="fa fa-check"></i><b>5.8</b> Colour palettes</a><ul>
+<li><a href="the-apply-family.html#colorramp"><code>colorRamp()</code></a></li>
+<li><a href="the-apply-family.html#colorramppalette"><code>colorRampPalette()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="advanced-plotting.html"><a href="advanced-plotting.html"><i class="fa fa-check"></i><b>6</b> Advanced Plotting</a><ul>
-<li class="chapter" data-level="6.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#setup-1"><i class="fa fa-check"></i><b>6.1</b> Setup</a></li>
-<li class="chapter" data-level="6.2" data-path="advanced-plotting.html"><a href="advanced-plotting.html#review-of-ggplot2-basics"><i class="fa fa-check"></i><b>6.2</b> Review of ggplot2 basics</a></li>
-<li class="chapter" data-level="6.3" data-path="advanced-plotting.html"><a href="advanced-plotting.html#statistics"><i class="fa fa-check"></i><b>6.3</b> Statistics</a></li>
-<li class="chapter" data-level="6.4" data-path="advanced-plotting.html"><a href="advanced-plotting.html#scales"><i class="fa fa-check"></i><b>6.4</b> Scales</a></li>
-<li class="chapter" data-level="6.5" data-path="advanced-plotting.html"><a href="advanced-plotting.html#colour-palettes"><i class="fa fa-check"></i><b>6.5</b> Colour palettes</a><ul>
-<li><a href="advanced-plotting.html#colorramp"><code>colorRamp()</code></a></li>
-<li><a href="advanced-plotting.html#colorramppalette"><code>colorRampPalette()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="the-apply-family.html"><a href="the-apply-family.html#faceting"><i class="fa fa-check"></i><b>5.9</b> Faceting</a><ul>
+<li><a href="the-apply-family.html#facet_wrap"><code>facet_wrap()</code></a></li>
+<li><a href="the-apply-family.html#facet_grid"><code>facet_grid()</code></a></li>
+<li class="chapter" data-level="" data-path="the-apply-family.html"><a href="the-apply-family.html#exercise-5.6"><i class="fa fa-check"></i>Exercise 5.6</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="advanced-plotting.html"><a href="advanced-plotting.html#faceting"><i class="fa fa-check"></i><b>6.6</b> Faceting</a><ul>
-<li><a href="advanced-plotting.html#facet_wrap"><code>facet_wrap()</code></a></li>
-<li><a href="advanced-plotting.html#facet_grid"><code>facet_grid()</code></a></li>
-<li class="chapter" data-level="" data-path="advanced-plotting.html"><a href="advanced-plotting.html#exercise-5.6"><i class="fa fa-check"></i>Exercise 5.6</a></li>
+<li class="chapter" data-level="5.10" data-path="the-apply-family.html"><a href="the-apply-family.html#themes"><i class="fa fa-check"></i><b>5.10</b> Themes</a></li>
+<li class="chapter" data-level="5.11" data-path="the-apply-family.html"><a href="the-apply-family.html#multiple-plots"><i class="fa fa-check"></i><b>5.11</b> Multiple plots</a><ul>
+<li><a href="the-apply-family.html#the-gridextra-package">The <code>gridExtra</code> package</a></li>
+<li><a href="the-apply-family.html#the-cowplot-package">The <code>cowplot</code> package</a></li>
+<li class="chapter" data-level="5.11.1" data-path="the-apply-family.html"><a href="the-apply-family.html#saving-plots"><i class="fa fa-check"></i><b>5.11.1</b> Saving plots</a></li>
+<li class="chapter" data-level="" data-path="the-apply-family.html"><a href="the-apply-family.html#exercise-8.1"><i class="fa fa-check"></i>Exercise 8.1</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="advanced-plotting.html"><a href="advanced-plotting.html#themes"><i class="fa fa-check"></i><b>6.7</b> Themes</a></li>
-<li class="chapter" data-level="6.8" data-path="advanced-plotting.html"><a href="advanced-plotting.html#multiple-plots"><i class="fa fa-check"></i><b>6.8</b> Multiple plots</a><ul>
-<li><a href="advanced-plotting.html#the-gridextra-package">The <code>gridExtra</code> package</a></li>
-<li><a href="advanced-plotting.html#the-cowplot-package">The <code>cowplot</code> package</a></li>
-<li class="chapter" data-level="6.8.1" data-path="advanced-plotting.html"><a href="advanced-plotting.html#saving-plots"><i class="fa fa-check"></i><b>6.8.1</b> Saving plots</a></li>
-<li class="chapter" data-level="" data-path="advanced-plotting.html"><a href="advanced-plotting.html#exercise-8.1"><i class="fa fa-check"></i>Exercise 8.1</a></li>
+<li class="chapter" data-level="5.12" data-path="the-apply-family.html"><a href="the-apply-family.html#additional-resources"><i class="fa fa-check"></i><b>5.12</b> Additional Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6.9" data-path="advanced-plotting.html"><a href="advanced-plotting.html#additional-resources"><i class="fa fa-check"></i><b>6.9</b> Additional Resources</a></li>
+<li class="chapter" data-level="6" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html"><i class="fa fa-check"></i><b>6</b> Advanced Rmardown</a><ul>
+<li class="chapter" data-level="6.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#yaml-options-for-html-documents"><i class="fa fa-check"></i><b>6.1</b> YAML options for HTML documents</a></li>
+<li class="chapter" data-level="6.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#cool-stuff-in-rmarkdown"><i class="fa fa-check"></i><b>6.2</b> Cool stuff in rmarkdown</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#making-tabs-in-rmarkdown"><i class="fa fa-check"></i><b>6.2.1</b> Making tabs in rmarkdown</a></li>
+<li class="chapter" data-level="6.2.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#rmarkdown-to-html-conversion"><i class="fa fa-check"></i><b>6.2.2</b> Rmarkdown to HTML conversion</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html"><i class="fa fa-check"></i><b>7</b> Advanced Rmardown</a><ul>
-<li class="chapter" data-level="7.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#yaml-options-for-html-documents"><i class="fa fa-check"></i><b>7.1</b> YAML options for HTML documents</a></li>
-<li class="chapter" data-level="7.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#cool-stuff-in-rmarkdown"><i class="fa fa-check"></i><b>7.2</b> Cool stuff in rmarkdown</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#cheatsheet"><i class="fa fa-check"></i><b>7.2.1</b> CHEATSHEET</a></li>
-<li class="chapter" data-level="7.2.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#making-cools-tables-in-rmarkdown-from-r-code"><i class="fa fa-check"></i><b>7.2.2</b> Making cools tables in rmarkdown from R code</a></li>
-<li class="chapter" data-level="7.2.3" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#making-tabs-in-rmarkdown"><i class="fa fa-check"></i><b>7.2.3</b> Making tabs in rmarkdown</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#html-and-css-basics"><i class="fa fa-check"></i><b>7.3</b> HTML and CSS basics</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#html"><i class="fa fa-check"></i><b>7.3.1</b> HTML</a></li>
-<li class="chapter" data-level="7.3.2" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#css"><i class="fa fa-check"></i><b>7.3.2</b> CSS</a></li>
+<li class="chapter" data-level="6.3" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#html-and-css-basics"><i class="fa fa-check"></i><b>6.3</b> HTML and CSS basics</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="advanced-rmardown.html"><a href="advanced-rmardown.html#css"><i class="fa fa-check"></i><b>6.3.1</b> CSS</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>8</b> Project</a><ul>
-<li class="chapter" data-level="8.1" data-path="project.html"><a href="project.html#setup-2"><i class="fa fa-check"></i><b>8.1</b> Setup</a></li>
-<li class="chapter" data-level="8.2" data-path="project.html"><a href="project.html#task-1"><i class="fa fa-check"></i><b>8.2</b> Task 1</a></li>
-<li class="chapter" data-level="8.3" data-path="project.html"><a href="project.html#task-2"><i class="fa fa-check"></i><b>8.3</b> Task 2</a></li>
-<li class="chapter" data-level="8.4" data-path="project.html"><a href="project.html#task-3"><i class="fa fa-check"></i><b>8.4</b> Task 3</a></li>
-<li class="chapter" data-level="8.5" data-path="project.html"><a href="project.html#task-4"><i class="fa fa-check"></i><b>8.5</b> Task 4</a></li>
-<li class="chapter" data-level="8.6" data-path="project.html"><a href="project.html#task-5"><i class="fa fa-check"></i><b>8.6</b> Task 5</a></li>
-<li class="chapter" data-level="8.7" data-path="project.html"><a href="project.html#task-6"><i class="fa fa-check"></i><b>8.7</b> Task 6</a></li>
+<li class="chapter" data-level="7" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i><b>7</b> Project</a><ul>
+<li class="chapter" data-level="7.1" data-path="project.html"><a href="project.html#setup-1"><i class="fa fa-check"></i><b>7.1</b> Setup</a></li>
+<li class="chapter" data-level="7.2" data-path="project.html"><a href="project.html#task-1"><i class="fa fa-check"></i><b>7.2</b> Task 1</a></li>
+<li class="chapter" data-level="7.3" data-path="project.html"><a href="project.html#task-2"><i class="fa fa-check"></i><b>7.3</b> Task 2</a></li>
+<li class="chapter" data-level="7.4" data-path="project.html"><a href="project.html#task-3"><i class="fa fa-check"></i><b>7.4</b> Task 3</a></li>
+<li class="chapter" data-level="7.5" data-path="project.html"><a href="project.html#task-4"><i class="fa fa-check"></i><b>7.5</b> Task 4</a></li>
+<li class="chapter" data-level="7.6" data-path="project.html"><a href="project.html#task-5"><i class="fa fa-check"></i><b>7.6</b> Task 5</a></li>
+<li class="chapter" data-level="7.7" data-path="project.html"><a href="project.html#task-6"><i class="fa fa-check"></i><b>7.7</b> Task 6</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="usefull-links.html"><a href="usefull-links.html"><i class="fa fa-check"></i><b>9</b> Usefull links</a><ul>
-<li class="chapter" data-level="9.1" data-path="usefull-links.html"><a href="usefull-links.html#cheatsheets"><i class="fa fa-check"></i><b>9.1</b> CheatSheets</a></li>
+<li class="chapter" data-level="8" data-path="usefull-links.html"><a href="usefull-links.html"><i class="fa fa-check"></i><b>8</b> Usefull links</a><ul>
+<li class="chapter" data-level="8.1" data-path="usefull-links.html"><a href="usefull-links.html#cheatsheets"><i class="fa fa-check"></i><b>8.1</b> CheatSheets</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
