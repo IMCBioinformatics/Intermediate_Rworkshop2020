@@ -2,7 +2,9 @@
 title: "functions"
 author: "Hena Ramay"
 date: '2020-05-25'
-output: html_document
+output: 
+  html_document: 
+    css: ~/projects/workshops/Intermediate_Rworkshop2020/Notes/data/styles.css
 ---
 
 ```{r setup, include=FALSE}
@@ -65,5 +67,14 @@ extremes <- function(x) {
 }
 
 sapply(temp,extremes)
+
+```
+
+<p>hjhsfkjhsfjks</p>
+<h1>yahoo</h1>
+<br>
+
+```{css}
+h1 {color:blue}
 
 ```

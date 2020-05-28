@@ -86,16 +86,23 @@ output:
 
 
 ## Cool stuff in Rmarkdown
+
 <br> 
+
 ### CHEATSHEET
+
 This cheat sheet has all the details on how to add figures, links, bullets, headings and tables in Rmarkdown!
+
 [](img/rmarkdown-2.0.pdf)
 <br> 
 <br> 
+
 ### Making cools tables in Rmarkdown from R code
 Tables generated from your R code are very useful to share modified output with other users.
 Simplest tables in markdown can be generated using the kable function but these table are static and to be honest boring!
+
 <br> 
+
 #### A kable table
 ```
 library(knitr)
@@ -105,7 +112,10 @@ kable(cars)
 ```{r}
 knitr::kable(cars)
 ```
+
 <br> 
+
+
 #### A DT table
 
 ```
@@ -119,6 +129,7 @@ datatable(cars)
 ```
 
 <br> 
+
 #### DT table with download options
 ```
 library(DT)
@@ -129,6 +140,7 @@ datatable(cars,
   )
 )
 ```
+
 <br> 
 
 ```{r}
@@ -167,11 +179,13 @@ You can organize content using tabs by applying the .tabset class attribute to h
 You can also specify two additional attributes to control the appearance and behavior of the tabs. The .tabset-fade attribute causes the tabs to fade in and out when switching between tabs. The .tabset-pills attribute causes the visual appearance of the tabs to be “pill” rather than traditional tabs. For example:
 
 <br> 
+
 ![tabset](img/tabset.png)
 
 
 
 ### Rmarkdown to HTML conversion
+
 ![](img/rmarkdown_html.png)
 
 
@@ -195,7 +209,9 @@ Lets look at the following examples
 
 <br> 
 <br> 
+
 ### HTML
+
 ```
 <!DOCTYPE html>
 <html>
@@ -208,7 +224,7 @@ Lets look at the following examples
 </html>
 ```
 
-####Output:
+*Output*
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
@@ -246,6 +262,7 @@ To learn more html go to https://www.w3schools.com/default.asp .
 <br> 
 
 ### CSS
+
 - CSS stands for Cascading Style Sheets
 - CSS describes how HTML elements are to be displayed on screen, paper, or in other media
 - CSS saves a lot of work. It can control the layout of multiple web pages all at once
@@ -253,6 +270,7 @@ To learn more html go to https://www.w3schools.com/default.asp .
 
 
 #### CSS Syntax
+
 A CSS rule-set consists of a selector and a declaration block:
 
 ![](img/css_selector.png)
@@ -265,8 +283,10 @@ A CSS rule-set consists of a selector and a declaration block:
 
 - Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
 
+<br> 
 
-```{asis}
+
+```{js}
 p {
   color: red;
   text-align: center;
@@ -285,5 +305,7 @@ p {
 
 
 <div class="box">
+
 #### Exercise {-}
+
 Start a new Rmarkdown file for your project. In the same folder, create a styles.css file.In this file write CSS code to change the color of h1 and h2 to one you like. Now link this file to your project Rmarkdown file.

@@ -30,20 +30,20 @@ Please download the data folder from <a href="https://www.dropbox.com/sh/qghmd34
 - When Month is Oct-Dec, Quarter = "Q4"
 
 Hint: Use mutate and case_when(), %in% and stop() function
-
-<!-- m_to_q<-function(dataframe) -->
-<!-- { -->
-<!--  if("Month" %in% colnames(dataframe) ){ -->
-<!-- dataframe <- dataframe %>% -->
-<!--   mutate(Quarter = case_when( -->
-<!--     as.numeric(Month) <= 3 ~ "Q1", -->
-<!--     as.numeric(Month) <= 6 ~ "Q2", -->
-<!--     as.numeric(Month) <= 9 ~ "Q3", -->
-<!--     TRUE                   ~ "Q4" -->
-<!--   ))} else stop("Column Month not found") -->
-<!-- return(dataframe) -->
-<!-- } -->
-
+```{r}
+m_to_q<-function(dataframe)
+{
+ if("Month" %in% colnames(dataframe) ){
+dataframe <- dataframe %>%
+  mutate(Quarter = case_when(
+    as.numeric(Month) <= 3 ~ "Q1",
+    as.numeric(Month) <= 6 ~ "Q2",
+    as.numeric(Month) <= 9 ~ "Q3",
+    TRUE                   ~ "Q4"
+  ))} else stop("Column Month not found")
+return(dataframe)
+}
+```
 ## Task 3
 
 1. Generate a bar plot that shows the number of transactions of each card type per quarter. (The card type is called `Factor_C`).
