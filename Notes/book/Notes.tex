@@ -113,7 +113,7 @@
 
 \title{Intermediate R Workshop Notes}
 \author{Hena R. Ramay}
-\date{2020-05-26}
+\date{2020-05-28}
 
 \begin{document}
 \maketitle
@@ -1823,13 +1823,21 @@ A way to add custom css
 \hypertarget{cool-stuff-in-rmarkdown}{%
 \section{Cool stuff in Rmarkdown}\label{cool-stuff-in-rmarkdown}}
 
-\#\#\# CHEATSHEET
+\hypertarget{cheatsheet}{%
+\subsection{CHEATSHEET}\label{cheatsheet}}
+
 This cheat sheet has all the details on how to add figures, links, bullets, headings and tables in Rmarkdown!
+
 \href{img/rmarkdown-2.0.pdf}{}
-\#\#\# Making cools tables in Rmarkdown from R code
+
+\hypertarget{making-cools-tables-in-rmarkdown-from-r-code}{%
+\subsection{Making cools tables in Rmarkdown from R code}\label{making-cools-tables-in-rmarkdown-from-r-code}}
+
 Tables generated from your R code are very useful to share modified output with other users.
 Simplest tables in markdown can be generated using the kable function but these table are static and to be honest boring!
-\#\#\#\# A kable table
+
+\hypertarget{a-kable-table}{%
+\subsubsection{A kable table}\label{a-kable-table}}
 
 \begin{verbatim}
 library(knitr)
@@ -1948,7 +1956,8 @@ speed & dist\\
 \hline
 \end{tabular}
 
-\#\#\#\# A DT table
+\hypertarget{a-dt-table}{%
+\subsubsection{A DT table}\label{a-dt-table}}
 
 \begin{verbatim}
 library(DT)
@@ -1964,7 +1973,8 @@ datatable(cars)
 
 \includegraphics{Notes_files/figure-latex/unnamed-chunk-60-1.pdf}
 
-\#\#\#\# DT table with download options
+\hypertarget{dt-table-with-download-options}{%
+\subsubsection{DT table with download options}\label{dt-table-with-download-options}}
 
 \begin{verbatim}
 library(DT)
@@ -2009,7 +2019,11 @@ You can organize content using tabs by applying the .tabset class attribute to h
 
 You can also specify two additional attributes to control the appearance and behavior of the tabs. The .tabset-fade attribute causes the tabs to fade in and out when switching between tabs. The .tabset-pills attribute causes the visual appearance of the tabs to be ``pill'' rather than traditional tabs. For example:
 
+\begin{figure}
+\centering
 \includegraphics{img/tabset.png}
+\caption{tabset}
+\end{figure}
 
 \hypertarget{rmarkdown-to-html-conversion}{%
 \subsection{Rmarkdown to HTML conversion}\label{rmarkdown-to-html-conversion}}
@@ -2031,7 +2045,8 @@ Lets look at the following examples
 
 \href{data/case_study_extreme.html}{Simple html styled by custom css}
 
-\#\#\# HTML
+\hypertarget{html}{%
+\subsection{HTML}\label{html}}
 
 \begin{verbatim}
 <!DOCTYPE html>
@@ -2045,7 +2060,7 @@ Lets look at the following examples
 </html>
 \end{verbatim}
 
-\#\#\#\#Output:
+\emph{Output}
 
 My First Heading
 
@@ -2109,10 +2124,14 @@ A CSS rule-set consists of a selector and a declaration block:
   Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
 \end{itemize}
 
-p \{
-color: red;
-text-align: center;
-\}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OperatorTok{\{}
+  \DataTypeTok{color}\OperatorTok{:}\NormalTok{ red}\OperatorTok{;}
+\NormalTok{  text}\OperatorTok{-}\DataTypeTok{align}\OperatorTok{:}\NormalTok{ center}\OperatorTok{;}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{itemize}
 \tightlist
@@ -2181,6 +2200,23 @@ Please download the data folder from Dropbox
 \end{itemize}
 
 Hint: Use mutate and case\_when(), \%in\% and stop() function
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m_to_q<-}\ControlFlowTok{function}\NormalTok{(dataframe)}
+\NormalTok{\{}
+ \ControlFlowTok{if}\NormalTok{(}\StringTok{"Month"} \OperatorTok{%in%}\StringTok{ }\KeywordTok{colnames}\NormalTok{(dataframe) )\{}
+\NormalTok{dataframe <-}\StringTok{ }\NormalTok{dataframe }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{Quarter =} \KeywordTok{case_when}\NormalTok{(}
+    \KeywordTok{as.numeric}\NormalTok{(Month) }\OperatorTok{<=}\StringTok{ }\DecValTok{3} \OperatorTok{~}\StringTok{ "Q1"}\NormalTok{,}
+    \KeywordTok{as.numeric}\NormalTok{(Month) }\OperatorTok{<=}\StringTok{ }\DecValTok{6} \OperatorTok{~}\StringTok{ "Q2"}\NormalTok{,}
+    \KeywordTok{as.numeric}\NormalTok{(Month) }\OperatorTok{<=}\StringTok{ }\DecValTok{9} \OperatorTok{~}\StringTok{ "Q3"}\NormalTok{,}
+    \OtherTok{TRUE}                   \OperatorTok{~}\StringTok{ "Q4"}
+\NormalTok{  ))\} }\ControlFlowTok{else} \KeywordTok{stop}\NormalTok{(}\StringTok{"Column Month not found"}\NormalTok{)}
+\KeywordTok{return}\NormalTok{(dataframe)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{task-3}{%
 \section{Task 3}\label{task-3}}
